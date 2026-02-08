@@ -352,57 +352,7 @@
             }
         }
 
-        /* Walkthrough Overlay (Attached to the sticky bar) */
-        #walkthrough-overlay {
-            position: absolute;
-            inset: -20px -20px -100px -20px;
-            /* Expand slightly around */
-            pointer-events: none;
-            z-index: 10;
-            display: none;
-            /* Hidden by default */
-        }
 
-        .overlay-arrow {
-            position: absolute;
-            color: white;
-            font-family: 'Playfair Display', serif;
-            text-shadow: 0 2px 8px #000;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .close-walkthrough {
-            position: absolute;
-            right: 0;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            border: none;
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            font-weight: bold;
-            cursor: pointer;
-            pointer-events: auto;
-            backdrop-filter: blur(4px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
 
         /* Nav Active Pill (Sliding Background) */
         .nav-links-wrap {
@@ -1914,21 +1864,6 @@
                         <div class="progress-fill" id="progress-fill" style="height: 100%;"></div>
                     </div>
                 </div>
-
-                <!-- Attached Walkthrough Overlay -->
-                <div id="walkthrough-overlay">
-                    <button class="close-walkthrough" onclick="hideWalkthrough()">ⓧ Hide</button>
-
-                    <div class="overlay-arrow" style="left: 70px; top: 80px;">
-                        <span style="font-size: 30px;">↑</span>
-                        <span>Click Prev</span>
-                    </div>
-
-                    <div class="overlay-arrow" style="right: 70px; top: 80px;">
-                        <span style="font-size: 30px;">↑</span>
-                        <span>Click Next</span>
-                    </div>
-                </div>
             </div>
             <div id="project-display-area">
                 <div id="injected-content" style="width: 100%;">
@@ -2428,19 +2363,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- SPOTLIGHT BLUR MASK -->
-    <div id="global-blur-mask" style="
-        position: fixed;
-        inset: 0;
-        z-index: 1000; /* Below controls (1005) but above page content */
-        background: rgba(0,0,0,0.3);
-        backdrop-filter: blur(8px);
-        display: none;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        pointer-events: none; /* Allow scrolling/interactions if needed, but mainly visual focus */
-    "></div>
 
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
