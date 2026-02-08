@@ -1,0 +1,1655 @@
+<div class="project-slide">
+    <div class="container">
+        <div class="project-header-large reveal">
+            <span class="h-tag"
+                style="color: #fff; border: 1px solid #fff; padding: 8px 20px; display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; font-weight: 600;">AI
+                Image Generation</span>
+            <h2 class="project-title-xl"
+                style="font-size: 72px; font-weight: 800; margin: 20px 0; color: #fff; line-height: 1.1; letter-spacing: -2px;">
+                Image Genaration In Local <i class="fas fa-image"></i></h2>
+            <p class="project-subtitle-lg">
+                Rethinking local image generation. Prompt-driven, open-source, and completely offline.
+                Focus on creating stunning images, not wrestling with technical parameters. Built on Stable Diffusion XL
+                with intelligent automation.
+            </p>
+        </div>
+
+        <div class="tech-stack reveal" style="text-align: center; margin: 3rem 0;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">Python
+                    3.10+</span>
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">PyTorch
+                    2.1</span>
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">Gradio
+                    UI</span>
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">SDXL
+                    Architecture</span>
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">GPT-2
+                    Expansion</span>
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">CUDA
+                    12.1</span>
+            </div>
+        </div>
+
+        <div class="philosophy-section reveal" style="margin: 4rem 0;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <div>
+                    <h3
+                        style="color: #fff; font-size: 1.6rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem;">
+                        The Philosophy</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem;">
+                        Designed as an intelligent wrapper around Stable Diffusion XL, this tool automates the complex
+                        "tweak-test-repeat" loop typical of traditional SD WebUIs. No more endless parameter
+                        adjustments.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem;">
+                        By integrating an offline <strong style="color: #fff;">GPT-2 prompt expansion engine</strong>,
+                        simple inputs like "house in garden" transform into elaborate, style-consistent prompts
+                        dynamically. It employs a custom <strong style="color: #fff;">advanced k-diffusion
+                            sampler</strong> with native refiner swapping, ensuring superior quality without manual
+                        tuning.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                        <strong style="color: #fff;">Zero Configuration:</strong> Users only need prompts - no parameter
+                        expertise required. <strong style="color: #fff;">Completely Offline:</strong> All processing
+                        happens locally on your machine. <strong style="color: #fff;">Professional Quality:</strong>
+                        Built-in optimizations deliver stunning results automatically.
+                    </p>
+                </div>
+                <div>
+                    <h3
+                        style="color: #fff; font-size: 1.6rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem;">
+                        Why This Tool?</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem;">
+                        Traditional image generation tools overwhelm users with hundreds of technical parameters. This
+                        platform strips away the complexity while maintaining professional-grade output quality.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem;">
+                        Built on the powerful SDXL (Stable Diffusion XL) architecture with native 1024x1024 resolution,
+                        dual text encoders (CLIP + OpenCLIP), and superior composition understanding. Enhanced with
+                        custom optimizations for sharpness, color accuracy, and coherent details.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                        Inspired by the best aspects of Midjourney's simplicity, Stable Diffusion's flexibility, and
+                        ComfyUI's efficiency - combined into a single streamlined experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="project-slide">
+            <div class="mountain-gallery-container">
+                <div class="gallery-header reveal">
+                    <span class="h-tag" style="color: #fff; border-color: #fff;">Super Realastic AI Image
+                        Generated</span>
+                    <h2 class="gallery-title">Explore Generated AI Images.</h2>
+                    <p class="gallery-subtitle">
+                        Explore ultra-realistic AI-generated images that look indistinguishable from real life. Hover to
+                        zoom and discover every detail.
+                    </p>
+                </div>
+
+                <div class="gallery-slider-wrapper">
+                    <button class="gallery-nav-btn gallery-prev-btn" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+                        </svg>
+                    </button>
+
+                    <button class="gallery-nav-btn gallery-next-btn" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                        </svg>
+                    </button>
+
+                    <div class="gallery-track">
+                        <div class="gallery-slide gallery-slide-active">
+                            <div class="gallery-slide-content">
+                                <div class="slide-number">01</div>
+                                <h3 class="slide-title">Hyper-Realistic Cat Portrait</h3>
+                                <div class="slide-description">
+                                    <p>This ultra-realistic AI-generated cat portrait captures fine fur texture, natural
+                                        lighting,
+                                        and lifelike facial expressions with incredible accuracy.</p>
+                                    <p>Every detail—from whiskers to eye reflections—has been carefully generated to
+                                        mirror a real
+                                        photographic shot.</p>
+                                </div>
+                                <div class="slide-meta">
+                                    <span class="meta-item">Category: Animal</span>
+                                    <span class="meta-item">Style: Ultra-Realistic AI</span>
+                                </div>
+                            </div>
+                            <div class="gallery-image-container">
+                                <div class="image-wrapper">
+                                    <img class="gallery-zoomable-img" src="assets/image_gen/cat_gen.png"
+                                        alt="Mountain Peak 1">
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-slide">
+                            <div class="gallery-slide-content">
+                                <div class="slide-number">02</div>
+                                <h3 class="slide-title">Realistic Female Portrait</h3>
+                                <div class="slide-description">
+                                    <p>This AI-generated portrait of a young woman showcases natural skin tones,
+                                        balanced lighting,
+                                        and authentic facial features.</p>
+                                    <p>The image is designed to closely resemble real-life photography, highlighting the
+                                        power of
+                                        modern AI realism.</p>
+                                </div>
+                                <div class="slide-meta">
+                                    <span class="meta-item">Category: Portrait</span>
+                                    <span class="meta-item">Style: Photorealistic</span>
+                                </div>
+                            </div>
+                            <div class="gallery-image-container">
+                                <div class="image-wrapper">
+                                    <img class="gallery-zoomable-img" src="assets/image_gen/g1_gen.png"
+                                        alt="Alpine Valley 2">
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-slide">
+                            <div class="gallery-slide-content">
+                                <div class="slide-number">03</div>
+                                <h3 class="slide-title">Lifelike Human Expression</h3>
+                                <div class="slide-description">
+                                    <p>This portrait focuses on realistic emotion and detail, capturing subtle
+                                        expressions and
+                                        natural depth.
+                                    </p>
+                                    <p>The AI model recreates real-world lighting and texture to produce an image nearly
+                                        indistinguishable from a real photo.</p>
+                                </div>
+                                <div class="slide-meta">
+                                    <span class="meta-item">Category: Human</span>
+                                    <span class="meta-item">Technique: AI Image Generation</span>
+                                </div>
+                            </div>
+                            <div class="gallery-image-container">
+                                <div class="image-wrapper">
+                                    <img class="gallery-zoomable-img" src="assets/image_gen/g2_gen.png"
+                                        alt="Glacier View 3">
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-slide">
+                            <div class="gallery-slide-content">
+                                <div class="slide-number">04</div>
+                                <h3 class="slide-title">Ultra-Detailed AI Portrait</h3>
+                                <div class="slide-description">
+                                    <p>This image demonstrates advanced AI realism through precise facial structure,
+                                        smooth skin
+                                        details, and natural color balance.
+                                    </p>
+                                    <p>It reflects how artificial intelligence can create convincing human visuals with
+                                        remarkable
+                                        accuracy.</p>
+                                </div>
+                                <div class="slide-meta">
+                                    <span class="meta-item">Category: AI Portrait</span>
+                                    <span class="meta-item">Quality: High Fidelity</span>
+                                </div>
+                            </div>
+                            <div class="gallery-image-container">
+                                <div class="image-wrapper">
+                                    <img class="gallery-zoomable-img" src="assets/image_gen/g3_gen.png"
+                                        alt="Mountain Sunset 4">
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-slide">
+                            <div class="gallery-slide-content">
+                                <div class="slide-number">05</div>
+                                <h3 class="slide-title">Photorealistic Female Detail</h3>
+                                <div class="slide-description">
+                                    <p>The image demonstrates how advanced AI can replicate the depth, clarity, and
+                                        emotion of
+                                        professional photography.</p>
+                                    <p> AI-generated portrait highlights fine facial details, natural skin texture, and
+                                        realistic lighting to create a true-to-life appearance.</p>
+                                </div>
+                                <div class="slide-meta">
+                                    <span class="meta-item">Category: AI Portrait</span>
+                                    <span class="meta-item">Style: Ultra-Realistic AI</span>
+                                </div>
+                            </div>
+                            <div class="gallery-image-container">
+                                <div class="image-wrapper">
+                                    <img class="gallery-zoomable-img" src="assets/image_gen/g4_gen.png"
+                                        alt="Forest Valley 5">
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-slide">
+                            <div class="gallery-slide-content">
+                                <div class="slide-number">06</div>
+                                <h3 class="slide-title">Realistic Couple Moment</h3>
+                                <div class="slide-description">
+                                    <p>This AI-generated image presents a natural and respectful moment between a young
+                                        couple,
+                                        focusing on authentic posture and expression.</p>
+                                    <p>The scene emphasizes realism, emotion, and balanced composition without
+                                        exaggeration.</p>
+                                </div>
+                                <div class="slide-meta">
+                                    <span class="meta-item">Category: Lifestyle</span>
+                                    <span class="meta-item">Style: Realistic AI</span>
+                                </div>
+                            </div>
+                            <div class="gallery-image-container">
+                                <div class="image-wrapper">
+                                    <img class="gallery-zoomable-img" src="assets/image_gen/g5_gen.png"
+                                        alt="Mountain Lake 6">
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="gallery-dots">
+                        <button class="gallery-dot gallery-dot-active" data-slide="0" type="button"></button>
+                        <button class="gallery-dot" data-slide="1" type="button"></button>
+                        <button class="gallery-dot" data-slide="2" type="button"></button>
+                        <button class="gallery-dot" data-slide="3" type="button"></button>
+                        <button class="gallery-dot" data-slide="4" type="button"></button>
+                        <button class="gallery-dot" data-slide="5" type="button"></button>
+                    </div>
+                    <div class="slide-counter">
+                        <span class="current-slide">01</span>
+                        <span class="counter-divider">/</span>
+                        <span class="total-slides">06</span>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .mountain-gallery-container {
+                    width: 100%;
+                    background: #000;
+                    padding: 80px 0;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .gallery-header {
+                    max-width: 1200px;
+                    margin: 0 auto 60px;
+                    padding: 0 40px;
+                    text-align: center;
+                }
+
+                .h-tag {
+                    display: inline-block;
+                    padding: 8px 20px;
+                    border: 1px solid #fff;
+                    border-radius: 30px;
+                    font-size: 12px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                    background: rgba(255, 255, 255, 0.05);
+                    backdrop-filter: blur(10px);
+                }
+
+                .gallery-title {
+                    font-size: 64px;
+                    font-weight: 700;
+                    color: #fff;
+                    margin-bottom: 20px;
+                    letter-spacing: -2px;
+                    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+                }
+
+                .gallery-subtitle {
+                    font-size: 18px;
+                    color: #888;
+                    max-width: 600px;
+                    margin: 0 auto;
+                    line-height: 1.6;
+                }
+
+                .gallery-slider-wrapper {
+                    position: relative;
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    padding: 0 120px;
+                }
+
+                .gallery-track {
+                    position: relative;
+                    width: 100%;
+                    overflow: hidden;
+                }
+
+                .gallery-slide {
+                    display: none;
+                    grid-template-columns: 1fr 1.2fr;
+                    gap: 80px;
+                    align-items: center;
+                    opacity: 0;
+                    transform: translateX(100px);
+                    transition: none;
+                }
+
+                .gallery-slide-active {
+                    display: grid !important;
+                    animation: slideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                }
+
+                @keyframes slideIn {
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+
+                .gallery-slide-content {
+                    padding: 40px;
+                    position: relative;
+                }
+
+                .slide-number {
+                    font-size: 120px;
+                    font-weight: 900;
+                    color: rgba(255, 255, 255, 0.3);
+                    position: absolute;
+                    top: -20px;
+                    left: 0;
+                    line-height: 1;
+                    pointer-events: none;
+                }
+
+                .slide-title {
+                    font-size: 48px;
+                    font-weight: 700;
+                    color: #fff;
+                    margin-bottom: 30px;
+                    position: relative;
+                    z-index: 1;
+                    letter-spacing: -1px;
+                }
+
+                .slide-title::before {
+                    content: '';
+                    position: absolute;
+                    left: -40px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 4px;
+                    height: 60%;
+                    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.3) 100%);
+                    border-radius: 4px;
+                }
+
+                .slide-description {
+                    margin-bottom: 30px;
+                }
+
+                .slide-description p {
+                    font-size: 16px;
+                    line-height: 1.8;
+                    color: #aaa;
+                    margin-bottom: 15px;
+                }
+
+                .slide-meta {
+                    display: flex;
+                    gap: 30px;
+                    padding-top: 20px;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                }
+
+                .meta-item {
+                    font-size: 13px;
+                    color: #666;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
+
+                .gallery-image-container {
+                    position: relative;
+                    height: 600px;
+                }
+
+                .image-wrapper {
+                    position: relative;
+                    height: 100%;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    background: #111;
+                    box-shadow:
+                        0 0 0 1px rgba(255, 255, 255, 0.1),
+                        0 20px 60px rgba(0, 0, 0, 0.5),
+                        inset 0 0 100px rgba(0, 0, 0, 0.3);
+                }
+
+                .image-wrapper::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+                    pointer-events: none;
+                    z-index: 2;
+                }
+
+                .gallery-zoomable-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform-origin: var(--zoom-pos-x, 50%) var(--zoom-pos-y, 50%);
+                    transition: transform 0.15s linear;
+                    cursor: zoom-in;
+                    filter: brightness(0.9) contrast(1.1);
+                }
+
+                .image-wrapper.zoomed .gallery-zoomable-img {
+                    transform: scale(var(--zoom, 2.5));
+                }
+
+                .image-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: radial-gradient(circle at var(--zoom-pos-x, 50%) var(--zoom-pos-y, 50%), transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                    pointer-events: none;
+                    z-index: 1;
+                }
+
+                .image-wrapper.zoomed .image-overlay {
+                    opacity: 1;
+                }
+
+                .gallery-nav-btn {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 60px;
+                    height: 60px;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    background: rgba(255, 255, 255, 0.05);
+                    backdrop-filter: blur(10px);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                    z-index: 100;
+                    outline: none;
+                }
+
+                .gallery-nav-btn:hover {
+                    background: rgba(255, 255, 255, 0.1);
+                    border-color: rgba(255, 255, 255, 0.4);
+                    transform: translateY(-50%) scale(1.1);
+                    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+                }
+
+                .gallery-nav-btn:active {
+                    transform: translateY(-50%) scale(0.95);
+                }
+
+                .gallery-nav-btn svg {
+                    width: 24px;
+                    height: 24px;
+                    fill: #fff;
+                    transition: transform 0.3s;
+                    pointer-events: none;
+                }
+
+                .gallery-nav-btn:hover svg {
+                    transform: translateX(0);
+                }
+
+                .gallery-prev-btn {
+                    left: 30px;
+                }
+
+                .gallery-prev-btn:hover svg {
+                    transform: translateX(-3px);
+                }
+
+                .gallery-next-btn {
+                    right: 30px;
+                }
+
+                .gallery-next-btn:hover svg {
+                    transform: translateX(3px);
+                }
+
+                .gallery-progress {
+                    max-width: 1400px;
+                    margin: 60px auto 0;
+                    padding: 0 120px;
+                    display: flex;
+                    align-items: center;
+                    gap: 40px;
+                }
+
+                .progress-bar {
+                    flex: 1;
+                    height: 2px;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 2px;
+                    overflow: hidden;
+                }
+
+                .progress-fill {
+                    height: 100%;
+                    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.5) 100%);
+                    width: 16.66%;
+                    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                }
+
+                .gallery-dots {
+                    display: flex;
+                    gap: 12px;
+                }
+
+                .gallery-dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    background: transparent;
+                    cursor: pointer;
+                    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                    padding: 0;
+                    outline: none;
+                }
+
+                .gallery-dot:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                    transform: scale(1.2);
+                }
+
+                .gallery-dot-active {
+                    background: #fff !important;
+                    border-color: #fff !important;
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                    transform: scale(1.3) !important;
+                }
+
+                .slide-counter {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 8px;
+                    font-weight: 600;
+                    min-width: 80px;
+                }
+
+                .current-slide {
+                    font-size: 24px;
+                    color: #fff;
+                }
+
+                .counter-divider {
+                    font-size: 16px;
+                    color: #666;
+                }
+
+                .total-slides {
+                    font-size: 16px;
+                    color: #666;
+                }
+
+                @media (max-width: 1024px) {
+                    .gallery-slider-wrapper {
+                        padding: 0 80px;
+                    }
+
+                    .gallery-slide {
+                        grid-template-columns: 1fr;
+                        gap: 40px;
+                    }
+
+                    .gallery-title {
+                        font-size: 48px;
+                    }
+
+                    .slide-title {
+                        font-size: 36px;
+                    }
+
+                    .gallery-image-container {
+                        height: 400px;
+                    }
+
+                    .gallery-progress {
+                        padding: 0 80px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .mountain-gallery-container {
+                        padding: 40px 0;
+                    }
+
+                    .gallery-header {
+                        padding: 0 20px;
+                        margin-bottom: 40px;
+                    }
+
+                    .gallery-title {
+                        font-size: 36px;
+                    }
+
+                    .gallery-subtitle {
+                        font-size: 16px;
+                    }
+
+                    .gallery-slider-wrapper {
+                        padding: 0 60px;
+                    }
+
+                    .gallery-slide-content {
+                        padding: 20px;
+                    }
+
+                    .slide-number {
+                        font-size: 80px;
+                    }
+
+                    .slide-title {
+                        font-size: 28px;
+                    }
+
+                    .slide-description p {
+                        font-size: 14px;
+                    }
+
+                    .slide-meta {
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    .gallery-image-container {
+                        height: 300px;
+                    }
+
+                    .gallery-nav-btn {
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                    .gallery-prev-btn {
+                        left: 10px;
+                    }
+
+                    .gallery-next-btn {
+                        right: 10px;
+                    }
+
+                    .gallery-progress {
+                        padding: 0 60px;
+                        gap: 20px;
+                    }
+
+                    .slide-counter {
+                        min-width: 60px;
+                    }
+
+                    .current-slide {
+                        font-size: 20px;
+                    }
+                }
+            </style>
+
+            <script>
+                (function () {
+                    const container = document.querySelector('.mountain-gallery-container');
+                    if (!container) return;
+
+                    let currentSlide = 0;
+                    const slides = container.querySelectorAll('.gallery-slide');
+                    const dots = container.querySelectorAll('.gallery-dot');
+                    const prevBtn = container.querySelector('.gallery-prev-btn');
+                    const nextBtn = container.querySelector('.gallery-next-btn');
+                    const totalSlides = slides.length;
+                    const progressFill = container.querySelector('.progress-fill');
+                    const currentSlideEl = container.querySelector('.current-slide');
+
+                    function updateSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('gallery-slide-active');
+                            if (i !== index) {
+                                slide.style.display = 'none';
+                            }
+                        });
+                        dots.forEach(dot => dot.classList.remove('gallery-dot-active'));
+
+                        if (index >= totalSlides) currentSlide = 0;
+                        if (index < 0) currentSlide = totalSlides - 1;
+
+                        slides[currentSlide].style.display = 'grid';
+                        setTimeout(() => {
+                            slides[currentSlide].classList.add('gallery-slide-active');
+                        }, 50);
+
+                        dots[currentSlide].classList.add('gallery-dot-active');
+                        progressFill.style.width = ((currentSlide + 1) / totalSlides * 100) + '%';
+                        currentSlideEl.textContent = String(currentSlide + 1).padStart(2, '0');
+                    }
+
+                    prevBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        currentSlide--;
+                        updateSlide(currentSlide);
+                    });
+
+                    nextBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        currentSlide++;
+                        updateSlide(currentSlide);
+                    });
+
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentSlide = index;
+                            updateSlide(currentSlide);
+                        });
+                    });
+
+                    container.querySelectorAll('.image-wrapper').forEach(wrapper => {
+                        let zoom = 2.5;
+                        let isZoomed = false;
+
+                        wrapper.addEventListener('mouseenter', () => {
+                            wrapper.classList.add('zoomed');
+                            isZoomed = true;
+                        });
+
+                        wrapper.addEventListener('mousemove', (e) => {
+                            if (!isZoomed) return;
+                            const rect = wrapper.getBoundingClientRect();
+                            const x = ((e.clientX - rect.left) / rect.width) * 100;
+                            const y = ((e.clientY - rect.top) / rect.height) * 100;
+                            wrapper.style.setProperty('--zoom-pos-x', x + '%');
+                            wrapper.style.setProperty('--zoom-pos-y', y + '%');
+                            wrapper.style.setProperty('--zoom', zoom);
+                        });
+
+                        wrapper.addEventListener('mouseleave', () => {
+                            wrapper.classList.remove('zoomed');
+                            isZoomed = false;
+                            zoom = 2.5;
+                        });
+
+                        wrapper.addEventListener('wheel', (e) => {
+                            if (!isZoomed) return;
+                            if (e.ctrlKey) {
+                                e.preventDefault();
+                                zoom += e.deltaY * -0.01;
+                                zoom = Math.min(Math.max(1.5, zoom), 4);
+                                wrapper.style.setProperty('--zoom', zoom);
+                            }
+                        }, { passive: false });
+                    });
+
+                    let autoSlide = setInterval(() => {
+                        currentSlide++;
+                        updateSlide(currentSlide);
+                    }, 5000);
+
+                    container.querySelector('.gallery-slider-wrapper').addEventListener('mouseenter', () => {
+                        clearInterval(autoSlide);
+                    });
+
+                    container.querySelector('.gallery-slider-wrapper').addEventListener('mouseleave', () => {
+                        autoSlide = setInterval(() => {
+                            currentSlide++;
+                            updateSlide(currentSlide);
+                        }, 5000);
+                    });
+
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowLeft') {
+                            currentSlide--;
+                            updateSlide(currentSlide);
+                        } else if (e.key === 'ArrowRight') {
+                            currentSlide++;
+                            updateSlide(currentSlide);
+                        }
+                    });
+
+                    updateSlide(0);
+                })();
+            </script>
+        </div>
+
+
+
+        <div class="diagram-box reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">System Architecture
+            </h3>
+            <div class="mermaid">
+                graph TB
+                Entry["Entry Point"] --> Env["Environment Setup"]
+                Env --> Models["Download Models"]
+                Models --> WebUI["Web Interface Gradio"]
+
+                WebUI --> User["User Input"]
+                User --> Prompt["Prompt Processing"]
+                Prompt --> Expand["GPT-2 Expansion"]
+                Expand --> CLIP["CLIP Encoding"]
+
+                CLIP --> Pipeline["Diffusion Pipeline"]
+                Pipeline --> UNet["SDXL UNet"]
+                UNet --> Sampler["K-Diffusion Sampler"]
+                Sampler --> Refiner["Refiner Model"]
+                Refiner --> VAE["VAE Decode"]
+                VAE --> Output["Final Image"]
+
+                LoRA["LoRA Weights"] --> UNet
+                ControlNet["ControlNet"] --> UNet
+                IPAdapter["IP-Adapter"] --> UNet
+
+                style Entry fill:#000,stroke:#fff,color:#fff
+                style WebUI fill:#000,stroke:#fff,color:#fff
+                style Expand fill:#000,stroke:#fff,color:#fff
+                style UNet fill:#000,stroke:#fff,color:#fff
+                style Output fill:#fff,stroke:#fff,color:#000
+            </div>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">Image Generation
+                Pipeline</h3>
+            <div class="mermaid">
+                graph LR
+                Input["User Prompt"] --> Style{"Style Selected?"}
+                Style -->|Yes| Template["Apply Style Template"]
+                Style -->|No| Raw["Raw Prompt"]
+                Template --> GPT["GPT-2 Expansion"]
+                Raw --> GPT
+
+                GPT --> Expanded["Expanded Prompt"]
+                Expanded --> CLIP["CLIP Tokenize & Encode"]
+                CLIP --> Embeddings["Text Embeddings"]
+
+                Embeddings --> Noise["Generate Noise Latent"]
+                Noise --> Diffusion["Diffusion Loop"]
+                Diffusion --> Steps{"More Steps?"}
+                Steps -->|Yes| UNet["UNet Forward Pass"]
+                UNet --> Denoise["Denoise Step"]
+                Denoise --> Diffusion
+                Steps -->|No| Final["Final Latent"]
+
+                Final --> Enhance["Apply Enhancements"]
+                Enhance --> Decode["VAE Decode"]
+                Decode --> Image["Output Image 1024x1024"]
+
+                style Input fill:#000,stroke:#fff,color:#fff
+                style GPT fill:#000,stroke:#fff,color:#fff
+                style Diffusion fill:#000,stroke:#fff,color:#fff
+                style Image fill:#fff,stroke:#fff,color:#000
+            </div>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">Memory Optimization
+                Flow</h3>
+            <div class="mermaid">
+                graph TD
+                Start["Load Model"] --> Check{"VRAM Available?"}
+                Check -- ">12GB" --> Full["Full GPU Mode"]
+                Check -- "4-12GB" --> Hybrid["Hybrid Mode"]
+                Check -- "<4GB" --> Low["Low VRAM Mode"]
+
+                    Full --> GPU["All Models on GPU"]
+                    Hybrid --> Offload["Offload Unused to CPU"]
+                    Low --> Swap["Virtual Swap to System RAM"]
+
+                    GPU --> Process["Process Image"]
+                    Offload --> Process
+                    Swap --> Process
+
+                    Process --> Optimize["Apply Optimizations"]
+                    Optimize --> FP16["FP16 Precision"]
+                    Optimize --> Attention["xformers Attention"]
+                    Optimize --> Tile["VAE Tiling"]
+
+                    style Start fill:#000,stroke:#fff,color:#fff
+                    style Check fill:#000,stroke:#fff,color:#fff
+                    style Process fill:#000,stroke:#fff,color:#fff
+                    style Optimize fill:#fff,stroke:#fff,color:#000
+            </div>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">Model Integration
+                Architecture</h3>
+            <div class="mermaid">
+                graph TB
+                Prompt["User Prompt"] --> GPT2["GPT-2 Expansion Engine"]
+                GPT2 --> Enhanced["Enhanced Prompt"]
+
+                Enhanced --> CLIPL["CLIP ViT-L/14"]
+                Enhanced --> CLIPG["OpenCLIP ViT-G/14"]
+
+                CLIPL --> Embed1["Text Embeddings 1"]
+                CLIPG --> Embed2["Text Embeddings 2"]
+
+                Embed1 --> Combine["Combine Embeddings"]
+                Embed2 --> Combine
+
+                Noise["Random Noise"] --> Latent["Initial Latent 128x128x4"]
+
+                Combine --> SDXL["SDXL UNet"]
+                Latent --> SDXL
+                LoRA["LoRA Weights"] --> SDXL
+                Control["ControlNet"] --> SDXL
+                IP["IP-Adapter"] --> SDXL
+
+                SDXL --> Denoised["Denoised Latent"]
+                Denoised --> VAE["SDXL VAE Decoder"]
+                VAE --> Final["Final Image 1024x1024x3"]
+
+                style GPT2 fill:#000,stroke:#fff,color:#fff
+                style SDXL fill:#000,stroke:#fff,color:#fff
+                style Final fill:#fff,stroke:#fff,color:#000
+            </div>
+        </div>
+
+        <div class="core-components reveal" style="margin: 4rem 0;">
+            <h3
+                style="color: #fff; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem;">
+                Core System Components</h3>
+
+            <div style="display: grid; gap: 2rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Entry Point:
+                        entry_with_update.py</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Application entry with auto-update capability using pygit2 for Git operations. Automatically
+                        fetches updates from origin remote, performs fast-forward merge if available, and falls back
+                        gracefully on update failures before launching the main application.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Environment Setup: launch.py
+                    </h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Prepares the environment and downloads required models. Installs PyTorch, xformers, and
+                        dependencies. Downloads VAE approximation models (xlvaeapp.pth, vaeapp_sd15.pth), prompt
+                        expansion model (335 MB), and default SDXL checkpoints based on selected preset (Default,
+                        Realistic, or Anime).
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Web Interface: webui.py (1129
+                        lines)</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Gradio-based user interface featuring prompt input fields (positive/negative), style selection
+                        system, image input tabs (Upscale, Variation, Inpaint, Outpaint), advanced settings (sampler,
+                        scheduler, CFG, steps), and ControlNet/IP-Adapter image prompts. Clean, intuitive design for
+                        both beginners and advanced users.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Async Worker: async_worker.py
+                        (1486 lines)</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Main image generation pipeline handling the async processing loop. Key functions include
+                        process_task() for single image generation, process_prompt() for applying styles and prompt
+                        expansion, apply_control_nets() for IP-Adapter and ControlNet, apply_vary() for image
+                        variations, apply_inpaint() for inpainting with masks, and apply_upscale() for image upscaling.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Default Pipeline:
+                        default_pipeline.py</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Model management and diffusion process coordinator. Functions include refresh_base_model() to
+                        load/refresh base SDXL model, refresh_refiner_model() for refiner loading, refresh_loras() to
+                        apply LoRA weights, clip_encode() for encoding prompts via CLIP, and process_diffusion() as the
+                        main diffusion sampling orchestrator.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Core Module: core.py</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Low-level model operations including StableDiffusionModel class as main model container (unet,
+                        vae, clip), VAEApprox for fast VAE approximation during previews, load_model() for loading
+                        checkpoint files, ksampler() as K-diffusion sampling wrapper, and decode_vae()/encode_vae() for
+                        latent ↔ image conversion.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Patch Module: patch.py</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Custom enhancements to the diffusion process including Adaptive Anisotropic Filtering for
+                        improved sharpness, Negative ADM Guidance for better CFG contrast at high resolution, Adaptive
+                        CFG for dynamic guidance scale adjustment, and ControlNet Softness for smoother control signal
+                        application.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ai-models reveal" style="margin: 4rem 0;">
+            <h3
+                style="color: #fff; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem;">
+                AI Models & Technology Stack</h3>
+
+            <div style="margin-bottom: 3rem;">
+                <h4 style="color: #fff; font-size: 1.4rem; margin-bottom: 1.5rem;">Base Models (SDXL Checkpoints)</h4>
+                <div
+                    style="background: rgba(255,255,255,0.03); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
+                    <table style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background: rgba(255,255,255,0.05);">
+                                <th
+                                    style="padding: 1rem; text-align: left; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                    Preset</th>
+                                <th
+                                    style="padding: 1rem; text-align: left; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                    Model Name</th>
+                                <th
+                                    style="padding: 1rem; text-align: left; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                                    Use Case</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td
+                                    style="padding: 1rem; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    Default</td>
+                                <td
+                                    style="padding: 1rem; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    juggernautXL_v8Rundiffusion</td>
+                                <td
+                                    style="padding: 1rem; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    General purpose generation</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    style="padding: 1rem; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    Realistic</td>
+                                <td
+                                    style="padding: 1rem; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    realisticStockPhoto_v20</td>
+                                <td
+                                    style="padding: 1rem; color: rgba(255,255,255,0.7); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    Photorealistic images</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 1rem; color: rgba(255,255,255,0.7);">Anime</td>
+                                <td style="padding: 1rem; color: rgba(255,255,255,0.7);">animaPencilXL_v500</td>
+                                <td style="padding: 1rem; color: rgba(255,255,255,0.7);">Anime/illustration style</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 4px;">
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6;">
+                        <strong style="color: #fff;">Why SDXL?</strong> Native 1024x1024 resolution • Dual text encoder
+                        (CLIP + OpenCLIP) • Superior composition and detail • Refined aesthetic understanding
+                    </p>
+                </div>
+            </div>
+
+            <div style="display: grid; gap: 2rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Text Encoders (CLIP)</h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        Dual encoder architecture: <strong style="color: #fff;">CLIP ViT-L/14</strong> (OpenAI's text
+                        encoder) and <strong style="color: #fff;">OpenCLIP ViT-G/14</strong> (larger open-source
+                        variant). Process: Prompt → Tokenization → Text Embeddings → Cross-attention in UNet.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Configuration: Clip Skip set to 2 (default) - skips last 2 CLIP layers for better stylization
+                        control and artistic flexibility.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ GPT-2 Prompt Expansion Engine
+                    </h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        Location: models/prompt_expansion/ containing pytorch_model.bin (~335 MB GPT-2 weights),
+                        tokenizer.json (BPE tokenizer), and positive.txt (prompt templates).
+                    </p>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        <strong style="color: #fff;">How It Works:</strong> Takes user's short prompt → GPT-2 generates
+                        expanded, detailed prompt → Adds quality-enhancing terms automatically. Similar to Midjourney's
+                        hidden prompt processing magic.
+                    </p>
+                    <p
+                        style="color: rgba(255,255,255,0.5); font-size: 0.85rem; font-style: italic; padding: 0.8rem; background: rgba(255,255,255,0.02); border-radius: 4px;">
+                        Example Transformation:<br>
+                        Input: "a cat"<br>
+                        Output: "a cat, highly detailed fur, soft lighting, professional photography, sharp focus, 8k
+                        resolution, masterpiece"
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ VAE (Variational Autoencoder)
+                    </h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        Encode/decode between pixel space and latent space. Models include SDXL VAE (main
+                        encoder/decoder) and VAE Approx (xlvaeapp.pth) for fast preview during generation.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Process: Image (1024×1024×3) → VAE Encode → Latent (128×128×4) → Diffusion Process → Latent
+                        (128×128×4) → VAE Decode → Image (1024×1024×3)
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Inpaint Models</h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        Version: inpaint_v26.patch (1.28 GB) - Custom inpainting head for natural fill-in with better
+                        edge blending, more coherent content generation, and enhanced respect for surrounding context
+                        compared to standard SDXL inpaint.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ ControlNet & IP-Adapter</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Supported control types: <strong style="color: #fff;">ImagePrompt</strong> (IP-Adapter for
+                        style/content transfer), <strong style="color: #fff;">FaceSwap</strong> (InsightFace for face
+                        replacement), <strong style="color: #fff;">PyraCanny</strong> (ControlNet Canny for edge-guided
+                        generation), and <strong style="color: #fff;">CPDS</strong> (ControlNet CPDS for depth/structure
+                        control).
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ LoRA (Low-Rank Adaptation)</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+                        Performance LoRAs for different speed/quality tradeoffs:
+                    </p>
+                    <div style="background: rgba(255,255,255,0.02); border-radius: 4px; overflow: hidden;">
+                        <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                            <tr style="background: rgba(255,255,255,0.03);">
+                                <td
+                                    style="padding: 0.8rem; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <strong>Quality</strong>
+                                </td>
+                                <td
+                                    style="padding: 0.8rem; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    None</td>
+                                <td
+                                    style="padding: 0.8rem; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    60 steps</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    style="padding: 0.8rem; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <strong>Speed</strong>
+                                </td>
+                                <td
+                                    style="padding: 0.8rem; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    None</td>
+                                <td
+                                    style="padding: 0.8rem; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    30 steps</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    style="padding: 0.8rem; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <strong>Extreme Speed</strong>
+                                </td>
+                                <td
+                                    style="padding: 0.8rem; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    sdxl_lcm_lora.safetensors</td>
+                                <td
+                                    style="padding: 0.8rem; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    8 steps</td>
+                            </tr>
+                            <tr>
+                                <td
+                                    style="padding: 0.8rem; color: #fff; border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    <strong>Lightning</strong>
+                                </td>
+                                <td
+                                    style="padding: 0.8rem; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    sdxl_lightning_4step_lora.safetensors</td>
+                                <td
+                                    style="padding: 0.8rem; color: rgba(255,255,255,0.6); border-bottom: 1px solid rgba(255,255,255,0.05);">
+                                    4 steps</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0.8rem; color: #fff;"><strong>Hyper-SD</strong></td>
+                                <td style="padding: 0.8rem; color: rgba(255,255,255,0.6);">
+                                    sdxl_hyper_sd_4step_lora.safetensors</td>
+                                <td style="padding: 0.8rem; color: rgba(255,255,255,0.6);">4 steps</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="advanced-features reveal" style="margin: 4rem 0;">
+            <h3
+                style="color: #fff; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem;">
+                Advanced Features & Optimizations</h3>
+
+            <div style="display: grid; gap: 2rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Prompt Magic (V2 Style)</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        GPT-2 model trained on high-quality prompts automatically expands simple inputs and adds
+                        quality-enhancing keywords. Transforms basic descriptions into professional-grade prompts that
+                        produce stunning results without manual optimization.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Native Refiner Swap</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Unlike other implementations, refiner swap occurs within a single k-sampler run, preserving
+                        sampler momentum, ODE history parameters, and sampling continuity. This results in smoother
+                        transitions and higher quality final images.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Negative ADM Guidance</h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        Compensates for lack of CFG contrast at the highest resolution level of SDXL. Negative prompts
+                        use 0.8× scale while positive prompts use 1.5× scale for optimal guidance.
+                    </p>
+                    <p
+                        style="color: rgba(255,255,255,0.5); font-size: 0.85rem; font-family: monospace; padding: 0.8rem; background: rgba(255,255,255,0.02); border-radius: 4px;">
+                        if prompt_type == "negative":<br>
+                        &nbsp;&nbsp;width *= 0.8; height *= 0.8<br>
+                        elif prompt_type == "positive":<br>
+                        &nbsp;&nbsp;width *= 1.5; height *= 1.5
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Self-Attention Guidance
+                        (Sharpness)</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Prevents overly smooth or plastic appearance using adaptive anisotropic filtering. Applies
+                        dynamic sharpness correction based on global diffusion progress (alpha = 0.001 × sharpness ×
+                        progress).
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ TSNR Correction</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        When CFG > 10, applies dynamic correction to prevent over-saturation. Uses adaptive CFG blending
+                        where mimicked_cfg = 7.0 (default) and smoothly interpolates based on timestep for balanced
+                        guidance without color explosion.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Memory Optimization Techniques
+                    </h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        <strong style="color: #fff;">Model Offloading:</strong> Move unused models to CPU automatically
+                        • <strong style="color: #fff;">Attention Optimization:</strong> xformers or PyTorch SDPA for
+                        efficient attention • <strong style="color: #fff;">VAE Tiling:</strong> Process large images in
+                        tiles • <strong style="color: #fff;">FP16/BF16:</strong> Half-precision computation • <strong
+                            style="color: #fff;">Gradient Checkpointing:</strong> Trade compute for memory
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="sampling-section reveal" style="margin: 4rem 0;">
+            <h3
+                style="color: #fff; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem;">
+                Sampling Configuration</h3>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.2rem;">Default Configuration</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.8;">
+                        <strong style="color: #fff;">Sampler:</strong> dpmpp_2m_sde_gpu<br>
+                        <strong style="color: #fff;">Scheduler:</strong> karras<br>
+                        <strong style="color: #fff;">CFG Scale:</strong> 7.0<br>
+                        <strong style="color: #fff;">Steps:</strong> 30 (Speed mode)<br>
+                        <strong style="color: #fff;">Resolution:</strong> 1024×1024
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.2rem;">Schedule Types</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.8;">
+                        <strong style="color: #fff;">normal:</strong> Linear sigma schedule<br>
+                        <strong style="color: #fff;">karras:</strong> Karras noise schedule ✓<br>
+                        <strong style="color: #fff;">exponential:</strong> Exponential decay<br>
+                        <strong style="color: #fff;">sgm_uniform:</strong> Uniform spacing<br>
+                        <strong style="color: #fff;">lcm:</strong> Latent Consistency Model<br>
+                        <strong style="color: #fff;">turbo:</strong> Fast turbo schedule
+                    </p>
+                </div>
+            </div>
+
+            <div
+                style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.2rem;">Available Samplers</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                    <span
+                        style="padding: 0.4rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">euler</span>
+                    <span
+                        style="padding: 0.4rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">euler_ancestral</span>
+                    <span
+                        style="padding: 0.4rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">heun</span>
+                    <span
+                        style="padding: 0.4rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">dpm_2</span>
+                    <span
+                        style="padding: 0.4rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">dpm_adaptive</span>
+                    <span
+                        style="padding: 0.4rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">dpmpp_2m_sde_gpu
+                        ✓</span>
+                    <span
+                        style="padding: 0.4rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">dpmpp_3m_sde_gpu</span>
+                    <span
+                        style="padding: 0.4rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">ddpm</span>
+                    <span
+                        style="padding: 0.4rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">lcm</span>
+                    <span
+                        style="padding: 0.4rem 1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 15px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">tcd</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="system-requirements reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">System Requirements &
+                Performance</h3>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 2rem; text-align: center;">Optimized for consumer
+                hardware via Microsoft's Virtual Swap technology</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4
+                        style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+                        Minimum Requirements</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.7); line-height: 2; padding: 0;">
+                        <li><strong style="color: #fff;">OS:</strong> Windows 10/11 64-bit, Linux</li>
+                        <li><strong style="color: #fff;">GPU:</strong> NVIDIA GTX Series with 4GB VRAM</li>
+                        <li><strong style="color: #fff;">System RAM:</strong> 8GB minimum</li>
+                        <li><strong style="color: #fff;">Storage:</strong> 20GB free space (SSD recommended)</li>
+                        <li><strong style="color: #fff;">Performance:</strong> ~2-3 min per image</li>
+                        <li><strong style="color: #fff;">Quality:</strong> Basic settings, limited features</li>
+                    </ul>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4
+                        style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+                        Recommended Configuration</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.7); line-height: 2; padding: 0;">
+                        <li><strong style="color: #fff;">OS:</strong> Windows 10/11 (NVIDIA optimized)</li>
+                        <li><strong style="color: #fff;">GPU:</strong> NVIDIA RTX 3060 or higher (12GB VRAM)</li>
+                        <li><strong style="color: #fff;">System RAM:</strong> 16GB or more</li>
+                        <li><strong style="color: #fff;">Storage:</strong> 50GB NVMe SSD</li>
+                        <li><strong style="color: #fff;">Performance:</strong> ~30-60 seconds per image</li>
+                        <li><strong style="color: #fff;">Quality:</strong> All features enabled</li>
+                    </ul>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4
+                        style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+                        Optimal Performance</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.7); line-height: 2; padding: 0;">
+                        <li><strong style="color: #fff;">OS:</strong> Windows 11 with latest NVIDIA drivers</li>
+                        <li><strong style="color: #fff;">GPU:</strong> NVIDIA RTX 4070 or higher (16GB+ VRAM)</li>
+                        <li><strong style="color: #fff;">System RAM:</strong> 32GB DDR5</li>
+                        <li><strong style="color: #fff;">Storage:</strong> 100GB Gen4 NVMe SSD</li>
+                        <li><strong style="color: #fff;">Performance:</strong> ~10-20 seconds per image</li>
+                        <li><strong style="color: #fff;">Quality:</strong> Maximum settings, batch generation</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem;">Platform Support</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">✓
+                        Windows 10/11</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">✓
+                        Linux (Ubuntu/Debian)</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">✓
+                        NVIDIA GPU (CUDA)</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">✓
+                        AMD GPU (ROCm)</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">✓
+                        CPU Fallback Mode</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="configuration-section reveal" style="margin: 4rem 0;">
+            <h3
+                style="color: #fff; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem;">
+                Configuration & Customization</h3>
+
+            <div
+                style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 2rem;">
+                <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.2rem;">Model Directory Structure</h4>
+                <div style="color: rgba(255,255,255,0.6); font-size: 0.9rem; font-family: monospace; line-height: 1.8;">
+                    models/<br>
+                    ├── checkpoints/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# SDXL checkpoint files<br>
+                    ├── loras/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# LoRA
+                    adaptation files<br>
+                    ├── embeddings/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Text embeddings<br>
+                    ├── vae_approx/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Fast VAE approximation<br>
+                    ├── inpaint/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Inpainting
+                    models<br>
+                    ├── controlnet/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ControlNet models<br>
+                    ├── clip_vision/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# CLIP vision encoders<br>
+                    └── prompt_expansion/ &nbsp;# GPT-2 expansion model
+                </div>
+            </div>
+
+            <div
+                style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.2rem;">Command Line Arguments</h4>
+                <p style="color: rgba(255,255,255,0.6); margin-bottom: 1rem; font-size: 0.9rem;">python
+                    entry_with_update.py [OPTIONS]</p>
+                <div style="background: rgba(255,255,255,0.02); border-radius: 4px; padding: 1rem;">
+                    <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                        <tr>
+                            <td style="padding: 0.5rem; color: #fff; font-family: monospace;">--preset
+                                {default,anime,realistic}</td>
+                            <td style="padding: 0.5rem; color: rgba(255,255,255,0.6);">Load preset configuration</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; color: #fff; font-family: monospace;">--listen [IP]</td>
+                            <td style="padding: 0.5rem; color: rgba(255,255,255,0.6);">Enable remote access</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; color: #fff; font-family: monospace;">--port PORT</td>
+                            <td style="padding: 0.5rem; color: rgba(255,255,255,0.6);">Server port (default: 7865)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; color: #fff; font-family: monospace;">--share</td>
+                            <td style="padding: 0.5rem; color: rgba(255,255,255,0.6);">Create public Gradio link</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; color: #fff; font-family: monospace;">--always-high-vram</td>
+                            <td style="padding: 0.5rem; color: rgba(255,255,255,0.6);">Keep all models in VRAM</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; color: #fff; font-family: monospace;">--always-low-vram</td>
+                            <td style="padding: 0.5rem; color: rgba(255,255,255,0.6);">Aggressive memory management</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; color: #fff; font-family: monospace;">--theme {dark,light}</td>
+                            <td style="padding: 0.5rem; color: rgba(255,255,255,0.6);">UI theme selection</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section reveal" style="margin: 4rem 0; text-align: center;">
+            <h3
+                style="color: #fff; font-size: 2rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem; display: inline-block; min-width: 300px;">
+                Start Creating</h3>
+            <p style="color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto 2rem auto; line-height: 1.8;">
+                Download the latest release, extract, and run the application. The first launch will automatically
+                download required AI models (~8GB). Then simply enter your prompt and generate.
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
+                <div
+                    style="flex: 1; min-width: 280px; max-width: 400px; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 2px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fff; font-size: 1.4rem; margin-bottom: 1rem;">Application Package v2.5.0</h4>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem;">Complete
+                        application with auto-updater, environment setup, and one-click installation. Windows and Linux
+                        builds available.</p>
+                    <p style="color: rgba(255,255,255,0.5); margin-bottom: 1rem; font-size: 0.85rem;">Size: ~2.5 GB
+                        (models download separately)</p>
+                    <a href="#download-app"
+                        style="display: inline-block; padding: 1rem 3rem; background: #fff; color: #000; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s; border: 2px solid #fff;">Download
+                        Application</a>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 280px; max-width: 400px; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 2px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fff; font-size: 1.4rem; margin-bottom: 1rem;">Source Code Repository</h4>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem;">Full Python
+                        source code, configuration files, and development documentation. Requires Python 3.10+ and
+                        manual dependency installation.</p>
+                    <p style="color: rgba(255,255,255,0.5); margin-bottom: 1rem; font-size: 0.85rem;">Size: ~150 MB
+                        (excluding models)</p>
+                    <a href="#download-source"
+                        style="display: inline-block; padding: 1rem 3rem; background: #000; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s; border: 2px solid #fff;">Download
+                        Source</a>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 2.5rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 8px; border-left: 3px solid rgba(255,255,255,0.3); max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7; text-align: left;">
+                    <strong style="color: #fff;">Quick Start:</strong> Extract the downloaded archive → Run <span
+                        style="font-family: monospace; background: rgba(255,255,255,0.1); padding: 0.2rem 0.5rem; border-radius: 3px;">entry_with_update.py</span>
+                    or <span
+                        style="font-family: monospace; background: rgba(255,255,255,0.1); padding: 0.2rem 0.5rem; border-radius: 3px;">run.bat</span>
+                    → Wait for automatic model downloads → Access web UI at localhost:7865 → Start creating stunning
+                    images with simple prompts
+                </p>
+            </div>
+        </div>
+        <div class="additional-info reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem;">Project Information</h3>
+            <div style="display: grid; gap: 1.2rem;">
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">License:</strong> Open-source under GNU General Public License v3.0.
+                    Free for personal, educational, and commercial use with attribution.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">Development:</strong> Built with modern Python architecture, leveraging
+                    PyTorch for deep learning, Gradio for intuitive web interface, and advanced optimization techniques
+                    for consumer hardware compatibility.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">Updates:</strong> Active development with regular feature additions,
+                    performance improvements, and model updates. Auto-updater keeps your installation current
+                    automatically.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">Community:</strong> Join the growing community of artists and
+                    developers. Share creations, report issues, contribute code, and help shape the future of accessible
+                    AI image generation.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">Philosophy:</strong> Democratizing professional-grade image generation
+                    by removing technical barriers while maintaining creative control. Completely offline operation
+                    ensures privacy and independence from cloud services.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Sphere</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+
+        #sphere-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        #sphere-container canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sphere-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script>
+        const img = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/06a094a4-7bd7-4bb9-b998-6c1e17f66c08/dbcju0k-b9b333e1-dd8d-4657-90db-7d3e7e179843.png';
+
+        class App {
+            constructor() {
+                this.renderer, this.sphere, this.camera = undefined;
+                this.containerSize = 400;
+                this.init();
+            }
+
+            init() {
+                // scene setup
+                this.scene = new THREE.Scene();
+                // light setup
+                this.pointLight = new THREE.PointLight(0xffffff, 0);
+                this.pointLight.position.set(-200, 50, 200);
+                this.pointLight.castShadow = true;
+                this.scene.add(this.pointLight);
+                // dim light
+                new TweenMax.to(this.pointLight, 1, {
+                    intensity: 1.2,
+                    delay: 1
+                });
+                this.initCamera();
+                this.initRenderer();
+                this.createCanvas();
+                this.render();
+                this.initSphere();
+                window.addEventListener("resize", () => {
+                    this.onWindowResize();
+                }, false);
+                this.cursorPosition();
+            }
+
+            cursorPosition() {
+                window.addEventListener("mousemove", (event) => {
+                    let posX = event.clientX;
+                    this.pointLight.position.x = ((posX / window.innerWidth) * 2 - 1) * 200;
+                });
+            }
+
+            createCanvas() {
+                // canvas container
+                const container = document.querySelector("#sphere-container");
+                // add canvas to dom
+                container.appendChild(this.renderer.domElement);
+            }
+
+            initRenderer() {
+                // WebGL renderer
+                this.renderer = new THREE.WebGLRenderer({
+                    antialias: true,
+                    alpha: true
+                });
+                this.renderer.setClearColor(0x000000, 0);
+                this.renderer.setPixelRatio(window.devicePixelRatio);
+                this.renderer.setSize(this.containerSize, this.containerSize);
+            }
+
+            initCamera() {
+                // camera setup
+                this.camera = new THREE.PerspectiveCamera(45, 1, 1, 1000);
+                this.camera.position.z = 50;
+                this.camera.position.y = 0;
+            }
+
+            render() {
+                this.renderer.render(this.scene, this.camera);
+
+                if (this.sphere !== undefined) {
+                    this.sphere.rotation.y += 0.001;
+                }
+
+                requestAnimationFrame(() => this.render());
+            }
+
+            onWindowResize() {
+                // Container size is fixed, no need to resize
+            }
+
+            initSphere() {
+                var texloader = new THREE.TextureLoader();
+                texloader.load(img, (tex) => {
+                    let geometry = new THREE.SphereGeometry(10, 22, 22);
+                    let material = new THREE.MeshPhongMaterial({
+                        color: 0xB2B2B2,
+                        normalMap: tex,
+                        shininess: 0
+                    });
+                    this.sphere = new THREE.Mesh(geometry, material);
+                    this.sphere.rotation.z = 0.5;
+                    this.scene.add(this.sphere);
+                });
+            }
+        }
+
+        new App();
+    </script>
+</body>
+
+</html>

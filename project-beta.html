@@ -1,0 +1,22 @@
+<div class="project-slide">
+    <div class="container">
+        <div class="project-header-large reveal">
+            <span class="h-tag" style="color: #fff; border-color: #fff;">Test Project Beta</span>
+            <h2 class="project-title-xl">Project Beta.</h2>
+            <p class="project-subtitle-lg">
+                This is the SECOND test file (<code>pages/project-beta.html</code>).
+                If you are seeing this, the "Next" button logic is functioning.
+            </p>
+        </div>
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Logic Flow</h3>
+            <div class="mermaid">
+                graph LR
+                User["Click Next"] --> JS["Main.js Index++"]
+                JS --> Fetch["Fetch(pages[i])"]
+                Fetch --> Body["Inject HTML"]
+                style User fill:#111,stroke:#fff,color:#fff
+            </div>
+        </div>
+    </div>
+</div>

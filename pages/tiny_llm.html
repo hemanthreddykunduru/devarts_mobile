@@ -1,0 +1,515 @@
+<div class="project-slide">
+    <div class="container">
+        <div class="project-header-large reveal" style="margin-bottom: 50px;">
+            <span class="h-tag"
+                style="color: #fff; border: 1px solid #fff; padding: 8px 20px; display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; font-weight: 600;">Custom
+                Language Model Training</span>
+            <h2 class="project-title-xl"
+                style="font-size: 72px; font-weight: 800; margin: 20px 0; color: #fff; line-height: 1.1; letter-spacing: -2px;">
+                TinyLLaMA <i class="fas fa-rocket"></i></h2>
+            <p class="project-subtitle-lg"
+                style="font-size: 22px; color: #999; line-height: 1.7; max-width: 900px; margin-top: 30px;">
+                A complete end-to-end pipeline for training a small-scale language model from scratch, including
+                automated data collection, preprocessing, custom tokenization, and training with a LLaMA-inspired
+                architecture. Build your own AI from the ground up.
+            </p>
+        </div>
+
+        <div class="development-info reveal"
+            style="margin: 50px 0; padding: 40px; background: #0a0a0a; border-radius: 12px; border: 1px solid #1a1a1a;">
+            <h3 style="color: #fff; font-size: 32px; margin-bottom: 30px; font-weight: 700;">Project Overview</h3>
+            <p style="color: #aaa; line-height: 1.9; margin-bottom: 25px; font-size: 16px;">
+                <strong style="color: #fff;">Architecture:</strong> Built on LLaMA3-style architecture and techniques,
+                featuring RMSNorm for layer normalization, Rotary Position Embeddings (RoPE), SwiGLU activation
+                function, and multi-head attention with causal masking. Designed for efficient training and inference on
+                consumer hardware.
+            </p>
+            <p style="color: #aaa; line-height: 1.9; margin-bottom: 25px; font-size: 16px;">
+                <strong style="color: #fff;">Model Size:</strong> Approximately 15 million parameters with 8 transformer
+                layers, 8 attention heads, and 512 embedding dimensions. Optimized for training on GPUs with 4-8GB VRAM
+                while maintaining good performance and text generation quality.
+            </p>
+            <p style="color: #aaa; line-height: 1.9; font-size: 16px;">
+                <strong style="color: #fff;">Training Pipeline:</strong> Complete automated workflow from data
+                collection through Wikipedia scraping, robust preprocessing with deduplication and quality filtering,
+                custom SentencePiece tokenizer training with BPE encoding, and full training loop with validation and
+                checkpointing.
+            </p>
+        </div>
+
+        <div class="output-example reveal"
+            style="margin: 50px 0; padding: 40px; background: #0d0d0d; border-radius: 12px; border: 1px solid #222;">
+            <h3 style="color: #fff; font-size: 28px; margin-bottom: 25px; font-weight: 700;">Sample Output</h3>
+            <div
+                style="background: #000; padding: 30px; border-radius: 8px; border: 1px solid #1a1a1a; font-family: 'Courier New', monospace;">
+                <div style="margin-bottom: 20px;">
+                    <span style="color: #fff; font-weight: 700;">You:</span> <span style="color: #999;">what is deep
+                        learning</span>
+                </div>
+                <div>
+                    <span style="color: #fff; font-weight: 700;">TinyLLaMA:</span>
+                    <span style="color: #aaa; line-height: 1.8; display: block; margin-top: 10px;">
+                        deep learning models analysis which models designed to be used to execute artificial
+                        intelligence (AI) and with less energy, aiming to generate consuments, and reasoning.
+                        In 2022, engineering, there are related to AI programs that can be used during mass recognition,
+                        pattern inputs, and brain to make imposed sensors and performance. As the expert data gathering
+                        information AI might create: "eases" Search plays a field of AI behavior in conjunction, where
+                        words are trained to automate control over time.
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="features-section reveal" style="margin: 50px 0;">
+            <h3 style="color: #fff; font-size: 32px; margin-bottom: 40px; text-align: center; font-weight: 700;">🌟 Key
+                Features</h3>
+            <div style="display: grid; gap: 25px;">
+
+                <div style="padding: 35px; background: #0d0d0d; border-left: 4px solid #fff; border-radius: 8px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 20px; font-weight: 700;">◆ Automated Data
+                        Collection</h4>
+                    <p style="color: #888; font-size: 15px; line-height: 1.8;">Scrapes Wikipedia articles and web
+                        content automatically. Collects up to 2000 articles per topic with support for custom topic
+                        lists and web URL scraping. All raw data is saved in JSON format for reproducibility and
+                        analysis.</p>
+                </div>
+
+                <div style="padding: 35px; background: #0d0d0d; border-left: 4px solid #fff; border-radius: 8px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 20px; font-weight: 700;">◆ Robust Data
+                        Preprocessing</h4>
+                    <p style="color: #888; font-size: 15px; line-height: 1.8;">Advanced deduplication using MD5 hashing
+                        for exact matches and Jaccard similarity on text shingles for near-duplicates. Quality filtering
+                        based on text length (100-50,000 characters), word count, sentence structure, and character
+                        diversity to ensure high-quality training data.</p>
+                </div>
+
+                <div style="padding: 35px; background: #0d0d0d; border-left: 4px solid #fff; border-radius: 8px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 20px; font-weight: 700;">◆ Custom Tokenizer
+                        Training</h4>
+                    <p style="color: #888; font-size: 15px; line-height: 1.8;">Uses SentencePiece with Byte Pair
+                        Encoding (BPE) algorithm. Vocabulary size of 12,000 tokens including special tokens: PAD, EOS,
+                        UNK, and BOS. Optimized for efficient encoding and decoding with subword tokenization for better
+                        handling of rare and compound words.</p>
+                </div>
+
+                <div style="padding: 35px; background: #0d0d0d; border-left: 4px solid #fff; border-radius: 8px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 20px; font-weight: 700;">◆ Modern
+                        LLaMA-Inspired Architecture</h4>
+                    <p style="color: #888; font-size: 15px; line-height: 1.8;">Implements cutting-edge features
+                        including RMSNorm for stable layer normalization, Rotary Position Embeddings (RoPE) for better
+                        positional encoding, SwiGLU activation function for improved gradient flow, and multi-head
+                        attention with causal masking for autoregressive generation.</p>
+                </div>
+
+                <div style="padding: 35px; background: #0d0d0d; border-left: 4px solid #fff; border-radius: 8px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 20px; font-weight: 700;">◆ Complete Training
+                        Pipeline</h4>
+                    <p style="color: #888; font-size: 15px; line-height: 1.8;">Full training loop with AdamW optimizer,
+                        cosine annealing learning rate scheduler, gradient clipping, and automatic checkpointing.
+                        Includes 90/10 train/validation split with real-time loss monitoring and progress bars for
+                        tracking training metrics.</p>
+                </div>
+
+                <div style="padding: 35px; background: #0d0d0d; border-left: 4px solid #fff; border-radius: 8px;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 20px; font-weight: 700;">◆ Ready-to-Use
+                        Inference Engine</h4>
+                    <p style="color: #888; font-size: 15px; line-height: 1.8;">Interactive text generation interface
+                        with configurable parameters including temperature control, top-k sampling, and maximum length
+                        settings. Easy-to-use chat interface for conversational AI testing and deployment-ready
+                        inference API.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 50px 0; padding: 40px; background: #0d0d0d; border-radius: 12px; border: 1px solid #222;">
+            <h3 style="color: #fff; font-size: 28px; margin-bottom: 35px; text-align: center; font-weight: 700;">📊
+                Pipeline Overview</h3>
+
+            <div style="display: grid; gap: 25px; margin-bottom: 40px;">
+                <div style="padding: 30px; background: #000; border-left: 4px solid #fff; border-radius: 6px;">
+                    <div style="color: #fff; font-weight: 700; margin-bottom: 15px; font-size: 18px;">Phase 1: Data
+                        Collection</div>
+                    <div style="color: #777; font-size: 14px; line-height: 1.7;">
+                        • Scrapes Wikipedia articles related to AI topics<br>
+                        • Collects up to 2000 articles per topic<br>
+                        • Supports custom topic lists and web URL scraping<br>
+                        • Saves raw data in JSON format
+                    </div>
+                </div>
+
+                <div style="padding: 30px; background: #000; border-left: 4px solid #fff; border-radius: 6px;">
+                    <div style="color: #fff; font-weight: 700; margin-bottom: 15px; font-size: 18px;">Phase 2: Data
+                        Preprocessing</div>
+                    <div style="color: #777; font-size: 14px; line-height: 1.7;">
+                        • Exact Deduplication using MD5 hashing<br>
+                        • Near Deduplication with Jaccard similarity on text shingles<br>
+                        • Quality Filtering: Text length (100-50,000 chars), word count, sentence structure, character
+                        diversity<br>
+                        • Output saved to clean_data.json
+                    </div>
+                </div>
+
+                <div style="padding: 30px; background: #000; border-left: 4px solid #fff; border-radius: 6px;">
+                    <div style="color: #fff; font-weight: 700; margin-bottom: 15px; font-size: 18px;">Phase 3: Tokenizer
+                        Training</div>
+                    <div style="color: #777; font-size: 14px; line-height: 1.7;">
+                        • Trains SentencePiece tokenizer with BPE algorithm<br>
+                        • Vocabulary size: 12,000 tokens<br>
+                        • Special tokens: PAD, EOS, UNK, BOS<br>
+                        • Outputs: tinyllama_tokenizer.model & tinyllama_tokenizer.vocab
+                    </div>
+                </div>
+
+                <div style="padding: 30px; background: #000; border-left: 4px solid #fff; border-radius: 6px;">
+                    <div style="color: #fff; font-weight: 700; margin-bottom: 15px; font-size: 18px;">Phase 4: Model
+                        Architecture</div>
+                    <div style="color: #777; font-size: 14px; line-height: 1.7;">
+                        • Embedding Dimension: 512<br>
+                        • Number of Layers: 8<br>
+                        • Attention Heads: 8<br>
+                        • Vocabulary Size: 12,000<br>
+                        • Max Sequence Length: 512<br>
+                        • Total Parameters: ~15M<br>
+                        • Features: RMSNorm, RoPE, SwiGLU, Causal Self-Attention
+                    </div>
+                </div>
+
+                <div style="padding: 30px; background: #000; border-left: 4px solid #fff; border-radius: 6px;">
+                    <div style="color: #fff; font-weight: 700; margin-bottom: 15px; font-size: 18px;">Phase 5: Training
+                        Configuration</div>
+                    <div style="color: #777; font-size: 14px; line-height: 1.7;">
+                        • Optimizer: AdamW with weight decay (0.1)<br>
+                        • Learning Rate: 5e-4 with cosine annealing<br>
+                        • Batch Size: 8<br>
+                        • Epochs: 100<br>
+                        • Gradient Clipping: Max norm 1.0<br>
+                        • Validation Split: 90/10 train/validation
+                    </div>
+                </div>
+
+                <div style="padding: 30px; background: #000; border-left: 4px solid #fff; border-radius: 6px;">
+                    <div style="color: #fff; font-weight: 700; margin-bottom: 15px; font-size: 18px;">Phase 6:
+                        Interactive Chat</div>
+                    <div style="color: #777; font-size: 14px; line-height: 1.7;">
+                        • User vs LLM conversational interface<br>
+                        • Run with: <code
+                            style="background: #0a0a0a; padding: 2px 8px; border-radius: 3px; color: #aaa;">python chat.py</code><br>
+                        • Real-time text generation<br>
+                        • Configurable generation parameters
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="system-requirements reveal"
+            style="margin: 50px 0; padding: 40px; background: #0a0a0a; border-radius: 12px; border: 1px solid #1a1a1a;">
+            <h3 style="color: #fff; font-size: 32px; margin-bottom: 40px; text-align: center; font-weight: 700;">📋
+                System Requirements</h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+
+                <div style="padding: 35px; background: #0d0d0d; border-radius: 10px; border: 1px solid #1f1f1f;">
+                    <h4
+                        style="color: #fff; font-size: 22px; margin-bottom: 25px; border-bottom: 2px solid #fff; padding-bottom: 15px; font-weight: 700;">
+                        Hardware Requirements</h4>
+                    <ul style="list-style: none; padding: 0; color: #aaa; line-height: 2.2; font-size: 15px;">
+                        <li style="margin-bottom: 12px;"><strong style="color: #fff;">GPU:</strong> CUDA-compatible GPU
+                            recommended<br><span style="font-size: 13px; color: #666;">(Training will be very slow on
+                                CPU)</span></li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #fff;">Minimum:</strong> RTX 3050 or GTX
+                            1060 (4GB VRAM)</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #fff;">Recommended:</strong> RTX 3060 or
+                            higher (8GB+ VRAM)</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #fff;">RAM:</strong> 8GB minimum, 16GB+
+                            recommended</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #fff;">Storage:</strong> 5-10GB free
+                            space for data and checkpoints</li>
+                    </ul>
+                </div>
+
+                <div style="padding: 35px; background: #0d0d0d; border-radius: 10px; border: 1px solid #1f1f1f;">
+                    <h4
+                        style="color: #fff; font-size: 22px; margin-bottom: 25px; border-bottom: 2px solid #fff; padding-bottom: 15px; font-weight: 700;">
+                        Software Requirements</h4>
+                    <ul style="list-style: none; padding: 0; color: #aaa; line-height: 2.2; font-size: 15px;">
+                        <li style="margin-bottom: 12px;"><strong style="color: #fff;">Python:</strong> 3.8 or higher
+                        </li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #fff;">PyTorch:</strong> Latest version
+                            with CUDA support</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #fff;">CUDA:</strong> 11.8+ for GPU
+                            acceleration</li>
+                        <li style="margin-bottom: 12px;"><strong style="color: #fff;">Dependencies:</strong> numpy,
+                            sentencepiece, wikipedia-api, beautifulsoup4, requests, tqdm</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div
+                style="margin-top: 30px; padding: 35px; background: #0d0d0d; border-radius: 10px; border: 1px solid #1f1f1f;">
+                <h4 style="color: #fff; font-size: 20px; margin-bottom: 25px; font-weight: 700;">📈 Performance
+                    Expectations</h4>
+                <div style="color: #aaa; font-size: 15px; line-height: 2;">
+                    <div style="margin-bottom: 15px;"><strong style="color: #fff;">GPU (RTX 3050):</strong> ~2-4 hours
+                        for 100 epochs</div>
+                    <div style="margin-bottom: 15px;"><strong style="color: #fff;">GPU (GTX 1060):</strong> ~8-12 hours
+                        for 100 epochs</div>
+                    <div style="margin-bottom: 15px;"><strong style="color: #fff;">CPU:</strong> Not recommended
+                        (days/weeks)</div>
+                    <div
+                        style="margin-top: 20px; padding: 20px; background: #0a0a0a; border-left: 3px solid #fff; border-radius: 6px; font-size: 14px; color: #888;">
+                        <strong style="color: #fff;">Note:</strong> Training time varies based on dataset size and
+                        hardware. Model quality improves with more epochs and larger datasets.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="installation-guide reveal"
+            style="margin: 50px 0; padding: 40px; background: #0d0d0d; border-radius: 12px; border: 1px solid #222;">
+            <h3 style="color: #fff; font-size: 28px; margin-bottom: 35px; text-align: center; font-weight: 700;">🚀
+                Sample Usage</h3>
+            <div>
+                <h4 style="color: #fff; font-size: 20px; margin-bottom: 20px; font-weight: 700;">Custom Text
+                    Generation</h4>
+                <div
+                    style="background: #000; padding: 25px; border-radius: 8px; border: 1px solid #1a1a1a; overflow-x: auto;">
+                    <code
+                        style="font-family: 'Courier New', 'Monaco', monospace; font-size: 14px; color: #aaa; line-height: 2; display: block; white-space: pre;">
+<span style="color: #fff;">from</span> training <span style="color: #fff;">import</span> TinyLLaMAInference
+
+<span style="color: #666;"># Load trained model</span>
+inference = TinyLLaMAInference(
+    model_path=<span style="color: #999;">"tinyllama_final.pt"</span>,
+    tokenizer_path=<span style="color: #999;">"tinyllama_tokenizer.model"</span>
+)
+
+<span style="color: #666;"># Generate text</span>
+response = inference.generate_text(
+    prompt=<span style="color: #999;">"The future of artificial intelligence is"</span>,
+    max_length=<span style="color: #fff;">100</span>,
+    temperature=<span style="color: #fff;">0.7</span>,
+    top_k=<span style="color: #fff;">50</span>
+)
+
+<span style="color: #fff;">print</span>(response)
+                    </code>
+                </div>
+            </div>
+        </div>
+
+        <div class="configuration-guide reveal"
+            style="margin: 50px 0; padding: 40px; background: #0a0a0a; border-radius: 12px; border: 1px solid #1a1a1a;">
+            <h3 style="color: #fff; font-size: 28px; margin-bottom: 35px; font-weight: 700;">🔧 Configuration Options
+            </h3>
+
+            <div style="margin-bottom: 35px;">
+                <h4 style="color: #fff; font-size: 20px; margin-bottom: 20px; font-weight: 700;">Customizing Topics</h4>
+                <div style="background: #0d0d0d; padding: 25px; border-radius: 8px; border: 1px solid #222;">
+                    <p style="color: #888; margin-bottom: 15px; font-size: 14px;">Edit the topics list in main():</p>
+                    <code
+                        style="font-family: 'Courier New', monospace; font-size: 13px; color: #aaa; line-height: 2; display: block; white-space: pre;">
+topics = [
+    <span style="color: #999;">"artificial intelligence"</span>,
+    <span style="color: #999;">"machine learning"</span>,
+    <span style="color: #999;">"deep learning"</span>,
+    <span style="color: #999;">"neural networks"</span>
+]
+                    </code>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 35px;">
+                <h4 style="color: #fff; font-size: 20px; margin-bottom: 20px; font-weight: 700;">Model Hyperparameters
+                </h4>
+                <div style="background: #0d0d0d; padding: 25px; border-radius: 8px; border: 1px solid #222;">
+                    <code
+                        style="font-family: 'Courier New', monospace; font-size: 13px; color: #aaa; line-height: 2; display: block; white-space: pre;">
+model = TinyLLaMA(
+    vocab_size=tokenizer.vocab_size(),
+    dim=<span style="color: #fff;">512</span>,        <span style="color: #666;"># Embedding dimension</span>
+    n_layers=<span style="color: #fff;">8</span>,     <span style="color: #666;"># Number of transformer layers</span>
+    n_heads=<span style="color: #fff;">8</span>,      <span style="color: #666;"># Number of attention heads</span>
+    max_seq_len=<span style="color: #fff;">512</span>, <span style="color: #666;"># Maximum sequence length</span>
+    dropout=<span style="color: #fff;">0.1</span>     <span style="color: #666;"># Dropout rate</span>
+)
+                    </code>
+                </div>
+            </div>
+
+            <div>
+                <h4 style="color: #fff; font-size: 20px; margin-bottom: 20px; font-weight: 700;">Training Parameters
+                </h4>
+                <div style="background: #0d0d0d; padding: 25px; border-radius: 8px; border: 1px solid #222;">
+                    <code
+                        style="font-family: 'Courier New', monospace; font-size: 13px; color: #aaa; line-height: 2; display: block; white-space: pre;">
+trainer.train(
+    train_data, 
+    val_data, 
+    epochs=<span style="color: #fff;">100</span>,      <span style="color: #666;"># Number of training epochs</span>
+    batch_size=<span style="color: #fff;">8</span>,    <span style="color: #666;"># Batch size</span>
+    lr=<span style="color: #fff;">5e-4</span>         <span style="color: #666;"># Learning rate</span>
+)
+                    </code>
+                </div>
+            </div>
+        </div>
+
+        <div class="output-files reveal"
+            style="margin: 50px 0; padding: 40px; background: #0d0d0d; border-radius: 12px; border: 1px solid #222;">
+            <h3 style="color: #fff; font-size: 28px; margin-bottom: 35px; font-weight: 700;">📁 Output Files</h3>
+            <div style="background: #000; padding: 30px; border-radius: 8px; border: 1px solid #1a1a1a;">
+                <div style="font-family: 'Courier New', monospace; font-size: 14px; color: #aaa; line-height: 2.2;">
+                    <div style="color: #666;">├── data/</div>
+                    <div style="color: #888; padding-left: 20px;">│ ├── wiki_data.json <span style="color: #666;"># Raw
+                            scraped data</span></div>
+                    <div style="color: #888; padding-left: 20px;">│ └── clean_data.json <span style="color: #666;">#
+                            Preprocessed data</span></div>
+                    <div style="color: #888;">├── tinyllama_tokenizer.model <span style="color: #666;"># Trained
+                            tokenizer</span></div>
+                    <div style="color: #888;">├── tinyllama_tokenizer.vocab <span style="color: #666;"># Tokenizer
+                            vocabulary</span></div>
+                    <div style="color: #888;">├── tinyllama_final.pt <span style="color: #666;"># Final trained
+                            model</span></div>
+                    <div style="color: #888;">└── checkpoint_*.pt <span style="color: #666;"># Training
+                            checkpoints</span></div>
+                </div>
+            </div>
+            <div
+                style="margin-top: 25px; padding: 20px; background: #0a0a0a; border-left: 3px solid #fff; border-radius: 6px;">
+                <p style="color: #888; font-size: 14px; line-height: 1.8;">
+                    <strong style="color: #fff;">Important Note:</strong> Due to size constraints (limited to ≤100MB),
+                    the files checkpoints.pt and tinyllama_final.pt are empty placeholders in the repository. Please
+                    train the model locally on your machine to generate the actual model files.
+                </p>
+            </div>
+        </div>
+
+        <div class="troubleshooting reveal"
+            style="margin: 50px 0; padding: 40px; background: #0a0a0a; border-radius: 12px; border: 1px solid #1a1a1a;">
+            <h3 style="color: #fff; font-size: 28px; margin-bottom: 35px; font-weight: 700;">🛠️ Troubleshooting</h3>
+
+            <div style="display: grid; gap: 25px;">
+                <div style="padding: 30px; background: #0d0d0d; border-radius: 8px; border-left: 3px solid #fff;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 18px; font-weight: 700;">CUDA Out of Memory
+                    </h4>
+                    <div style="color: #888; font-size: 14px; line-height: 1.8;">
+                        • Reduce batch size: <code
+                            style="background: #000; padding: 2px 8px; border-radius: 3px; color: #aaa;">batch_size=4</code>
+                        or <code
+                            style="background: #000; padding: 2px 8px; border-radius: 3px; color: #aaa;">batch_size=2</code><br>
+                        • Reduce sequence length: <code
+                            style="background: #000; padding: 2px 8px; border-radius: 3px; color: #aaa;">max_seq_len=256</code><br>
+                        • Use gradient accumulation<br>
+                        • Use smaller model configuration
+                    </div>
+                </div>
+
+                <div style="padding: 30px; background: #0d0d0d; border-radius: 8px; border-left: 3px solid #fff;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 18px; font-weight: 700;">Slow Training</h4>
+                    <div style="color: #888; font-size: 14px; line-height: 1.8;">
+                        • Ensure you're using GPU: Check <code
+                            style="background: #000; padding: 2px 8px; border-radius: 3px; color: #aaa;">torch.cuda.is_available()</code><br>
+                        • Reduce model size: <code
+                            style="background: #000; padding: 2px 8px; border-radius: 3px; color: #aaa;">dim=256, n_layers=4</code><br>
+                        • Use mixed precision training<br>
+                        • Reduce dataset size for initial testing
+                    </div>
+                </div>
+
+                <div style="padding: 30px; background: #0d0d0d; border-radius: 8px; border-left: 3px solid #fff;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 18px; font-weight: 700;">Poor Generation
+                        Quality</h4>
+                    <div style="color: #888; font-size: 14px; line-height: 1.8;">
+                        • Train for more epochs<br>
+                        • Increase model size (more layers/dimensions)<br>
+                        • Improve data quality and quantity<br>
+                        • Adjust generation parameters (temperature, top_k)<br>
+                        • Use larger vocabulary size
+                    </div>
+                </div>
+
+                <div style="padding: 30px; background: #0d0d0d; border-radius: 8px; border-left: 3px solid #fff;">
+                    <h4 style="color: #fff; margin-bottom: 15px; font-size: 18px; font-weight: 700;">Memory Optimization
+                        (Limited GPU)</h4>
+                    <div style="color: #888; font-size: 14px; margin-bottom: 15px;">For GPUs with limited memory, use
+                        smaller model configuration:</div>
+                    <code
+                        style="font-family: 'Courier New', monospace; font-size: 13px; color: #aaa; line-height: 2; display: block; white-space: pre; background: #000; padding: 15px; border-radius: 6px;">
+model = TinyLLaMA(
+vocab_size=tokenizer.vocab_size(),
+dim=<span style="color: #fff;">256</span>,        <span style="color: #666;"># Reduced dimension</span>
+n_layers=<span style="color: #fff;">4</span>,     <span style="color: #666;"># Fewer layers</span>
+n_heads=<span style="color: #fff;">4</span>,      <span style="color: #666;"># Fewer heads</span>
+max_seq_len=<span style="color: #fff;">256</span>, <span style="color: #666;"># Shorter sequences</span>
+dropout=<span style="color: #fff;">0.1</span>
+)
+</code>
+                </div>
+            </div>
+        </div>
+        <div class="download-section reveal" style="margin: 50px 0; text-align: center;">
+            <h3 style="color: #fff; font-size: 32px; margin-bottom: 40px; font-weight: 700;">Get the Code</h3>
+
+            <div
+                style="max-width: 600px; margin: 0 auto; padding: 50px 40px; background: #0d0d0d; border-radius: 12px; border: 2px solid #222;">
+                <h4 style="color: #fff; font-size: 26px; margin-bottom: 25px; font-weight: 700;">TinyLLaMA Source Code
+                </h4>
+                <p style="color: #888; margin-bottom: 30px; font-size: 16px; line-height: 1.7;">Complete implementation
+                    with automated pipeline, training scripts, inference engine, and comprehensive documentation.</p>
+                <p style="color: #666; margin-bottom: 30px; font-size: 14px;">License: MIT Open Source</p>
+                <a href="https://github.com/hemanthreddykunduru/LLM.LLama.git" target="_blank"
+                    style="display: inline-block; padding: 18px 60px; background: #fff; color: #000; text-decoration: none; border-radius: 8px; font-weight: 700; transition: all 0.3s; border: 2px solid #fff; font-size: 17px;">Clone
+                    Repository</a>
+            </div>
+
+            <div
+                style="margin-top: 40px; padding: 30px; background: #0a0a0a; border-radius: 10px; border-left: 4px solid #fff; max-width: 900px; margin-left: auto; margin-right: auto; text-align: left;">
+                <p style="color: #aaa; font-size: 14px; line-height: 1.8;">
+                    <strong style="color: #fff;">Quick Clone:</strong> <code
+                        style="background: #000; padding: 4px 12px; border-radius: 4px; color: #aaa; font-family: 'Courier New', monospace;">git clone https://github.com/hemanthreddykunduru/LLM.LLama.git</code>
+                </p>
+                <p style="color: #aaa; font-size: 14px; line-height: 1.8; margin-top: 15px;">
+                    After cloning, follow the Quick Start Guide above to install dependencies and begin training your
+                    own language model from scratch.
+                </p>
+            </div>
+        </div>
+
+        <div class="additional-info reveal"
+            style="margin: 50px 0; padding: 40px; background: #0a0a0a; border-radius: 12px; border: 1px solid #1a1a1a;">
+            <h3 style="color: #fff; font-size: 28px; margin-bottom: 30px; font-weight: 700;">📝 Additional Information
+            </h3>
+            <div style="display: grid; gap: 20px;">
+                <p style="color: #aaa; line-height: 1.9; font-size: 15px;">
+                    <strong style="color: #fff;">Built On:</strong> LLaMA3 style architecture and techniques, leveraging
+                    modern transformer innovations for efficient small-scale language modeling.
+                </p>
+                <p style="color: #aaa; line-height: 1.9; font-size: 15px;">
+                    <strong style="color: #fff;">Acknowledgments:</strong> Inspired by the LLaMA architecture from Meta
+                    AI, uses SentencePiece tokenization, built with PyTorch framework, and Wikipedia for providing open
+                    training data.
+                </p>
+                <p style="color: #aaa; line-height: 1.9; font-size: 15px;">
+                    <strong style="color: #fff;">Contributing:</strong> Open to pull requests and community
+                    contributions. Fork the repository, create a feature branch, make your changes, add tests if
+                    applicable, and submit a pull request.
+                </p>
+                <p style="color: #aaa; line-height: 1.9; font-size: 15px;">
+                    <strong style="color: #fff;">Support:</strong> For questions and support, open an issue on GitHub,
+                    check the troubleshooting section, review the code comments for implementation details, or email:
+                    <span style="color: #fff;">hemanthreddykunduru0701@gmail.com</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-info"
+            style="margin-top: 80px; padding-top: 40px; border-top: 1px solid #1a1a1a; text-align: center; color: #666; font-size: 14px;">
+            <p style="margin-bottom: 15px;">Custom Language Model Training • End-to-End Pipeline • Open Source</p>
+            <p style="font-size: 13px; color: #555;">Built with PyTorch • Inspired by LLaMA • Educational & Research
+                Purposes</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1280 @@
+<div class="project-slide">
+    <div class="container">
+        <div class="project-header-large reveal">
+            <span class="h-tag"
+                style="color: #fff; border: 1px solid #fff; padding: 8px 20px; display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; font-weight: 600;">AI
+                Assistant</span>
+            <h2 class="project-title-xl"
+                style="font-size: 72px; font-weight: 800; margin: 20px 0; color: #fff; line-height: 1.1; letter-spacing: -2px;">
+                MITRA <i class="fas fa-mobile-phone"></i></h2>
+            <p class="project-subtitle-lg">
+                Personal Offline AI Assistant - Your intelligent companion for voice-controlled tasks, automation, and
+                seamless human-computer interaction without internet dependency.
+            </p>
+        </div>
+        <div class="mobile-showcase">
+            <style>
+                @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+                .mobile-showcase {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+                    flex-wrap: wrap;
+                    min-height: auto;
+                }
+
+                .device-container {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 20px;
+                    transform: scale(0.8)
+                }
+
+                .device-label {
+                    font-size: 24px;
+                    font-weight: 600;
+                    color: #fff;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+
+                .iphone-x {
+                    position: relative;
+                    width: 375px;
+                    height: 812px;
+                    background: #000;
+                    border-radius: 55px;
+                    box-shadow:
+                        0 0 0 12px #1f1f1f,
+                        0 0 0 14px #111,
+                        0 0 0 18px #000,
+                        0 20px 60px rgba(0, 0, 0, 0.8);
+                    overflow: hidden;
+                    transform: scale(0.8);
+                    transform-origin: top center;
+                }
+
+                .iphone-x:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 60%;
+                    height: 35px;
+                    background: #000;
+                    border-radius: 0 0 25px 25px;
+                    z-index: 100;
+                }
+
+                .iphone-speaker {
+                    position: absolute;
+                    top: 8px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 18%;
+                    height: 6px;
+                    background: #0a0a0a;
+                    border-radius: 8px;
+                    z-index: 101;
+                    box-shadow: inset 0 -2px 3px rgba(255, 255, 255, 0.1);
+                }
+
+                .iphone-camera {
+                    position: absolute;
+                    top: 8px;
+                    left: 50%;
+                    transform: translateX(65px);
+                    width: 14px;
+                    height: 14px;
+                    background: #0f1419;
+                    border-radius: 50%;
+                    z-index: 101;
+                    box-shadow: inset 0 -2px 3px rgba(255, 255, 255, 0.1);
+                }
+
+                .iphone-camera:after {
+                    content: '';
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    width: 8px;
+                    height: 8px;
+                    background: radial-gradient(circle, #2d4d76 0%, #1a2940 100%);
+                    border-radius: 50%;
+                }
+
+                .iphone-home-bar {
+                    position: absolute;
+                    bottom: 8px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 140px;
+                    height: 5px;
+                    background: rgba(255, 255, 255, 0.9);
+                    border-radius: 10px;
+                    z-index: 100;
+                }
+
+                .iphone-screen {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .android-phone {
+                    position: relative;
+                    width: 360px;
+                    height: 780px;
+                    background: #000;
+                    border-radius: 45px;
+                    box-shadow:
+                        0 0 0 11px #1f1f1f,
+                        0 0 0 13px #191919,
+                        0 0 0 18px #111,
+                        0 20px 60px rgba(0, 0, 0, 0.8);
+                    overflow: hidden;
+                    transform: scale(0.8);
+                    transform-origin: top center;
+                }
+
+                .android-notch {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 200px;
+                    height: 32px;
+                    background: #000;
+                    border-radius: 0 0 20px 20px;
+                    z-index: 100;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .android-camera {
+                    width: 10px;
+                    height: 10px;
+                    background: #1a1a1a;
+                    border-radius: 50%;
+                    margin: 0 8px;
+                    box-shadow: inset 0 -1px 2px rgba(255, 255, 255, 0.2);
+                    position: relative;
+                }
+
+                .android-camera:after {
+                    content: '';
+                    position: absolute;
+                    width: 6px;
+                    height: 6px;
+                    background: radial-gradient(circle, #2d4d76 0%, #1a2940 100%);
+                    border-radius: 50%;
+                    top: 2px;
+                    left: 2px;
+                }
+
+                .android-speaker {
+                    width: 60px;
+                    height: 5px;
+                    background: #0a0a0a;
+                    border-radius: 10px;
+                    box-shadow: inset 0 -1px 2px rgba(255, 255, 255, 0.1);
+                }
+
+                .android-screen {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #1a1a1a;
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .status-bar {
+                    height: 70px;
+                    background: rgba(0, 0, 0, 0.5);
+                    backdrop-filter: blur(10px);
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    padding: 0 20px 12px 20px;
+                    color: #fff;
+                    font-size: 13px;
+                    z-index: 50;
+                    flex-shrink: 0;
+                }
+
+                .android-status-bar {
+                    height: 50px;
+                    padding: 0 20px;
+                    align-items: center;
+                    background: rgba(26, 26, 26, 0.95);
+                }
+
+                .time {
+                    font-weight: 600;
+                    font-size: 15px;
+                }
+
+                .status-icons {
+                    display: flex;
+                    gap: 6px;
+                    align-items: center;
+                }
+
+                .battery-icon {
+                    width: 24px;
+                    height: 12px;
+                    border: 1.5px solid #fff;
+                    border-radius: 2px;
+                    position: relative;
+                    padding: 1px;
+                }
+
+                .battery-icon:after {
+                    content: '';
+                    position: absolute;
+                    right: -4px;
+                    top: 3px;
+                    width: 2px;
+                    height: 4px;
+                    background: #fff;
+                    border-radius: 0 2px 2px 0;
+                }
+
+                .battery-fill {
+                    height: 100%;
+                    width: 85%;
+                    background: #fff;
+                    border-radius: 1px;
+                }
+
+                .character-section {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: linear-gradient(135deg, #2c3e50 0%, #1a252f 100%);
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .android-character-section {
+                    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+                }
+
+                .avatar-wrapper {
+                    transform: scale(0.75);
+                    position: relative;
+                }
+
+                .android-avatar-wrapper {
+                    transform: scale(0.65);
+                }
+
+                .background-circle {
+                    width: 400px;
+                    height: 400px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin: 0 auto;
+                    background: #2c3e50;
+                    position: relative;
+                    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+                    border: 5px solid rgba(255, 255, 255, 0.1);
+                }
+
+                .body {
+                    width: 285px;
+                    height: 600px;
+                    margin: 0 auto;
+                    background: #333;
+                    border-radius: 100px;
+                    position: relative;
+                    top: 200px;
+                }
+
+                .shirt-text {
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 700;
+                    color: rgba(255, 255, 255, 0.5);
+                    position: relative;
+                    top: -300px;
+                    font-size: 50px;
+                    display: inline-block;
+                }
+
+                .head {
+                    width: 196px;
+                    height: 260px;
+                    border-radius: 50px;
+                    background: #FFE4BE;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    margin-top: -210px;
+                    margin-left: -98px;
+                    z-index: 10;
+                    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+                }
+
+                .face {
+                    width: 180px;
+                    height: 137px;
+                    border-radius: 48px 48px 0 0;
+                    background: #FFE4BE;
+                    position: absolute;
+                    top: 40px;
+                    left: 8px;
+                    z-index: 3;
+                }
+
+                .mouth {
+                    width: 66px;
+                    height: 4px;
+                    border-radius: 5px;
+                    background: linear-gradient(to bottom, #d88b8b, #c27e7e);
+                    position: absolute;
+                    top: 156px;
+                    left: 50%;
+                    margin-left: -33px;
+                    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+                    transition: all 0.3s ease;
+                }
+
+                .hair-main {
+                    width: 220px;
+                    height: 137px;
+                    background: #2c3e50;
+                    border-radius: 54px 54px 0px 0px;
+                    margin-left: -12px;
+                    margin-top: -10px;
+                    position: relative;
+                    z-index: 2;
+                }
+
+                .hair-top {
+                    width: 128px;
+                    height: 70px;
+                    border-top-right-radius: 30px;
+                    background: #2c3e50;
+                    position: relative;
+                    top: -17px;
+                    left: 50%;
+                    transform: translateX(-64px);
+                }
+
+                .hair-bottom {
+                    width: 54px;
+                    height: 50px;
+                    border-bottom-left-radius: 25px;
+                    background: #2c3e50;
+                    position: relative;
+                    top: -20px;
+                    left: 50%;
+                    transform: translateX(-27px);
+                }
+
+                .sideburn {
+                    width: 8px;
+                    height: 25px;
+                    background: #2c3e50;
+                    position: absolute;
+                    bottom: -25px;
+                }
+
+                .sideburn.left {
+                    left: 12px;
+                }
+
+                .sideburn.right {
+                    right: 12px;
+                }
+
+                .nose {
+                    width: 20px;
+                    height: 45px;
+                    background: #eebb99;
+                    border-top-left-radius: 20px;
+                    position: absolute;
+                    left: 50%;
+                    top: 80px;
+                    margin-left: -20px;
+                    z-index: 5;
+                }
+
+                .ear {
+                    width: 24px;
+                    height: 35px;
+                    background: #FFE4BE;
+                    border-radius: 12px;
+                    position: absolute;
+                    top: 116px;
+                }
+
+                .spacer {
+                    width: 40px;
+                    display: inline-block;
+                }
+
+                .ear.left {
+                    left: -12px;
+                }
+
+                .ear.right {
+                    right: -12px;
+                }
+
+                .eye-shadow {
+                    width: 30px;
+                    height: 15px;
+                    border-radius: 0 0 15px 15px;
+                    background: rgba(149, 36, 0, 0.1);
+                    position: absolute;
+                    top: 70px;
+                }
+
+                .eye-shadow.left {
+                    left: 35px;
+                    z-index: 5;
+                }
+
+                .eye-shadow.right {
+                    right: 35px;
+                }
+
+                .eyebrow {
+                    width: 40px;
+                    height: 8px;
+                    background: #2c3e50;
+                    position: absolute;
+                    top: -30px;
+                    left: 50%;
+                    margin-left: -20px;
+                    border-radius: 4px;
+                    transition: all 0.3s ease;
+                }
+
+                .eye {
+                    width: 14px;
+                    height: 14px;
+                    border-radius: 50%;
+                    background: #333;
+                    position: absolute;
+                    top: -10px;
+                    left: 50%;
+                    margin-left: -7px;
+                    box-shadow: 0 0 0 4px #fff;
+                    transition: all 0.15s ease;
+                    animation: blink-animation 4s infinite;
+                }
+
+                @keyframes blink-animation {
+
+                    0%,
+                    45%,
+                    55%,
+                    100% {
+                        height: 14px;
+                        box-shadow: 0 0 0 4px #fff;
+                    }
+
+                    50% {
+                        height: 2px;
+                        box-shadow: none;
+                    }
+                }
+
+                .conversation-section {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    background: rgba(0, 0, 0, 0.3);
+                    overflow: hidden;
+                }
+
+                .chat-container {
+                    flex: 1;
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+                    cursor: grab;
+                    user-select: none;
+                }
+
+                .chat-container:active {
+                    cursor: grabbing;
+                }
+
+                .android-chat-container {
+                    padding: 16px;
+                    gap: 12px;
+                }
+
+                .chat-container::-webkit-scrollbar {
+                    width: 4px;
+                }
+
+                .chat-container::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+
+                .chat-container::-webkit-scrollbar-thumb {
+                    background: rgba(255, 255, 255, 0.2);
+                    border-radius: 2px;
+                }
+
+                .message {
+                    max-width: 80%;
+                    padding: 14px 18px;
+                    border-radius: 18px;
+                    font-size: 15px;
+                    line-height: 1.5;
+                    word-wrap: break-word;
+                    animation: messageSlideIn 0.3s ease;
+                }
+
+                @keyframes messageSlideIn {
+                    from {
+                        opacity: 0;
+                        transform: translateY(10px);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .android-message {
+                    padding: 12px 16px;
+                    border-radius: 16px;
+                    font-size: 14px;
+                }
+
+                .message.user {
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: #fff;
+                    align-self: flex-end;
+                    border-bottom-right-radius: 4px;
+                }
+
+                .message.bot {
+                    background: rgba(255, 255, 255, 0.1);
+                    color: #e2e8f0;
+                    align-self: flex-start;
+                    border-bottom-left-radius: 4px;
+                }
+
+                .android-message.bot {
+                    background: #2d3748;
+                }
+
+                .input-section {
+                    flex-shrink: 0;
+                    padding: 16px 20px;
+                    background: rgba(0, 0, 0, 0.5);
+                    backdrop-filter: blur(20px);
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                }
+
+                .android-input-section {
+                    background: #1a1a1a;
+                    padding: 12px 16px;
+                }
+
+                .message-input {
+                    flex: 1;
+                    background: rgba(255, 255, 255, 0.15);
+                    border: none;
+                    border-radius: 24px;
+                    padding: 12px 18px;
+                    color: #fff;
+                    font-size: 15px;
+                    outline: none;
+                }
+
+                .android-message-input {
+                    background: #2d3748;
+                    border-radius: 20px;
+                    padding: 10px 16px;
+                    font-size: 14px;
+                }
+
+                .message-input::placeholder {
+                    color: rgba(255, 255, 255, 0.5);
+                }
+
+                .send-button {
+                    width: 44px;
+                    height: 44px;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    border: none;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+                    flex-shrink: 0;
+                    transition: transform 0.2s;
+                }
+
+                .send-button:active {
+                    transform: scale(0.95);
+                }
+
+                .android-send-button {
+                    width: 40px;
+                    height: 40px;
+                    background: #667eea;
+                    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+                }
+
+                .send-button:before {
+                    content: '➤';
+                    color: #fff;
+                    font-size: 18px;
+                }
+
+                .voice-button {
+                    width: 44px;
+                    height: 44px;
+                    background: rgba(255, 255, 255, 0.15);
+                    border: none;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    flex-shrink: 0;
+                    transition: transform 0.2s;
+                }
+
+                .voice-button:active {
+                    transform: scale(0.95);
+                }
+
+                .android-voice-button {
+                    width: 40px;
+                    height: 40px;
+                    background: rgba(255, 255, 255, 0.1);
+                }
+
+                .voice-button:before {
+                    content: '🎤';
+                    font-size: 18px;
+                }
+
+                @media (max-width: 900px) {
+                    .mobile-showcase {
+                        flex-direction: column;
+                        gap: 40px;
+                        padding: 40px 20px;
+                    }
+
+                    .iphone-x,
+                    .android-phone {
+                        transform: scale(0.72);
+                    }
+                }
+
+                @media (max-width: 480px) {
+
+                    .iphone-x,
+                    .android-phone {
+                        transform: scale(0.6);
+                    }
+                }
+            </style>
+
+            <div class="device-container">
+                <div class="device-label">iOS</div>
+                <div class="iphone-x">
+                    <div class="iphone-speaker"></div>
+                    <div class="iphone-camera"></div>
+                    <div class="iphone-home-bar"></div>
+
+                    <div class="iphone-screen">
+                        <div class="status-bar">
+                            <div class="time">3:02</div>
+                            <div class="status-icons">
+                                <span>📶</span>
+                                <span>📡</span>
+                                <div class="battery-icon">
+                                    <div class="battery-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="character-section">
+                            <div class="avatar-wrapper">
+                                <div class="background-circle">
+                                    <div class="body"></div>
+                                    <span class="shirt-text spacer"></span>
+                                    <span class="shirt-text spacer"></span>
+                                    <span class="shirt-text">MITRA💗</span>
+                                </div>
+                                <div class="head" data-device="ios">
+                                    <div class="ear left"></div>
+                                    <div class="ear right"></div>
+                                    <div class="hair-main">
+                                        <div class="sideburn left"></div>
+                                        <div class="sideburn right"></div>
+                                        <div class="hair-top"></div>
+                                    </div>
+                                    <div class="face">
+                                        <div class="hair-bottom"></div>
+                                        <div class="nose"></div>
+                                        <div class="eye-shadow left">
+                                            <div class="eyebrow"></div>
+                                            <div class="eye ios-eye"></div>
+                                        </div>
+                                        <div class="eye-shadow right">
+                                            <div class="eyebrow"></div>
+                                            <div class="eye ios-eye"></div>
+                                        </div>
+                                        <div class="mouth"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conversation-section">
+                            <div class="chat-container ios-chat" data-device="ios">
+                                <div class="message bot">
+                                    Hello! I'm Mitra, your AI assistant. How can I help you today?
+                                </div>
+                                <div class="message user">
+                                    What can you do?
+                                </div>
+                                <div class="message bot">
+                                    I can help with voice commands, automation, information queries, and much more. Just
+                                    ask me anything!
+                                </div>
+                                <div class="message user">
+                                    That sounds great!
+                                </div>
+                                <div class="message bot">
+                                    I'm here whenever you need assistance. Feel free to ask me anything!
+                                </div>
+                                <div class="message user">
+                                    Can you help with daily tasks?
+                                </div>
+                                <div class="message bot">
+                                    Absolutely! I can assist with scheduling, reminders, information lookup, and various
+                                    automation tasks.
+                                </div>
+                                <div class="message user">
+                                    Perfect!
+                                </div>
+                            </div>
+
+                            <div class="input-section">
+                                <input type="text" class="message-input" placeholder="Type a message...">
+                                <button class="send-button"></button>
+                                <button class="voice-button"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="device-container">
+                <div class="device-label">Android</div>
+                <div class="android-phone">
+                    <div class="android-notch">
+                        <div class="android-camera"></div>
+                        <div class="android-speaker"></div>
+                    </div>
+
+                    <div class="android-screen">
+                        <div class="status-bar android-status-bar">
+                            <div class="time">15:02</div>
+                            <div class="status-icons">
+                                <span>📶</span>
+                                <span>📡</span>
+                                <div class="battery-icon">
+                                    <div class="battery-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="character-section android-character-section">
+                            <div class="avatar-wrapper android-avatar-wrapper">
+                                <div class="background-circle">
+                                    <div class="body"></div>
+                                    <span class="shirt-text spacer"></span>
+                                    <span class="shirt-text spacer"></span>
+                                    <span class="shirt-text">MITRA💗</span>
+                                </div>
+                                <div class="head" data-device="android">
+                                    <div class="ear left"></div>
+                                    <div class="ear right"></div>
+                                    <div class="hair-main">
+                                        <div class="sideburn left"></div>
+                                        <div class="sideburn right"></div>
+                                        <div class="hair-top"></div>
+                                    </div>
+                                    <div class="face">
+                                        <div class="hair-bottom"></div>
+                                        <div class="nose"></div>
+                                        <div class="eye-shadow left">
+                                            <div class="eyebrow"></div>
+                                            <div class="eye android-eye"></div>
+                                        </div>
+                                        <div class="eye-shadow right">
+                                            <div class="eyebrow"></div>
+                                            <div class="eye android-eye"></div>
+                                        </div>
+                                        <div class="mouth"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="conversation-section">
+                            <div class="chat-container android-chat-container android-chat" data-device="android">
+                                <div class="message bot android-message">
+                                    Hello! I'm Mitra, your AI assistant. How can I help you today?
+                                </div>
+                                <div class="message user android-message">
+                                    What can you do?
+                                </div>
+                                <div class="message bot android-message">
+                                    I can help with voice commands, automation, information queries, and much more!
+                                </div>
+                                <div class="message user android-message">
+                                    That sounds great!
+                                </div>
+                                <div class="message bot android-message">
+                                    I'm here whenever you need assistance. Feel free to ask me anything!
+                                </div>
+                                <div class="message user android-message">
+                                    Can you help with daily tasks?
+                                </div>
+                                <div class="message bot android-message">
+                                    Absolutely! I can assist with scheduling, reminders, and various automation tasks.
+                                </div>
+                                <div class="message user android-message">
+                                    Perfect!
+                                </div>
+                            </div>
+
+                            <div class="input-section android-input-section">
+                                <input type="text" class="message-input android-message-input"
+                                    placeholder="Type a message...">
+                                <button class="send-button android-send-button"></button>
+                                <button class="voice-button android-voice-button"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const iosEyes = document.querySelectorAll('.ios-eye');
+                    const androidEyes = document.querySelectorAll('.android-eye');
+                    const chatContainers = document.querySelectorAll('.chat-container');
+
+
+
+                    function eyeSaccades(eyes) {
+                        const saccade = () => {
+                            if (Math.random() > 0.7) {
+                                const x = (Math.random() - 0.5) * 6;
+                                const y = (Math.random() - 0.5) * 3;
+                                eyes.forEach(eye => {
+                                    eye.style.transform = `translate(${x}px, ${y}px)`;
+                                });
+                                setTimeout(() => {
+                                    eyes.forEach(eye => {
+                                        eye.style.transform = 'translate(0, 0)';
+                                    });
+                                }, 300);
+                            }
+                            setTimeout(saccade, 1500);
+                        };
+                        setTimeout(saccade, 1500);
+                    }
+
+                    eyeSaccades(iosEyes);
+                    eyeSaccades(androidEyes);
+
+                    chatContainers.forEach(container => {
+                        let isDown = false;
+                        let startY;
+                        let scrollTop;
+
+                        container.addEventListener('mousedown', (e) => {
+                            isDown = true;
+                            container.style.cursor = 'grabbing';
+                            startY = e.pageY - container.offsetTop;
+                            scrollTop = container.scrollTop;
+                        });
+
+                        container.addEventListener('mouseleave', () => {
+                            isDown = false;
+                            container.style.cursor = 'grab';
+                        });
+
+                        container.addEventListener('mouseup', () => {
+                            isDown = false;
+                            container.style.cursor = 'grab';
+                        });
+
+                        container.addEventListener('mousemove', (e) => {
+                            if (!isDown) return;
+                            e.preventDefault();
+                            const y = e.pageY - container.offsetTop;
+                            const walk = (y - startY) * 2;
+                            container.scrollTop = scrollTop - walk;
+                        });
+
+                        container.addEventListener('wheel', (e) => {
+                            e.preventDefault();
+                            container.scrollTop += e.deltaY;
+                        }, { passive: false });
+
+                        let touchStartY = 0;
+                        let touchScrollTop = 0;
+
+                        container.addEventListener('touchstart', (e) => {
+                            touchStartY = e.touches[0].pageY;
+                            touchScrollTop = container.scrollTop;
+                        }, { passive: true });
+
+                        container.addEventListener('touchmove', (e) => {
+                            const touchY = e.touches[0].pageY;
+                            const diff = touchStartY - touchY;
+                            container.scrollTop = touchScrollTop + diff;
+                        }, { passive: true });
+                    });
+                });
+            </script>
+        </div>
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">System Architecture</h3>
+            <div class="mermaid">
+                graph TB
+                User[User Voice Input] --> SR[Speech Recognition]
+                SR --> NLP[Natural Language Processing]
+                NLP --> Intent[Intent Classification]
+                Intent --> Task1[Web Automation]
+                Intent --> Task2[System Control]
+                Intent --> Task3[Information Query]
+                Intent --> Task4[File Management]
+                Task1 --> Execute[Task Executor]
+                Task2 --> Execute
+                Task3 --> Execute
+                Task4 --> Execute
+                Execute --> TTS[Text-to-Speech]
+                TTS --> Response[Voice Response]
+                Response --> User
+                Execute --> DB[(Local Database)]
+                DB --> Cache[Response Cache]
+                Cache --> Execute
+                style User fill:#1a1a1a,stroke:#fff,color:#fff
+                style SR fill:#2a2a2a,stroke:#fff,color:#fff
+                style NLP fill:#2a2a2a,stroke:#fff,color:#fff
+                style Intent fill:#333,stroke:#fff,color:#fff
+                style Execute fill:#2a2a2a,stroke:#fff,color:#fff
+                style TTS fill:#2a2a2a,stroke:#fff,color:#fff
+                style Response fill:#1a1a1a,stroke:#fff,color:#fff
+                style DB fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <h2 class="project-title-xl">Core Features.</h2>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Voice Recognition Pipeline</h3>
+            <div class="mermaid">
+                graph LR
+                A[Microphone Input] --> B[Audio Processing]
+                B --> C[Noise Reduction]
+                C --> D[Feature Extraction]
+                D --> E[Speech-to-Text Model]
+                E --> F[Text Output]
+                F --> G[Command Parser]
+                style A fill:#1a1a1a,stroke:#fff,color:#fff
+                style B fill:#2a2a2a,stroke:#fff,color:#fff
+                style C fill:#2a2a2a,stroke:#fff,color:#fff
+                style D fill:#2a2a2a,stroke:#fff,color:#fff
+                style E fill:#333,stroke:#fff,color:#fff
+                style F fill:#2a2a2a,stroke:#fff,color:#fff
+                style G fill:#1a1a1a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Automation Capabilities</h3>
+            <div class="mermaid">
+                graph TD
+                CMD[Voice Command] --> Parse[Command Parser]
+                Parse --> WA[Web Automation]
+                Parse --> SC[System Control]
+                Parse --> FM[File Management]
+                Parse --> IA[Information Assistant]
+                WA --> W1[Open Websites]
+                WA --> W2[Search Queries]
+                WA --> W3[Form Filling]
+                SC --> S1[Volume Control]
+                SC --> S2[Brightness Adjust]
+                SC --> S3[App Launch]
+                FM --> F1[File Search]
+                FM --> F2[File Operations]
+                FM --> F3[Directory Nav]
+                IA --> I1[Wikipedia]
+                IA --> I2[Weather Info]
+                IA --> I3[News Updates]
+                style CMD fill:#1a1a1a,stroke:#fff,color:#fff
+                style Parse fill:#333,stroke:#fff,color:#fff
+                style WA fill:#2a2a2a,stroke:#fff,color:#fff
+                style SC fill:#2a2a2a,stroke:#fff,color:#fff
+                style FM fill:#2a2a2a,stroke:#fff,color:#fff
+                style IA fill:#2a2a2a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Offline Processing Flow</h3>
+            <div class="mermaid">
+                graph TB
+                Start[System Boot] --> Load[Load AI Models]
+                Load --> Models[Pre-trained Models]
+                Models --> M1[Speech Recognition]
+                Models --> M2[NLP Model]
+                Models --> M3[TTS Engine]
+                M1 --> Ready[System Ready]
+                M2 --> Ready
+                M3 --> Ready
+                Ready --> Listen[Listen Mode]
+                Listen --> Wake[Wake Word Detection]
+                Wake --> Process[Process Command]
+                Process --> Local[Local Processing]
+                Local --> Execute[Execute Task]
+                Execute --> Speak[Voice Response]
+                Speak --> Listen
+                style Start fill:#1a1a1a,stroke:#fff,color:#fff
+                style Models fill:#333,stroke:#fff,color:#fff
+                style Ready fill:#2a2a2a,stroke:#fff,color:#fff
+                style Local fill:#2a2a2a,stroke:#fff,color:#fff
+                style Execute fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <h2 class="project-title-xl">Technical Stack.</h2>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Technology Components</h3>
+            <div class="mermaid">
+                graph LR
+                MITRA[MITRA Core] --> Python[Python 3.x]
+                Python --> SR[SpeechRecognition]
+                Python --> TTS[pyttsx3]
+                Python --> Web[Selenium/PyAutoGUI]
+                Python --> OS[OS Integration]
+                SR --> Lib1[PyAudio]
+                TTS --> Lib2[eSpeak/SAPI5]
+                Web --> Lib3[WebDriver]
+                OS --> Lib4[System APIs]
+                style MITRA fill:#1a1a1a,stroke:#fff,color:#fff
+                style Python fill:#2a2a2a,stroke:#fff,color:#fff
+                style SR fill:#333,stroke:#fff,color:#fff
+                style TTS fill:#333,stroke:#fff,color:#fff
+                style Web fill:#333,stroke:#fff,color:#fff
+                style OS fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Data Flow & Privacy</h3>
+            <div class="mermaid">
+                graph TD
+                Input[User Input] --> Local[Local Processing Only]
+                Local --> NoCloud[No Cloud Connection]
+                NoCloud --> Privacy[100% Privacy]
+                Privacy --> Storage[Local Storage]
+                Storage --> Cache[Response Cache]
+                Storage --> History[Command History]
+                Storage --> Prefs[User Preferences]
+                Cache --> Fast[Faster Response]
+                History --> Learn[Pattern Learning]
+                Prefs --> Custom[Customization]
+                style Input fill:#1a1a1a,stroke:#fff,color:#fff
+                style Local fill:#2a2a2a,stroke:#fff,color:#fff
+                style NoCloud fill:#333,stroke:#fff,color:#fff
+                style Privacy fill:#2a2a2a,stroke:#fff,color:#fff
+                style Storage fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Command Processing Lifecycle</h3>
+            <div class="mermaid">
+                sequenceDiagram
+                participant U as User
+                participant M as Microphone
+                participant SR as Speech Recognition
+                participant NLP as NLP Engine
+                participant E as Executor
+                participant TTS as Text-to-Speech
+                U->>M: Voice Command
+                M->>SR: Audio Stream
+                SR->>NLP: Text Command
+                NLP->>NLP: Parse Intent
+                NLP->>E: Execute Task
+                E->>E: Perform Action
+                E->>TTS: Response Text
+                TTS->>U: Voice Feedback
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <h2 class="project-title-xl">Use Cases.</h2>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Application Scenarios</h3>
+            <div class="mermaid">
+                graph TB
+                MITRA[MITRA Assistant] --> UC1[Productivity]
+                MITRA --> UC2[Accessibility]
+                MITRA --> UC3[Automation]
+                MITRA --> UC4[Information]
+                UC1 --> P1[Quick App Launch]
+                UC1 --> P2[File Management]
+                UC1 --> P3[Web Navigation]
+                UC2 --> A1[Hands-Free Control]
+                UC2 --> A2[Voice Computing]
+                UC2 --> A3[Assistive Tech]
+                UC3 --> AU1[Repetitive Tasks]
+                UC3 --> AU2[System Settings]
+                UC3 --> AU3[Scheduled Actions]
+                UC4 --> I1[Quick Lookups]
+                UC4 --> I2[News & Weather]
+                UC4 --> I3[Local Knowledge]
+                style MITRA fill:#1a1a1a,stroke:#fff,color:#fff
+                style UC1 fill:#2a2a2a,stroke:#fff,color:#fff
+                style UC2 fill:#2a2a2a,stroke:#fff,color:#fff
+                style UC3 fill:#2a2a2a,stroke:#fff,color:#fff
+                style UC4 fill:#2a2a2a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">System Integration</h3>
+            <div class="mermaid">
+                graph LR
+                MITRA[MITRA Core] --> Browser[Web Browser]
+                MITRA --> Apps[Desktop Apps]
+                MITRA --> Files[File System]
+                MITRA --> System[OS Controls]
+                Browser --> Chrome[Chrome]
+                Browser --> Firefox[Firefox]
+                Apps --> Office[Office Suite]
+                Apps --> Media[Media Players]
+                Files --> Search[File Search]
+                Files --> Organize[Organization]
+                System --> Audio[Audio Control]
+                System --> Display[Display Settings]
+                style MITRA fill:#1a1a1a,stroke:#fff,color:#fff
+                style Browser fill:#2a2a2a,stroke:#fff,color:#fff
+                style Apps fill:#2a2a2a,stroke:#fff,color:#fff
+                style Files fill:#2a2a2a,stroke:#fff,color:#fff
+                style System fill:#2a2a2a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <h2 class="project-title-xl">Performance & Security.</h2>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Security Architecture</h3>
+            <div class="mermaid">
+                graph TD
+                Security[Security Layer] --> Offline[Offline Processing]
+                Security --> Local[Local Storage]
+                Security --> NoTelemetry[No Telemetry]
+                Offline --> NoInternet[No Internet Required]
+                Offline --> Privacy[Data Privacy]
+                Local --> Encrypted[Encrypted Storage]
+                Local --> UserControl[User Control]
+                NoTelemetry --> NoTracking[No Tracking]
+                NoTelemetry --> NoAnalytics[No Analytics]
+                Privacy --> Safe[100% Safe]
+                UserControl --> Delete[Easy Deletion]
+                NoTracking --> Anonymous[Complete Anonymity]
+                style Security fill:#1a1a1a,stroke:#fff,color:#fff
+                style Offline fill:#2a2a2a,stroke:#fff,color:#fff
+                style Local fill:#2a2a2a,stroke:#fff,color:#fff
+                style NoTelemetry fill:#2a2a2a,stroke:#fff,color:#fff
+                style Safe fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Performance Optimization</h3>
+            <div class="mermaid">
+                graph LR
+                Perf[Performance] --> Cache[Smart Caching]
+                Perf --> PreLoad[Model Preloading]
+                Perf --> Async[Async Processing]
+                Cache --> Fast1[Instant Responses]
+                PreLoad --> Fast2[Quick Startup]
+                Async --> Fast3[Non-blocking]
+                Fast1 --> UX[Better UX]
+                Fast2 --> UX
+                Fast3 --> UX
+                style Perf fill:#1a1a1a,stroke:#fff,color:#fff
+                style Cache fill:#2a2a2a,stroke:#fff,color:#fff
+                style PreLoad fill:#2a2a2a,stroke:#fff,color:#fff
+                style Async fill:#2a2a2a,stroke:#fff,color:#fff
+                style UX fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <span class="h-tag" style="color: #fff; border-color: #fff;">Open Source</span>
+            <h2 class="project-title-xl">Built for Privacy.</h2>
+            <p class="project-subtitle-lg">
+                MITRA operates entirely offline, ensuring your voice commands and personal data never leave your device.
+                Complete transparency through open-source code, giving you full control over your digital assistant.
+            </p>
+        </div>
+        <div
+            style="flex: 1; min-width: 280px; max-width: 400px; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 8px; border: 2px solid rgba(255,255,255,0.1);">
+            <h4 style="color: #fff; font-size: 1.4rem; margin-bottom: 1rem;">Complete Google Sheets with code</h4>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem;">Full Code
+                package including all code, executable, and required dependencies.</p>
+            <p style="color: rgba(255,255,255,0.5); margin-bottom: 1rem; font-size: 0.85rem;">Size: ~408 KB</p>
+            <a href="https://drive.google.com/uc?export=download&id=1RU4vs8jTP_EBS4qWXl-wGwoOYnUysa7C" target="_blank"
+                style="display: inline-block; padding: 1rem 3rem; background: #fff; color: #000; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s; border: 2px solid #fff;">Code
+                Link</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,1061 @@
+<div class="project-slide">
+    <div class="container">
+        <div class="project-header-large reveal">
+            <span class="h-tag"
+                style="color: #fff; border: 1px solid #fff; padding: 8px 20px; display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; font-weight: 600;">AAA
+                Gaming Experience</span>
+            <h2 class="project-title-xl"
+                style="font-size: 72px; font-weight: 800; margin: 20px 0; color: #fff; line-height: 1.1; letter-spacing: -2px;">
+                Echoes of the Pharaohs <i class="fas fa-gamepad"></i></h2>
+            <p class="project-subtitle-lg">
+                Step into a world of ancient Egypt, filled with adventure, mystery, and AI-based warfare.
+                Explore vast deserts, uncover forgotten treasures, and engage in strategic battles to restore
+                peace to a land in turmoil. Built with Unreal Engine 5 over 7 months of intense development.
+            </p>
+        </div>
+
+        <div class="development-info reveal"
+            style="margin: 3rem 0; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 1rem;">Development Journey</h3>
+            <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem;">
+                <strong style="color: #fff;">Engine:</strong> Unreal Engine 5 - Leveraging Nanite virtualized geometry,
+                Lumen global illumination, and advanced physics simulation for unprecedented visual fidelity and
+                realistic environmental interactions.
+            </p>
+            <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem;">
+                <strong style="color: #fff;">Development Time:</strong> 7 Months of dedicated development, including
+                concept design, asset creation, gameplay mechanics implementation, AI behavior programming, and
+                extensive playtesting.
+            </p>
+            <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                <strong style="color: #fff;">Why Unreal Engine 5?</strong> UE5's cutting-edge rendering capabilities
+                allow for film-quality visuals in real-time, photorealistic lighting with Lumen, seamless open-world
+                streaming with World Partition, and advanced AI systems through Behavior Trees and Environment Query
+                System (EQS).
+            </p>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 3rem 0; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">Game Architecture
+                Flow</h3>
+            <div class="mermaid">
+                graph TB
+                Player["Player Input"] --> GameMode["Game Mode Controller"]
+                GameMode --> Character["Character Controller"]
+                Character --> Movement["Movement System"]
+                Character --> Combat["Combat System"]
+                Character --> Inventory["Inventory System"]
+
+                Combat --> AI["AI Behavior Tree"]
+                AI --> EQS["Environment Query"]
+                EQS --> Decision["Enemy Decision Making"]
+
+                Movement --> Mount["Mount System"]
+                Movement --> Climb["Climbing Mechanics"]
+
+                World["World Manager"] --> DayNight["Day/Night Cycle"]
+                World --> Weather["Weather System"]
+                World --> Spawn["Dynamic Spawning"]
+
+                style Player fill:#000,stroke:#fff,color:#fff
+                style GameMode fill:#000,stroke:#fff,color:#fff
+                style Character fill:#000,stroke:#fff,color:#fff
+                style AI fill:#000,stroke:#fff,color:#fff
+                style World fill:#000,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 3rem 0; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">AI Combat System</h3>
+            <div class="mermaid">
+                graph LR
+                Start["Enemy Spawned"] --> Patrol["Patrol State"]
+                Patrol --> Detect{"Player Detected?"}
+                Detect -->|No| Patrol
+                Detect -->|Yes| Alert["Alert State"]
+                Alert --> Engage["Engage Combat"]
+                Engage --> Attack{"Choose Action"}
+                Attack -->|Melee Range| Melee["Melee Attack"]
+                Attack -->|Long Range| Ranged["Ranged Attack"]
+                Attack -->|Low Health| Retreat["Tactical Retreat"]
+                Melee --> Check{"Player Alive?"}
+                Ranged --> Check
+                Retreat --> Heal["Seek Cover/Heal"]
+                Heal --> Engage
+                Check -->|Yes| Engage
+                Check -->|No| Victory["Victory State"]
+
+                style Start fill:#000,stroke:#fff,color:#fff
+                style Engage fill:#000,stroke:#fff,color:#fff
+                style Victory fill:#000,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 3rem 0; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">Player Progression
+                System</h3>
+            <div class="mermaid">
+                graph TD
+                Start["Game Start"] --> Tutorial["Tutorial Mission"]
+                Tutorial --> Explore["Open World Exploration"]
+                Explore --> Quest["Main Quest Line"]
+                Explore --> Side["Side Quests"]
+                Quest --> Boss["Boss Battles"]
+                Side --> Collect["Collectibles & Artifacts"]
+                Collect --> Upgrade["Weapon/Armor Upgrades"]
+                Boss --> Skills["Unlock New Skills"]
+                Skills --> Advanced["Advanced Abilities"]
+                Upgrade --> Power["Increase Power Level"]
+                Power --> Final["Final Confrontation"]
+
+                style Start fill:#000,stroke:#fff,color:#fff
+                style Final fill:#000,stroke:#fff,color:#fff
+                style Skills fill:#000,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-slide">
+            <div class="mountain-gallery-container">
+                <div class="gallery-header reveal">
+                    <span class="h-tag" style="color: #fff; border-color: #fff;">Game Character Showcase</span>
+                    <h2 class="gallery-title">Explore Game Characters.</h2>
+                    <p class="gallery-subtitle">
+                        Step into a world of adventure, mystery, and epic battles with iconic characters from GamerZ.
+                        Each character plays a unique role in this immersive experience, filled with strategy,
+                        combat, and unforgettable quests. Discover their stories and strengths as you explore the game.
+                    </p>
+                </div>
+
+                <div class="gallery-slider-wrapper">
+                    <button class="gallery-nav-btn gallery-prev-btn" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+                        </svg>
+                    </button>
+
+                    <button class="gallery-nav-btn gallery-next-btn" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z" />
+                        </svg>
+                    </button>
+
+                    <div class="gallery-track">
+                        <div class="gallery-slide gallery-slide-active">
+                            <div class="gallery-slide-content">
+                                <div class="slide-number">01</div>
+                                <h3 class="slide-title">Captain Branford</h3>
+                                <div class="slide-description">
+                                    <p>A playable game character with a legendary pirate background, specializing in
+                                        naval combat
+                                        and treasure exploration.</p>
+                                </div>
+                                <div class="slide-meta">
+                                    <span class="meta-item">Category: Game Character</span>
+                                    <span class="meta-item">Style: Ultra-Realistic</span>
+                                </div>
+                            </div>
+                            <div class="gallery-image-container">
+                                <div class="image-wrapper">
+                                    <img class="gallery-zoomable-img" src="../assets/pirate -1.png"
+                                        alt="Mountain Peak 1">
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-slide">
+                            <div class="gallery-slide-content">
+                                <div class="slide-number">02</div>
+                                <h3 class="slide-title">Dreadlord Kaelgrim</h3>
+                                <div class="slide-description">
+                                    <p>A powerful antagonist character in the game, feared across the seas and known for
+                                        commanding
+                                        dark forces in battle.</p>
+                                </div>
+                                <div class="slide-meta">
+                                    <span class="meta-item">Category: Game Character</span>
+                                    <span class="meta-item">Style: Ultra-Realistic</span>
+                                </div>
+                            </div>
+                            <div class="gallery-image-container">
+                                <div class="image-wrapper">
+                                    <img class="gallery-zoomable-img" src="../assets/pirate -2.png"
+                                        alt="Alpine Valley 2">
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gallery-slide">
+                            <div class="gallery-slide-content">
+                                <div class="slide-number">03</div>
+                                <h3 class="slide-title">Ronan Veyne</h3>
+                                <div class="slide-description">
+                                    <p>A warrior character featured in the game, trained in ancient combat techniques
+                                        and designed
+                                        for close-range battles.
+                                    </p>
+                                </div>
+                                <div class="slide-meta">
+                                    <span class="meta-item">Category: Game Character</span>
+                                    <span class="meta-item">Style: Ultra-Realistic</span>
+                                </div>
+                            </div>
+                            <div class="gallery-image-container">
+                                <div class="image-wrapper">
+                                    <img class="gallery-zoomable-img" src="../assets/pirate -3.png"
+                                        alt="Glacier View 3">
+                                    <div class="image-overlay"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <div class="gallery-dots">
+                        <button class="gallery-dot gallery-dot-active" data-slide="0" type="button"></button>
+                        <button class="gallery-dot" data-slide="1" type="button"></button>
+                        <button class="gallery-dot" data-slide="2" type="button"></button>
+                    </div>
+                    <div class="slide-counter">
+                        <span class="current-slide">01</span>
+                        <span class="counter-divider">/</span>
+                        <span class="total-slides">03</span>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                .mountain-gallery-container {
+                    width: 100%;
+                    background: #000;
+                    padding: 80px 0;
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .gallery-header {
+                    max-width: 1200px;
+                    margin: 0 auto 60px;
+                    padding: 0 40px;
+                    text-align: center;
+                }
+
+                .h-tag {
+                    display: inline-block;
+                    padding: 8px 20px;
+                    border: 1px solid #fff;
+                    border-radius: 30px;
+                    font-size: 12px;
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                    margin-bottom: 20px;
+                    background: rgba(255, 255, 255, 0.05);
+                    backdrop-filter: blur(10px);
+                }
+
+                .gallery-title {
+                    font-size: 64px;
+                    font-weight: 700;
+                    color: #fff;
+                    margin-bottom: 20px;
+                    letter-spacing: -2px;
+                    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+                }
+
+                .gallery-subtitle {
+                    font-size: 18px;
+                    color: #888;
+                    max-width: 600px;
+                    margin: 0 auto;
+                    line-height: 1.6;
+                }
+
+                .gallery-slider-wrapper {
+                    position: relative;
+                    max-width: 1400px;
+                    margin: 0 auto;
+                    padding: 0 120px;
+                }
+
+                .gallery-track {
+                    position: relative;
+                    width: 100%;
+                    overflow: hidden;
+                }
+
+                .gallery-slide {
+                    display: none;
+                    grid-template-columns: 1fr 1.2fr;
+                    gap: 80px;
+                    align-items: center;
+                    opacity: 0;
+                    transform: translateX(100px);
+                    transition: none;
+                }
+
+                .gallery-slide-active {
+                    display: grid !important;
+                    animation: slideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+                }
+
+                @keyframes slideIn {
+                    to {
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+
+                .gallery-slide-content {
+                    padding: 40px;
+                    position: relative;
+                }
+
+                .slide-number {
+                    font-size: 120px;
+                    font-weight: 900;
+                    color: rgba(255, 255, 255, 0.3);
+                    position: absolute;
+                    top: -20px;
+                    left: 0;
+                    line-height: 1;
+                    pointer-events: none;
+                }
+
+                .slide-title {
+                    font-size: 48px;
+                    font-weight: 700;
+                    color: #fff;
+                    margin-bottom: 30px;
+                    position: relative;
+                    z-index: 1;
+                    letter-spacing: -1px;
+                }
+
+                .slide-title::before {
+                    content: '';
+                    position: absolute;
+                    left: -40px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 4px;
+                    height: 60%;
+                    background: linear-gradient(180deg, #fff 0%, rgba(255, 255, 255, 0.3) 100%);
+                    border-radius: 4px;
+                }
+
+                .slide-description {
+                    margin-bottom: 30px;
+                }
+
+                .slide-description p {
+                    font-size: 16px;
+                    line-height: 1.8;
+                    color: #aaa;
+                    margin-bottom: 15px;
+                }
+
+                .slide-meta {
+                    display: flex;
+                    gap: 30px;
+                    padding-top: 20px;
+                    border-top: 1px solid rgba(255, 255, 255, 0.1);
+                }
+
+                .meta-item {
+                    font-size: 13px;
+                    color: #666;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
+
+                .gallery-image-container {
+                    position: relative;
+                    height: 600px;
+                }
+
+                .image-wrapper {
+                    position: relative;
+                    height: 100%;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    background: #111;
+                    box-shadow:
+                        0 0 0 1px rgba(255, 255, 255, 0.1),
+                        0 20px 60px rgba(0, 0, 0, 0.5),
+                        inset 0 0 100px rgba(0, 0, 0, 0.3);
+                }
+
+                .image-wrapper::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+                    pointer-events: none;
+                    z-index: 2;
+                }
+
+                .gallery-zoomable-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform-origin: var(--zoom-pos-x, 50%) var(--zoom-pos-y, 50%);
+                    transition: transform 0.15s linear;
+                    cursor: zoom-in;
+                    filter: brightness(0.9) contrast(1.1);
+                }
+
+                .image-wrapper.zoomed .gallery-zoomable-img {
+                    transform: scale(var(--zoom, 2.5));
+                }
+
+                .image-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: radial-gradient(circle at var(--zoom-pos-x, 50%) var(--zoom-pos-y, 50%), transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+                    opacity: 0;
+                    transition: opacity 0.3s;
+                    pointer-events: none;
+                    z-index: 1;
+                }
+
+                .image-wrapper.zoomed .image-overlay {
+                    opacity: 1;
+                }
+
+                .gallery-nav-btn {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 60px;
+                    height: 60px;
+                    border: 1px solid rgba(255, 255, 255, 0.2);
+                    background: rgba(255, 255, 255, 0.05);
+                    backdrop-filter: blur(10px);
+                    border-radius: 50%;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                    z-index: 100;
+                    outline: none;
+                }
+
+                .gallery-nav-btn:hover {
+                    background: rgba(255, 255, 255, 0.1);
+                    border-color: rgba(255, 255, 255, 0.4);
+                    transform: translateY(-50%) scale(1.1);
+                    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+                }
+
+                .gallery-nav-btn:active {
+                    transform: translateY(-50%) scale(0.95);
+                }
+
+                .gallery-nav-btn svg {
+                    width: 24px;
+                    height: 24px;
+                    fill: #fff;
+                    transition: transform 0.3s;
+                    pointer-events: none;
+                }
+
+                .gallery-nav-btn:hover svg {
+                    transform: translateX(0);
+                }
+
+                .gallery-prev-btn {
+                    left: 30px;
+                }
+
+                .gallery-prev-btn:hover svg {
+                    transform: translateX(-3px);
+                }
+
+                .gallery-next-btn {
+                    right: 30px;
+                }
+
+                .gallery-next-btn:hover svg {
+                    transform: translateX(3px);
+                }
+
+                .gallery-progress {
+                    max-width: 1400px;
+                    margin: 60px auto 0;
+                    padding: 0 120px;
+                    display: flex;
+                    align-items: center;
+                    gap: 40px;
+                }
+
+                .progress-bar {
+                    flex: 1;
+                    height: 2px;
+                    background: rgba(255, 255, 255, 0.1);
+                    border-radius: 2px;
+                    overflow: hidden;
+                }
+
+                .progress-fill {
+                    height: 100%;
+                    background: linear-gradient(90deg, #fff 0%, rgba(255, 255, 255, 0.5) 100%);
+                    width: 16.66%;
+                    transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                }
+
+                .gallery-dots {
+                    display: flex;
+                    gap: 12px;
+                }
+
+                .gallery-dot {
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    border: 1px solid rgba(255, 255, 255, 0.3);
+                    background: transparent;
+                    cursor: pointer;
+                    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                    padding: 0;
+                    outline: none;
+                }
+
+                .gallery-dot:hover {
+                    background: rgba(255, 255, 255, 0.3);
+                    transform: scale(1.2);
+                }
+
+                .gallery-dot-active {
+                    background: #fff !important;
+                    border-color: #fff !important;
+                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+                    transform: scale(1.3) !important;
+                }
+
+                .slide-counter {
+                    display: flex;
+                    align-items: baseline;
+                    gap: 8px;
+                    font-weight: 600;
+                    min-width: 80px;
+                }
+
+                .current-slide {
+                    font-size: 24px;
+                    color: #fff;
+                }
+
+                .counter-divider {
+                    font-size: 16px;
+                    color: #666;
+                }
+
+                .total-slides {
+                    font-size: 16px;
+                    color: #666;
+                }
+
+                @media (max-width: 1024px) {
+                    .gallery-slider-wrapper {
+                        padding: 0 80px;
+                    }
+
+                    .gallery-slide {
+                        grid-template-columns: 1fr;
+                        gap: 40px;
+                    }
+
+                    .gallery-title {
+                        font-size: 48px;
+                    }
+
+                    .slide-title {
+                        font-size: 36px;
+                    }
+
+                    .gallery-image-container {
+                        height: 400px;
+                    }
+
+                    .gallery-progress {
+                        padding: 0 80px;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .mountain-gallery-container {
+                        padding: 40px 0;
+                    }
+
+                    .gallery-header {
+                        padding: 0 20px;
+                        margin-bottom: 40px;
+                    }
+
+                    .gallery-title {
+                        font-size: 36px;
+                    }
+
+                    .gallery-subtitle {
+                        font-size: 16px;
+                    }
+
+                    .gallery-slider-wrapper {
+                        padding: 0 60px;
+                    }
+
+                    .gallery-slide-content {
+                        padding: 20px;
+                    }
+
+                    .slide-number {
+                        font-size: 80px;
+                    }
+
+                    .slide-title {
+                        font-size: 28px;
+                    }
+
+                    .slide-description p {
+                        font-size: 14px;
+                    }
+
+                    .slide-meta {
+                        flex-direction: column;
+                        gap: 10px;
+                    }
+
+                    .gallery-image-container {
+                        height: 300px;
+                    }
+
+                    .gallery-nav-btn {
+                        width: 50px;
+                        height: 50px;
+                    }
+
+                    .gallery-prev-btn {
+                        left: 10px;
+                    }
+
+                    .gallery-next-btn {
+                        right: 10px;
+                    }
+
+                    .gallery-progress {
+                        padding: 0 60px;
+                        gap: 20px;
+                    }
+
+                    .slide-counter {
+                        min-width: 60px;
+                    }
+
+                    .current-slide {
+                        font-size: 20px;
+                    }
+                }
+            </style>
+
+            <script>
+                (function () {
+                    const container = document.querySelector('.mountain-gallery-container');
+                    if (!container) return;
+
+                    let currentSlide = 0;
+                    const slides = container.querySelectorAll('.gallery-slide');
+                    const dots = container.querySelectorAll('.gallery-dot');
+                    const prevBtn = container.querySelector('.gallery-prev-btn');
+                    const nextBtn = container.querySelector('.gallery-next-btn');
+                    const totalSlides = slides.length;
+                    const progressFill = container.querySelector('.progress-fill');
+                    const currentSlideEl = container.querySelector('.current-slide');
+
+                    function updateSlide(index) {
+                        slides.forEach((slide, i) => {
+                            slide.classList.remove('gallery-slide-active');
+                            if (i !== index) {
+                                slide.style.display = 'none';
+                            }
+                        });
+                        dots.forEach(dot => dot.classList.remove('gallery-dot-active'));
+
+                        if (index >= totalSlides) currentSlide = 0;
+                        if (index < 0) currentSlide = totalSlides - 1;
+
+                        slides[currentSlide].style.display = 'grid';
+                        setTimeout(() => {
+                            slides[currentSlide].classList.add('gallery-slide-active');
+                        }, 50);
+
+                        dots[currentSlide].classList.add('gallery-dot-active');
+                        progressFill.style.width = ((currentSlide + 1) / totalSlides * 100) + '%';
+                        currentSlideEl.textContent = String(currentSlide + 1).padStart(2, '0');
+                    }
+
+                    prevBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        currentSlide--;
+                        updateSlide(currentSlide);
+                    });
+
+                    nextBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        currentSlide++;
+                        updateSlide(currentSlide);
+                    });
+
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            currentSlide = index;
+                            updateSlide(currentSlide);
+                        });
+                    });
+
+                    container.querySelectorAll('.image-wrapper').forEach(wrapper => {
+                        let zoom = 2.5;
+                        let isZoomed = false;
+
+                        wrapper.addEventListener('mouseenter', () => {
+                            wrapper.classList.add('zoomed');
+                            isZoomed = true;
+                        });
+
+                        wrapper.addEventListener('mousemove', (e) => {
+                            if (!isZoomed) return;
+                            const rect = wrapper.getBoundingClientRect();
+                            const x = ((e.clientX - rect.left) / rect.width) * 100;
+                            const y = ((e.clientY - rect.top) / rect.height) * 100;
+                            wrapper.style.setProperty('--zoom-pos-x', x + '%');
+                            wrapper.style.setProperty('--zoom-pos-y', y + '%');
+                            wrapper.style.setProperty('--zoom', zoom);
+                        });
+
+                        wrapper.addEventListener('mouseleave', () => {
+                            wrapper.classList.remove('zoomed');
+                            isZoomed = false;
+                            zoom = 2.5;
+                        });
+
+                        wrapper.addEventListener('wheel', (e) => {
+                            if (!isZoomed) return;
+                            if (e.ctrlKey) {
+                                e.preventDefault();
+                                zoom += e.deltaY * -0.01;
+                                zoom = Math.min(Math.max(1.5, zoom), 4);
+                                wrapper.style.setProperty('--zoom', zoom);
+                            }
+                        }, { passive: false });
+                    });
+
+                    let autoSlide = setInterval(() => {
+                        currentSlide++;
+                        updateSlide(currentSlide);
+                    }, 5000);
+
+                    container.querySelector('.gallery-slider-wrapper').addEventListener('mouseenter', () => {
+                        clearInterval(autoSlide);
+                    });
+
+                    container.querySelector('.gallery-slider-wrapper').addEventListener('mouseleave', () => {
+                        autoSlide = setInterval(() => {
+                            currentSlide++;
+                            updateSlide(currentSlide);
+                        }, 5000);
+                    });
+
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'ArrowLeft') {
+                            currentSlide--;
+                            updateSlide(currentSlide);
+                        } else if (e.key === 'ArrowRight') {
+                            currentSlide++;
+                            updateSlide(currentSlide);
+                        }
+                    });
+
+                    updateSlide(0);
+                })();
+            </script>
+        </div>
+
+
+        <div class="features-section reveal" style="margin: 3rem 0;">
+            <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">Core Game Features
+            </h3>
+            <div style="display: grid; gap: 1.5rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">◆ Advanced Climbing & Motion Warping</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">Experience true physical interaction
+                        with procedural climbing system. Scale pyramids, cliff faces, and ancient structures with
+                        realistic hand-placement and dynamic animation blending. Motion warping ensures smooth
+                        transitions between ledges.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">◆ Intelligent AI Combat System</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">Engage with adaptive AI enemies using
+                        Unreal Engine 5's Behavior Tree system. Distract enemies with throwable objects, utilize stealth
+                        mechanics, or engage in direct combat with swords, bows, spears, shields, and magical artifacts.
+                        Enemies react to player tactics and adapt their strategies.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">◆ Diverse Animals & Mount System</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">Ride and tame majestic desert creatures
+                        including camels for speed, rhinos for power, and elephants for warfare. Each mount has unique
+                        abilities and characteristics. Hunt wildlife for resources or observe natural ecosystem
+                        behaviors.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">◆ Dynamic Day-Night & Weather System</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">A fully dynamic 24/7 real-time sun
+                        cycle powered by Lumen global illumination. Watch as shadows shift across ancient monuments,
+                        experience temperature changes affecting gameplay, and witness sandstorms that alter visibility
+                        and combat effectiveness. Night brings different enemy types and challenges.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">◆ Loyal Pet Companion System</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">Bond with your loyal fox companion that
+                        assists in exploration and combat, or summon your crow ally when stamina is depleted to scout
+                        ahead and mark enemies. Pets level up alongside you and learn new abilities.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">◆ Parkour & Free-Running</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">Navigate the world with fluid parkour
+                        mechanics including wall-running, vaulting, sliding, and contextual jumping. Chain movements
+                        together for spectacular traversal sequences through ancient cities and desert landscapes.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">◆ Deep Crafting & Upgrade System</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">Collect resources from defeated enemies
+                        and the environment to craft weapons, armor, potions, and tools. Upgrade your gear with ancient
+                        Egyptian enchantments and rare materials found in hidden tombs.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">◆ Puzzle-Filled Ancient Tombs</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">Explore intricate tomb dungeons
+                        featuring environmental puzzles, pressure plates, moving platforms, hieroglyphic riddles, and
+                        deadly traps. Uncover legendary treasures and powerful artifacts hidden within.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">◆ Epic Boss Battles</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">Face off against massive boss enemies
+                        including giant scorpions, sand serpents, cursed pharaohs, and mythological creatures. Each boss
+                        requires unique strategies and offers legendary rewards upon defeat.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">◆ Branching Story & Choices</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem;">Make meaningful decisions that affect
+                        the game's narrative outcome. Choose between honor and power, mercy and vengeance. Your choices
+                        determine which factions support you and influence the game's multiple endings.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="system-requirements reveal"
+            style="margin: 3rem 0; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">System Requirements
+            </h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                    <h4
+                        style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 2px solid #fff; padding-bottom: 0.5rem;">
+                        Minimum Requirements</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.7); line-height: 2;">
+                        <li><strong style="color: #fff;">OS:</strong> Windows 10 64-bit</li>
+                        <li><strong style="color: #fff;">Processor:</strong> Intel Core i5-8400 / AMD Ryzen 5 2600</li>
+                        <li><strong style="color: #fff;">Memory:</strong> 16 GB RAM</li>
+                        <li><strong style="color: #fff;">Graphics:</strong> NVIDIA GTX 1060 6GB / AMD RX 580 8GB</li>
+                        <li><strong style="color: #fff;">DirectX:</strong> Version 12</li>
+                        <li><strong style="color: #fff;">Storage:</strong> 75 GB available space (SSD recommended)</li>
+                        <li><strong style="color: #fff;">Settings:</strong> 1080p, Low-Medium, 30 FPS</li>
+                    </ul>
+                </div>
+
+                <div style="padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                    <h4
+                        style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 2px solid #fff; padding-bottom: 0.5rem;">
+                        Recommended Requirements</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.7); line-height: 2;">
+                        <li><strong style="color: #fff;">OS:</strong> Windows 11 64-bit</li>
+                        <li><strong style="color: #fff;">Processor:</strong> Intel Core i7-10700K / AMD Ryzen 7 3700X
+                        </li>
+                        <li><strong style="color: #fff;">Memory:</strong> 32 GB RAM</li>
+                        <li><strong style="color: #fff;">Graphics:</strong> NVIDIA RTX 3070 8GB / AMD RX 6800 XT 16GB
+                        </li>
+                        <li><strong style="color: #fff;">DirectX:</strong> Version 12</li>
+                        <li><strong style="color: #fff;">Storage:</strong> 75 GB SSD (NVMe recommended)</li>
+                        <li><strong style="color: #fff;">Settings:</strong> 1440p, High-Ultra, 60 FPS</li>
+                    </ul>
+                </div>
+
+                <div style="padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                    <h4
+                        style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 2px solid #fff; padding-bottom: 0.5rem;">
+                        Ultra 4K Requirements</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.7); line-height: 2;">
+                        <li><strong style="color: #fff;">OS:</strong> Windows 11 64-bit</li>
+                        <li><strong style="color: #fff;">Processor:</strong> Intel Core i9-12900K / AMD Ryzen 9 5950X
+                        </li>
+                        <li><strong style="color: #fff;">Memory:</strong> 64 GB RAM</li>
+                        <li><strong style="color: #fff;">Graphics:</strong> NVIDIA RTX 4080 16GB / AMD RX 7900 XTX 24GB
+                        </li>
+                        <li><strong style="color: #fff;">DirectX:</strong> Version 12 Ultimate</li>
+                        <li><strong style="color: #fff;">Storage:</strong> 100 GB NVMe SSD</li>
+                        <li><strong style="color: #fff;">Settings:</strong> 4K, Ultra with Ray Tracing, 60+ FPS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem;">Platform Support</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">✓
+                        Windows PC</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">✓
+                        Steam Deck (Verified)</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">✓
+                        Controller Support</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">✓
+                        Keyboard + Mouse</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">✓
+                        Ultra-wide Monitor Support</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">✓
+                        HDR Support</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.05); border-radius: 8px;">
+                <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem;">Technical Features</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">Ray
+                        Tracing</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">DLSS
+                        3.0</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">FSR
+                        2.0</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">Lumen
+                        GI</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">Nanite
+                        Geometry</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid #fff; border-radius: 20px; color: #fff; font-size: 0.9rem;">Virtual
+                        Shadow Maps</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-section reveal" style="margin: 3rem 0; text-align: center;">
+            <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem;">Official Game Trailer</h3>
+            <div
+                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; border: 2px solid rgba(255,255,255,0.1);">
+                <iframe src="https://www.youtube.com/embed/glGmE3Xavkk" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+            </div>
+        </div>
+
+        <div class="download-section reveal" style="margin: 3rem 0; text-align: center;">
+            <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem;">Download Options</h3>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
+                <div
+                    style="flex: 1; min-width: 280px; max-width: 400px; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 8px; border: 2px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fff; font-size: 1.4rem; margin-bottom: 1rem;">Game Build v1.0.0</h4>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem;">Full game
+                        package including all assets, executable, and required dependencies. Ready to play.</p>
+                    <p style="color: rgba(255,255,255,0.5); margin-bottom: 1rem; font-size: 0.85rem;">Size: ~4 GB</p>
+                    <a href="https://drive.google.com/drive/folders/1FlNCsygxX_Cl3Y3osfmn17BHHTI_v88C?usp=drive_link"
+                        target="_blank"
+                        style="display: inline-block; padding: 1rem 3rem; background: #fff; color: #000; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s; border: 2px solid #fff;">Download
+                        Game</a>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 280px; max-width: 400px; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 8px; border: 2px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fff; font-size: 1.4rem; margin-bottom: 1rem;">Source Code</h4>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem;">Complete Unreal
+                        Engine 5 project files including blueprints, C++ source, assets, and documentation for
+                        developers.</p>
+                    <p style="color: rgba(255,255,255,0.5); margin-bottom: 1rem; font-size: 0.85rem;">Size: ~40 GB
+                        (Requires UE5)</p>
+                    <a href="#" target="_blank"
+                        style="display: inline-block; padding: 1rem 3rem; background: #000; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s; border: 2px solid #fff;">Download
+                        Source</a>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border-left: 3px solid #fff;">
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.6;">
+                    <strong style="color: #fff;">Installation Instructions:</strong> Extract the downloaded files, run
+                    the installer, and follow the on-screen prompts. Ensure you have the latest DirectX Runtime and
+                    Visual C++ Redistributables installed. For source code, Unreal Engine 5.3 or higher is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="additional-info reveal"
+            style="margin: 3rem 0; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem;">Additional Information</h3>
+            <div style="display: grid; gap: 1rem;">
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">License:</strong> Free for personal and educational use. Commercial use
+                    requires separate licensing agreement.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">Updates:</strong> Regular patches and content updates planned. Check
+                    back for new features, bug fixes, and additional story content.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

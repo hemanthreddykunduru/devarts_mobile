@@ -1,0 +1,525 @@
+<div class="project-slide">
+    <div class="container">
+        <div class="project-header-large reveal">
+            <span class="h-tag"
+                style="color: #fff; border: 1px solid #fff; padding: 8px 20px; display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; font-weight: 600;">RAG
+                System</span>
+            <h2 class="project-title-xl"
+                style="font-size: 72px; font-weight: 800; margin: 20px 0; color: #fff; line-height: 1.1; letter-spacing: -2px;">
+                Chat With PDF <i class="fas fa-file-pdf"></i></h2>
+            <p class="project-subtitle-lg">
+                An intelligent conversational AI system that enables natural language interactions with PDF documents
+                using Retrieval Augmented Generation, vector embeddings, and LLM technology.
+            </p>
+        </div>
+        <div
+            style="perspective: 1000px; display: flex; justify-content: center; align-items: center; min-height: 100vh;; font-family: 'Poppins', sans-serif; flex-direction: column;">
+            <div id="laptop"
+                style="display: flex; justify-content: center; align-items: center; flex-direction: column; transform-style: preserve-3d; transition: transform 1s ease;">
+                <div
+                    style="position: relative; background-color: #878484; width: 30rem; height: 21rem; border-radius: 15px;">
+                    <div
+                        style="position: absolute; top: 1.5rem; left: 0.9rem; height: calc(100% - 3.8rem); width: calc(100% - 1.7rem); background-color: #fff; overflow: hidden;">
+                        <img src="../assets/working.gif" style="width: 100%; height: 100%; object-fit: cover;">
+                    </div>
+                    <div
+                        style="width: 100%; height: 1.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1); position: absolute; bottom: 0.4rem; display: flex; justify-content: center; align-items: center;">
+                        <span
+                            style="position: relative; top: -2px; color: rgba(255, 255, 255, 0.6); font-size: 8px;">Laptop</span>
+                    </div>
+                </div>
+                <div
+                    style="position: relative; width: 34rem; height: 1.2rem; background: #494949; bottom: 0.8rem; border-radius: 3px 3px 0 0;">
+                </div>
+                <div
+                    style="position: relative; bottom: 1rem; width: 34rem; height: .8rem; background: #3a3a3a; border-bottom-left-radius: 50% 60%; border-bottom-right-radius: 60% 50%;">
+                </div>
+            </div>
+        </div>
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Complete System Architecture</h3>
+            <div class="mermaid">
+                graph TB
+                User[User Query] --> Frontend[Streamlit Frontend]
+                Frontend --> Upload[PDF Upload]
+                Frontend --> Chat[Chat Interface]
+                Upload --> Extract[Text Extraction]
+                Extract --> PyPDF[PyPDF2/PDFPlumber]
+                PyPDF --> Chunks[Text Chunking]
+                Chunks --> Splitter[RecursiveCharacterTextSplitter]
+                Splitter --> Embed[Embedding Generation]
+                Embed --> Model[HuggingFace Embeddings]
+                Model --> VectorDB[(FAISS Vector Store)]
+                Chat --> Query[Query Processing]
+                Query --> VectorDB
+                VectorDB --> Retrieval[Similarity Search]
+                Retrieval --> Context[Relevant Context]
+                Context --> LLM[Language Model]
+                LLM --> GPT[OpenAI GPT-3.5/4]
+                GPT --> Response[Generated Answer]
+                Response --> Frontend
+                style User fill:#1a1a1a,stroke:#fff,color:#fff
+                style Frontend fill:#2a2a2a,stroke:#fff,color:#fff
+                style VectorDB fill:#333,stroke:#fff,color:#fff
+                style LLM fill:#2a2a2a,stroke:#fff,color:#fff
+                style Response fill:#1a1a1a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <h2 class="project-title-xl">RAG Pipeline.</h2>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Document Processing Flow</h3>
+            <div class="mermaid">
+                graph LR
+                PDF[PDF Document] --> Read[Read PDF]
+                Read --> Pages[Extract Pages]
+                Pages --> Text[Extract Text]
+                Text --> Clean[Clean & Normalize]
+                Clean --> Split[Text Splitting]
+                Split --> C1[Chunk 1]
+                Split --> C2[Chunk 2]
+                Split --> C3[Chunk N]
+                C1 --> E1[Embed]
+                C2 --> E2[Embed]
+                C3 --> E3[Embed]
+                E1 --> V1[Vector 1]
+                E2 --> V2[Vector 2]
+                E3 --> V3[Vector N]
+                V1 --> Store[(Vector Store)]
+                V2 --> Store
+                V3 --> Store
+                style PDF fill:#1a1a1a,stroke:#fff,color:#fff
+                style Split fill:#2a2a2a,stroke:#fff,color:#fff
+                style Store fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Query Processing & Retrieval</h3>
+            <div class="mermaid">
+                graph TB
+                Q[User Question] --> Embed[Embedding Model]
+                Embed --> QV[Query Vector]
+                QV --> Search[Similarity Search]
+                Search --> VS[(Vector Store)]
+                VS --> Top[Top K Results]
+                Top --> R1[Chunk 1 - Score 0.95]
+                Top --> R2[Chunk 2 - Score 0.89]
+                Top --> R3[Chunk 3 - Score 0.82]
+                R1 --> Rerank[Re-ranking]
+                R2 --> Rerank
+                R3 --> Rerank
+                Rerank --> Context[Final Context]
+                Context --> Prompt[Prompt Construction]
+                Q --> Prompt
+                Prompt --> LLM[LLM Generation]
+                LLM --> Answer[Generated Answer]
+                style Q fill:#1a1a1a,stroke:#fff,color:#fff
+                style VS fill:#333,stroke:#fff,color:#fff
+                style LLM fill:#2a2a2a,stroke:#fff,color:#fff
+                style Answer fill:#1a1a1a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">LangChain Integration</h3>
+            <div class="mermaid">
+                graph LR
+                LC[LangChain] --> Loader[Document Loaders]
+                LC --> Splitter[Text Splitters]
+                LC --> Embed[Embeddings]
+                LC --> VectorS[Vector Stores]
+                LC --> Retriever[Retrievers]
+                LC --> Chain[Chains]
+                Loader --> PDFLoader[PyPDFLoader]
+                Splitter --> RecText[RecursiveCharacterTextSplitter]
+                Embed --> HF[HuggingFaceEmbeddings]
+                VectorS --> FAISS[FAISS]
+                Retriever --> SimSearch[Similarity Search]
+                Chain --> QA[RetrievalQA]
+                Chain --> Conv[ConversationalRetrievalChain]
+                style LC fill:#1a1a1a,stroke:#fff,color:#fff
+                style Chain fill:#2a2a2a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <h2 class="project-title-xl">Technical Components.</h2>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Technology Stack</h3>
+            <div class="mermaid">
+                graph TB
+                Stack[Tech Stack] --> Frontend[Frontend Layer]
+                Stack --> Backend[Backend Layer]
+                Stack --> AI[AI/ML Layer]
+                Stack --> Storage[Storage Layer]
+                Frontend --> Streamlit[Streamlit]
+                Frontend --> Gradio[Gradio Alternative]
+                Backend --> Flask[Flask API]
+                Backend --> FastAPI[FastAPI]
+                AI --> OpenAI[OpenAI API]
+                AI --> Lang[LangChain]
+                AI --> Embed[sentence-transformers]
+                Storage --> FAISS[FAISS]
+                Storage --> Chroma[ChromaDB]
+                Storage --> Pinecone[Pinecone]
+                style Stack fill:#1a1a1a,stroke:#fff,color:#fff
+                style Frontend fill:#2a2a2a,stroke:#fff,color:#fff
+                style AI fill:#2a2a2a,stroke:#fff,color:#fff
+                style Storage fill:#2a2a2a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Embedding & Vector Search</h3>
+            <div class="mermaid">
+                graph LR
+                Text[Text Chunks] --> Model[Embedding Model]
+                Model --> M1[all-MiniLM-L6-v2]
+                Model --> M2[text-embedding-ada-002]
+                Model --> M3[sentence-transformers]
+                M1 --> Vec[Vector Representation]
+                M2 --> Vec
+                M3 --> Vec
+                Vec --> Dim[384/1536 Dimensions]
+                Dim --> Index[Vector Index]
+                Index --> FAISS[FAISS Index]
+                FAISS --> Search[Cosine Similarity]
+                Search --> Results[Top K Chunks]
+                style Text fill:#1a1a1a,stroke:#fff,color:#fff
+                style Model fill:#2a2a2a,stroke:#fff,color:#fff
+                style FAISS fill:#333,stroke:#fff,color:#fff
+                style Results fill:#1a1a1a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Conversation Memory</h3>
+            <div class="mermaid">
+                graph TB
+                Conv[Conversation] --> History[Chat History]
+                History --> Store[Memory Store]
+                Store --> Buffer[ConversationBufferMemory]
+                Store --> Summary[ConversationSummaryMemory]
+                Store --> Window[ConversationBufferWindowMemory]
+                Buffer --> Keep[Keep All Messages]
+                Summary --> Summarize[Summarize Old Messages]
+                Window --> Last[Keep Last N Messages]
+                Keep --> Context[Context Building]
+                Summarize --> Context
+                Last --> Context
+                Context --> Prompt[Enhanced Prompt]
+                Prompt --> LLM[LLM]
+                style Conv fill:#1a1a1a,stroke:#fff,color:#fff
+                style Store fill:#2a2a2a,stroke:#fff,color:#fff
+                style LLM fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <h2 class="project-title-xl">Implementation Details.</h2>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Complete Application Flow</h3>
+            <div class="mermaid">
+                sequenceDiagram
+                participant U as User
+                participant UI as Streamlit UI
+                participant P as PDF Processor
+                participant E as Embeddings
+                participant V as Vector DB
+                participant L as LLM
+                U->>UI: Upload PDF
+                UI->>P: Process PDF
+                P->>P: Extract Text
+                P->>P: Split into Chunks
+                P->>E: Generate Embeddings
+                E->>V: Store Vectors
+                V-->>UI: Ready
+                U->>UI: Ask Question
+                UI->>E: Embed Query
+                E->>V: Search Similar
+                V-->>UI: Return Context
+                UI->>L: Generate Answer
+                L-->>UI: Response
+                UI-->>U: Display Answer
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Text Chunking Strategy</h3>
+            <div class="mermaid">
+                graph TB
+                Doc[Full Document] --> Strategy[Chunking Strategy]
+                Strategy --> Fixed[Fixed Size]
+                Strategy --> Recursive[Recursive]
+                Strategy --> Semantic[Semantic]
+                Fixed --> F1[Chunk Size: 1000]
+                Fixed --> F2[Overlap: 200]
+                Recursive --> R1[Split by Paragraph]
+                Recursive --> R2[Then by Sentence]
+                Recursive --> R3[Then by Word]
+                Semantic --> S1[Preserve Meaning]
+                Semantic --> S2[Topic Boundaries]
+                F1 --> Chunks[Text Chunks]
+                R3 --> Chunks
+                S2 --> Chunks
+                Chunks --> Quality[Optimal Context]
+                style Doc fill:#1a1a1a,stroke:#fff,color:#fff
+                style Strategy fill:#2a2a2a,stroke:#fff,color:#fff
+                style Chunks fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Prompt Engineering</h3>
+            <div class="mermaid">
+                graph LR
+                System[System Prompt] --> Role[Define Role]
+                System --> Rules[Set Rules]
+                Context[Retrieved Context] --> Format[Format Context]
+                Question[User Question] --> Clean[Clean Query]
+                Role --> Template[Prompt Template]
+                Rules --> Template
+                Format --> Template
+                Clean --> Template
+                Template --> Final[Final Prompt]
+                Final --> LLM[Send to LLM]
+                LLM --> Parse[Parse Response]
+                Parse --> Answer[Final Answer]
+                style System fill:#1a1a1a,stroke:#fff,color:#fff
+                style Template fill:#2a2a2a,stroke:#fff,color:#fff
+                style LLM fill:#333,stroke:#fff,color:#fff
+                style Answer fill:#1a1a1a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <h2 class="project-title-xl">Advanced Features.</h2>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Multi-Document Support</h3>
+            <div class="mermaid">
+                graph TB
+                Multi[Multiple PDFs] --> PDF1[Document 1]
+                Multi --> PDF2[Document 2]
+                Multi --> PDF3[Document N]
+                PDF1 --> Meta1[Metadata: Source, Page]
+                PDF2 --> Meta2[Metadata: Source, Page]
+                PDF3 --> Meta3[Metadata: Source, Page]
+                Meta1 --> Unified[(Unified Vector Store)]
+                Meta2 --> Unified
+                Meta3 --> Unified
+                Unified --> Query[Query All Docs]
+                Query --> Filter[Filter by Source]
+                Filter --> Results[Contextualized Results]
+                Results --> Cite[Source Citations]
+                style Multi fill:#1a1a1a,stroke:#fff,color:#fff
+                style Unified fill:#333,stroke:#fff,color:#fff
+                style Cite fill:#2a2a2a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Answer Quality Enhancement</h3>
+            <div class="mermaid">
+                graph LR
+                Q[Question] --> Enhance[Enhancement Layer]
+                Enhance --> Expand[Query Expansion]
+                Enhance --> Rephrase[Query Rephrasing]
+                Enhance --> Multi[Multi-Query]
+                Expand --> Retrieve[Retrieval]
+                Rephrase --> Retrieve
+                Multi --> Retrieve
+                Retrieve --> Rerank[Re-ranking]
+                Rerank --> CrossEnc[Cross-Encoder]
+                CrossEnc --> Best[Best Chunks]
+                Best --> Generate[Generation]
+                Generate --> Verify[Answer Verification]
+                Verify --> Final[Final Answer]
+                style Q fill:#1a1a1a,stroke:#fff,color:#fff
+                style Enhance fill:#2a2a2a,stroke:#fff,color:#fff
+                style Rerank fill:#333,stroke:#fff,color:#fff
+                style Final fill:#1a1a1a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Error Handling & Validation</h3>
+            <div class="mermaid">
+                graph TB
+                Input[User Input] --> Validate[Validation]
+                Validate --> V1[File Type Check]
+                Validate --> V2[File Size Limit]
+                Validate --> V3[Content Check]
+                V1 --> Error1{Valid PDF?}
+                V2 --> Error2{Within Limit?}
+                V3 --> Error3{Has Text?}
+                Error1 -->|No| Err[Error Message]
+                Error2 -->|No| Err
+                Error3 -->|No| Err
+                Error1 -->|Yes| Process[Process PDF]
+                Error2 -->|Yes| Process
+                Error3 -->|Yes| Process
+                Process --> Try[Try-Catch Block]
+                Try --> Success[Success]
+                Try --> Fail[Exception Handler]
+                Fail --> Log[Log Error]
+                Log --> User[User Friendly Message]
+                style Input fill:#1a1a1a,stroke:#fff,color:#fff
+                style Validate fill:#2a2a2a,stroke:#fff,color:#fff
+                style Err fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <h2 class="project-title-xl">Performance Optimization.</h2>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Caching Strategy</h3>
+            <div class="mermaid">
+                graph LR
+                Request[Request] --> Cache{Cache Hit?}
+                Cache -->|Yes| Return[Return Cached]
+                Cache -->|No| Process[Process Request]
+                Process --> Embed[Generate Embedding]
+                Embed --> Search[Vector Search]
+                Search --> LLM[LLM Call]
+                LLM --> Result[Result]
+                Result --> Store[Cache Result]
+                Store --> Return
+                Return --> User[User]
+                style Request fill:#1a1a1a,stroke:#fff,color:#fff
+                style Cache fill:#2a2a2a,stroke:#fff,color:#fff
+                style Store fill:#333,stroke:#fff,color:#fff
+                style User fill:#1a1a1a,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Scalability Architecture</h3>
+            <div class="mermaid">
+                graph TB
+                Load[Load Balancer] --> API1[API Instance 1]
+                Load --> API2[API Instance 2]
+                Load --> API3[API Instance N]
+                API1 --> Queue[Task Queue]
+                API2 --> Queue
+                API3 --> Queue
+                Queue --> Worker1[Worker 1]
+                Queue --> Worker2[Worker 2]
+                Queue --> Worker3[Worker N]
+                Worker1 --> VectorDB[(Shared Vector DB)]
+                Worker2 --> VectorDB
+                Worker3 --> VectorDB
+                VectorDB --> Cache[Redis Cache]
+                Cache --> Response[Response]
+                style Load fill:#1a1a1a,stroke:#fff,color:#fff
+                style Queue fill:#2a2a2a,stroke:#fff,color:#fff
+                style VectorDB fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Cost Optimization</h3>
+            <div class="mermaid">
+                graph LR
+                Cost[Cost Factors] --> Tokens[Token Usage]
+                Cost --> API[API Calls]
+                Cost --> Storage[Vector Storage]
+                Tokens --> Limit[Context Limits]
+                Tokens --> Compress[Compression]
+                API --> Batch[Batch Processing]
+                API --> Cache[Caching]
+                Storage --> Prune[Pruning]
+                Storage --> Quantize[Quantization]
+                Limit --> Save[Cost Savings]
+                Batch --> Save
+                Cache --> Save
+                Prune --> Save
+                style Cost fill:#1a1a1a,stroke:#fff,color:#fff
+                style Save fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <h2 class="project-title-xl">Deployment & Monitoring.</h2>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Deployment Pipeline</h3>
+            <div class="mermaid">
+                graph LR
+                Code[Code Repository] --> Build[Build Container]
+                Build --> Test[Run Tests]
+                Test --> Deploy[Deploy]
+                Deploy --> D1[Streamlit Cloud]
+                Deploy --> D2[AWS/GCP]
+                Deploy --> D3[Docker Container]
+                D1 --> Monitor[Monitoring]
+                D2 --> Monitor
+                D3 --> Monitor
+                Monitor --> Logs[Logging]
+                Monitor --> Metrics[Metrics]
+                Monitor --> Alerts[Alerts]
+                style Code fill:#1a1a1a,stroke:#fff,color:#fff
+                style Deploy fill:#2a2a2a,stroke:#fff,color:#fff
+                style Monitor fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal">
+            <h3 class="diagram-title">Monitoring & Analytics</h3>
+            <div class="mermaid">
+                graph TB
+                App[Application] --> Track[Tracking]
+                Track --> Usage[Usage Metrics]
+                Track --> Perf[Performance]
+                Track --> Errors[Error Tracking]
+                Usage --> U1[Queries per User]
+                Usage --> U2[PDF Upload Count]
+                Usage --> U3[Active Users]
+                Perf --> P1[Response Time]
+                Perf --> P2[Token Usage]
+                Perf --> P3[Cache Hit Rate]
+                Errors --> E1[Failed Uploads]
+                Errors --> E2[API Errors]
+                Errors --> E3[Timeout Issues]
+                U3 --> Dashboard[Analytics Dashboard]
+                P3 --> Dashboard
+                E3 --> Dashboard
+                style App fill:#1a1a1a,stroke:#fff,color:#fff
+                style Track fill:#2a2a2a,stroke:#fff,color:#fff
+                style Dashboard fill:#333,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="project-header-large reveal">
+            <span class="h-tag" style="color: #fff; border-color: #fff;">Intelligent Document Analysis</span>
+            <h2 class="project-title-xl">Powered by RAG.</h2>
+            <p class="project-subtitle-lg">
+                A sophisticated Retrieval Augmented Generation system that combines vector embeddings, semantic search,
+                and large language models to enable intelligent conversations with PDF documents. Built with LangChain,
+                FAISS, and OpenAI for accurate, context-aware responses.
+            </p>
+        </div>
+        <div
+            style="flex: 1; min-width: 280px; max-width: 400px; padding: 2rem; background: rgba(255,255,255,0.05); border-radius: 8px; border: 2px solid rgba(255,255,255,0.1);">
+            <h4 style="color: #fff; font-size: 1.4rem; margin-bottom: 1rem;">Complete Google Sheets with code</h4>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem;">Full Code
+                package including all code, executable, and required dependencies.</p>
+            <p style="color: rgba(255,255,255,0.5); margin-bottom: 1rem; font-size: 0.85rem;">Size: ~308 mb</p>
+            <a href="https://github.com/hemanthreddykunduru/Chat-With-Pdf.git" target="_blank"
+                style="display: inline-block; padding: 1rem 3rem; background: #fff; color: #000; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s; border: 2px solid #fff;">Code
+                Link</a>
+        </div>
+    </div>
+</div>

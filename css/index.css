@@ -1,0 +1,79 @@
+/* Home Specific Styles */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.giant-text {
+    font-family: var(--font-serif);
+    font-size: clamp(80px, 15vw, 240px);
+    font-weight: 400;
+    letter-spacing: -0.05em;
+    color: var(--accent);
+    line-height: 0.8;
+}
+
+.dynamic-word {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--accent);
+}
+
+.a1 {
+    width: 220px;
+    height: 300px;
+    top: 8%;
+    left: 5%;
+}
+
+.a2 {
+    width: 180px;
+    height: 120px;
+    bottom: 12%;
+    left: 15%;
+}
+
+.a3 {
+    width: 260px;
+    height: 180px;
+    top: 12%;
+    right: 7%;
+}
+
+.a4 {
+    width: 140px;
+    height: 200px;
+    bottom: 8%;
+    right: 12%;
+}
+
+.a5 {
+    width: 160px;
+    height: 100px;
+    top: 40%;
+    left: 10%;
+}
+
+.a6 {
+    width: 200px;
+    height: 160px;
+    bottom: 40%;
+    right: 8%;
+}
+
+.a7 {
+    width: 120px;
+    height: 180px;
+    top: 60%;
+    left: 18%;
+}
+
+.a8 {
+    width: 240px;
+    height: 320px;
+    bottom: 25%;
+    right: 20%;
+}

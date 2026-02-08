@@ -1,0 +1,610 @@
+<div class="project-slide">
+    <div class="container">
+        <div class="project-header-large reveal">
+            <span class="h-tag"
+                style="color: #fff; border: 1px solid #fff; padding: 8px 20px; display: inline-block; font-size: 11px; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 25px; font-weight: 600;">Reinforcement
+                Learning</span>
+            <h2 class="project-title-xl"
+                style="font-size: 72px; font-weight: 800; margin: 20px 0; color: #fff; line-height: 1.1; letter-spacing: -2px;">
+                AI Snake Game <i class="fas fa-brain"></i></h2>
+            <p class="project-subtitle-lg">
+                Teaching AI to master the classic Snake game through Deep Q-Learning and Neural Networks.
+                Watch as the agent learns from scratch, making mistakes, adapting strategies, and eventually
+                achieving superhuman performance through trial and error reinforcement learning.
+            </p>
+        </div>
+
+        <div class="tech-stack reveal" style="text-align: center; margin: 3rem 0;">
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">Python
+                    3.8+</span>
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">PyTorch</span>
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">Pygame</span>
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">NumPy</span>
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">Matplotlib</span>
+                <span
+                    style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.85rem;">Deep
+                    Q-Learning</span>
+            </div>
+        </div>
+
+        <div class="project-overview reveal" style="margin: 4rem 0;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;">
+                <div>
+                    <h3
+                        style="color: #fff; font-size: 1.6rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem;">
+                        What is This Project?</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem;">
+                        An intelligent agent that learns to play the classic Snake game through reinforcement learning.
+                        Starting with zero knowledge, the AI explores the game environment, receives rewards for eating
+                        food and penalties for collisions, gradually developing sophisticated survival strategies.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem;">
+                        Built entirely from scratch using Python, PyTorch, and Pygame, this project demonstrates how
+                        machines can learn complex behaviors without explicit programming - just like how animals learn
+                        through trial and error.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                        The system uses <strong style="color: #fff;">Deep Q-Learning</strong>, combining Q-Learning
+                        algorithms with neural networks to approximate the optimal action-value function, enabling the
+                        agent to make intelligent decisions in real-time.
+                    </p>
+                </div>
+                <div>
+                    <h3
+                        style="color: #fff; font-size: 1.6rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 0.5rem;">
+                        Why Reinforcement Learning?</h3>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem;">
+                        Unlike supervised learning where we need labeled training data with "correct answers,"
+                        reinforcement learning works through rewards and punishments. We don't tell the agent the best
+                        move - it discovers optimal strategies independently through exploration.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1rem;">
+                        <strong style="color: #fff;">The Learning Process:</strong> Agent performs action → Environment
+                        provides feedback (reward/penalty) → Agent updates strategy → Repeats millions of times →
+                        Emerges with expert-level gameplay.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                        This mirrors how humans learn skills - through practice, failure, and gradual improvement. The
+                        AI experiences thousands of games in minutes, accelerating learning beyond human capability.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">Reinforcement
+                Learning Loop</h3>
+            <div class="mermaid">
+                graph LR
+                Agent["Agent (Snake AI)"] --> Action["Select Action"]
+                Action --> Env["Environment (Game)"]
+                Env --> State["New State"]
+                Env --> Reward["Reward/Penalty"]
+                State --> Agent
+                Reward --> Agent
+
+                Agent --> Learn["Update Q-Values"]
+                Learn --> Policy["Improve Policy"]
+                Policy --> Agent
+
+                style Agent fill:#000,stroke:#fff,color:#fff
+                style Env fill:#000,stroke:#fff,color:#fff
+                style Reward fill:#fff,stroke:#fff,color:#000
+                style Learn fill:#000,stroke:#fff,color:#fff
+            </div>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">System Architecture
+            </h3>
+            <div class="mermaid">
+                graph TB
+                Game["Snake Game Pygame"] --> State["Game State 11 values"]
+                State --> S1["Danger Straight"]
+                State --> S2["Danger Right"]
+                State --> S3["Danger Left"]
+                State --> S4["Direction L/R/U/D"]
+                State --> S5["Food Location"]
+
+                S1 --> Agent["Agent Controller"]
+                S2 --> Agent
+                S3 --> Agent
+                S4 --> Agent
+                S5 --> Agent
+
+                Agent --> Memory["Replay Memory"]
+                Agent --> Model["Deep Q-Network"]
+
+                Model --> Input["Input Layer 11 nodes"]
+                Input --> Hidden1["Hidden Layer 256 nodes"]
+                Hidden1 --> Hidden2["Hidden Layer 256 nodes"]
+                Hidden2 --> Output["Output Layer 3 actions"]
+
+                Output --> Actions["Straight / Left / Right"]
+                Actions --> Game
+
+                Memory --> Train["Training Loop"]
+                Train --> Model
+
+                style Game fill:#000,stroke:#fff,color:#fff
+                style Agent fill:#000,stroke:#fff,color:#fff
+                style Model fill:#000,stroke:#fff,color:#fff
+                style Actions fill:#fff,stroke:#fff,color:#000
+            </div>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">Deep Q-Learning
+                Process</h3>
+            <div class="mermaid">
+                graph TD
+                Start["Initialize Q-Network"] --> Epsilon["Epsilon-Greedy Exploration"]
+                Epsilon --> Random{"Random < Epsilon?"} Random -->|Yes| Explore["Random Action Explore"]
+                    Random -->|No| Exploit["Best Action Exploit"]
+
+                    Explore --> Execute["Execute Action"]
+                    Exploit --> Execute
+
+                    Execute --> Observe["Observe Reward & Next State"]
+                    Observe --> Store["Store in Replay Memory"]
+                    Store --> Sample["Sample Mini-Batch"]
+
+                    Sample --> Compute["Compute Q-Target"]
+                    Compute --> Loss["Calculate Loss MSE"]
+                    Loss --> Backprop["Backpropagation"]
+                    Backprop --> Update["Update Weights"]
+
+                    Update --> Decay["Decay Epsilon"]
+                    Decay --> Check{"Episode End?"}
+                    Check -->|No| Epsilon
+                    Check -->|Yes| Save["Save Model"]
+
+                    style Start fill:#000,stroke:#fff,color:#fff
+                    style Execute fill:#000,stroke:#fff,color:#fff
+                    style Update fill:#000,stroke:#fff,color:#fff
+                    style Save fill:#fff,stroke:#fff,color:#000
+            </div>
+        </div>
+
+        <div class="diagram-box reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem; text-align: center;">Training Progress
+                Flow</h3>
+            <div class="mermaid">
+                graph LR
+                Game0["Game 1-20"] --> Random["Random Exploration"]
+                Random --> Deaths["Frequent Deaths"]
+
+                Game20["Game 20-40"] --> Learning["Learning Patterns"]
+                Learning --> Avoid["Avoiding Walls"]
+
+                Game40["Game 40-80"] --> Strategy["Developing Strategy"]
+                Strategy --> Food["Finding Food"]
+
+                Game80["Game 80+"] --> Expert["Expert Performance"]
+                Expert --> High["High Scores 40+"]
+
+                style Game0 fill:#000,stroke:#fff,color:#fff
+                style Game40 fill:#000,stroke:#fff,color:#fff
+                style Game80 fill:#000,stroke:#fff,color:#fff
+                style High fill:#fff,stroke:#fff,color:#000
+            </div>
+        </div>
+
+        <div class="core-components reveal" style="margin: 4rem 0;">
+            <h3
+                style="color: #fff; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem;">
+                Project Components</h3>
+
+            <div style="display: grid; gap: 2rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Game Environment (game.py)</h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        Implements the Snake game using Pygame with a clean, modular design. The environment provides
+                        the state space (11 boolean values indicating danger directions, current direction, and food
+                        location), action space (3 moves: straight, left, right relative to current direction), and
+                        reward system.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        <strong style="color: #fff;">Key Features:</strong> Collision detection with walls and self,
+                        dynamic snake growth, random food placement, frame-based game loop (40 FPS), and visual
+                        rendering for monitoring training progress.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ AI Agent (agent.py)</h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        The brain of the operation - controls decision-making using epsilon-greedy exploration strategy.
+                        Maintains replay memory (deque with max 100,000 experiences) for experience replay, which breaks
+                        correlation between consecutive samples and improves learning stability.
+                    </p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        <strong style="color: #fff;">Epsilon Decay:</strong> Starts at 80 (high exploration) and
+                        linearly decays to 0 (pure exploitation). Formula: epsilon = 80 - number_of_games. This balance
+                        ensures early exploration of the state space followed by exploitation of learned policies.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Deep Q-Network (model.py)</h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        Neural network architecture with 3 fully connected layers: Input (11 neurons) → Hidden Layer 1
+                        (256 neurons with ReLU) → Hidden Layer 2 (256 neurons with ReLU) → Output (3 neurons for
+                        Q-values of each action).
+                    </p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        <strong style="color: #fff;">Training Details:</strong> Uses Adam optimizer with learning rate
+                        0.001, Mean Squared Error (MSE) loss function, batch size of 1000 samples from replay memory,
+                        and gamma (discount factor) of 0.9 for future reward valuation.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Training Visualization
+                        (helper.py)</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Real-time plotting using Matplotlib to visualize training progress. Displays score per game and
+                        mean score over time, allowing observation of learning curves and performance improvements. The
+                        plot updates after each game, showing clear progression from random play to expert behavior.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="state-representation reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem;">State Representation (11 Values)</h3>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">The agent perceives the environment through
+                11 boolean values encoding critical information:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <div style="padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 0.5rem;">Danger Detection (3 values)</h4>
+                    <ul
+                        style="list-style: none; padding: 0; color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.8;">
+                        <li>• Danger straight ahead</li>
+                        <li>• Danger to the right</li>
+                        <li>• Danger to the left</li>
+                    </ul>
+                </div>
+
+                <div style="padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 0.5rem;">Current Direction (4 values)</h4>
+                    <ul
+                        style="list-style: none; padding: 0; color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.8;">
+                        <li>• Moving left</li>
+                        <li>• Moving right</li>
+                        <li>• Moving up</li>
+                        <li>• Moving down</li>
+                    </ul>
+                </div>
+
+                <div style="padding: 1rem; background: rgba(255,255,255,0.03); border-radius: 4px;">
+                    <h4 style="color: #fff; font-size: 1rem; margin-bottom: 0.5rem;">Food Location (4 values)</h4>
+                    <ul
+                        style="list-style: none; padding: 0; color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.8;">
+                        <li>• Food to the left</li>
+                        <li>• Food to the right</li>
+                        <li>• Food above</li>
+                        <li>• Food below</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="reward-system reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem;">Reward System</h3>
+            <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem;">The agent learns through carefully designed
+                rewards and penalties:</p>
+
+            <div style="display: grid; gap: 1.5rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h4 style="color: #fff; font-size: 1.1rem;">Eating Food</h4>
+                        <span style="color: #fff; font-size: 1.3rem; font-weight: bold;">+10</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Positive reinforcement for successful
+                        food collection, encouraging the agent to seek out apples.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h4 style="color: #fff; font-size: 1.1rem;">Game Over (Collision)</h4>
+                        <span style="color: #fff; font-size: 1.3rem; font-weight: bold;">-10</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Strong penalty for hitting walls or
+                        self, teaching the agent to avoid dangerous situations.</p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <h4 style="color: #fff; font-size: 1.1rem;">Normal Move</h4>
+                        <span style="color: #fff; font-size: 1.3rem; font-weight: bold;">0</span>
+                    </div>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">Neutral reward for safe movements,
+                        allowing the agent to explore without immediate feedback.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="training-process reveal" style="margin: 4rem 0;">
+            <h3
+                style="color: #fff; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem;">
+                Training Process & Performance</h3>
+
+            <div style="display: grid; gap: 2rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fff; margin-bottom: 1rem; font-size: 1.2rem;">Training Stages</h4>
+                    <div style="display: grid; gap: 1rem;">
+                        <div style="padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 4px;">
+                            <h5 style="color: #fff; margin-bottom: 0.5rem;">Games 1-20: Random Exploration</h5>
+                            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6;">
+                                High epsilon value (>60) leads to mostly random actions. Agent explores the state space,
+                                dying frequently but building up replay memory. Average score: 0-3.
+                            </p>
+                        </div>
+
+                        <div style="padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 4px;">
+                            <h5 style="color: #fff; margin-bottom: 0.5rem;">Games 20-40: Pattern Recognition</h5>
+                            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6;">
+                                Epsilon 40-60. Agent starts recognizing wall dangers and learns basic survival. Begins
+                                to avoid immediate collisions. Average score: 3-8.
+                            </p>
+                        </div>
+
+                        <div style="padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 4px;">
+                            <h5 style="color: #fff; margin-bottom: 0.5rem;">Games 40-80: Strategy Development</h5>
+                            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6;">
+                                Epsilon 0-40. Balance between exploration and exploitation. Agent develops food-seeking
+                                behavior and path planning. Average score: 8-20.
+                            </p>
+                        </div>
+
+                        <div style="padding: 1rem; background: rgba(255,255,255,0.02); border-radius: 4px;">
+                            <h5 style="color: #fff; margin-bottom: 0.5rem;">Games 80+: Expert Performance</h5>
+                            <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6;">
+                                Epsilon = 0 (pure exploitation). Agent exhibits sophisticated strategies: safe path
+                                planning, avoiding self-traps, efficient food collection. Average score: 20-40+, with
+                                some games reaching 60+.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="key-algorithms reveal" style="margin: 4rem 0;">
+            <h3
+                style="color: #fff; font-size: 1.8rem; margin-bottom: 2rem; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem;">
+                Key Algorithms & Techniques</h3>
+
+            <div style="display: grid; gap: 2rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Q-Learning Algorithm</h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        Q-Learning is a value-based reinforcement learning algorithm that learns the quality (Q-value)
+                        of actions in given states. The Q-value represents the expected cumulative reward of taking
+                        action 'a' in state 's' and following the optimal policy thereafter.
+                    </p>
+                    <p
+                        style="color: rgba(255,255,255,0.5); font-size: 0.85rem; font-family: monospace; padding: 0.8rem; background: rgba(255,255,255,0.02); border-radius: 4px; margin-bottom: 0.8rem;">
+                        Q(s, a) = Q(s, a) + α × [r + γ × max Q(s', a') - Q(s, a)]
+                    </p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.6;">
+                        Where: α = learning rate (0.001), γ = discount factor (0.9), r = immediate reward, s' = next
+                        state, a' = next action
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Experience Replay</h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Stores experiences (state, action, reward, next_state) in a replay memory buffer. During
+                        training, random mini-batches (1000 samples) are sampled from this memory, breaking the
+                        correlation between consecutive experiences and significantly improving learning stability and
+                        efficiency. This technique was key to DeepMind's DQN breakthrough.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Epsilon-Greedy Exploration</h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        Balances exploration (trying new actions) vs exploitation (using learned knowledge). With
+                        probability epsilon, choose a random action (explore). With probability 1-epsilon, choose the
+                        best known action (exploit).
+                    </p>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7;">
+                        Epsilon decays linearly from 80 to 0 over the first 80 games, gradually shifting from
+                        exploration to exploitation as the agent learns.
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Bellman Equation</h4>
+                    <p
+                        style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.7; margin-bottom: 0.8rem;">
+                        The foundation of Q-Learning, expressing the value of a state as the immediate reward plus the
+                        discounted value of the next state. This recursive relationship allows the agent to propagate
+                        value information backwards from goal states through the state space.
+                    </p>
+                    <p
+                        style="color: rgba(255,255,255,0.5); font-size: 0.85rem; font-family: monospace; padding: 0.8rem; background: rgba(255,255,255,0.02); border-radius: 4px;">
+                        V(s) = max [r + γ × V(s')]
+                    </p>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-left: 3px solid #fff; border-radius: 4px;">
+                    <h4 style="color: #fff; margin-bottom: 0.8rem; font-size: 1.2rem;">◆ Neural Network Approximation
+                    </h4>
+                    <p style="color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height:1.7;">
+                        Instead of maintaining a Q-table (infeasible for large state spaces), we use a neural network to
+                        approximate the Q-function. The network inputs the state vector and outputs Q-values for all
+                        possible actions, enabling continuous state representation and generalization to unseen states.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="system-requirements reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.8rem; margin-bottom: 1.5rem; text-align: center;">System Requirements
+            </h3>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4
+                        style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+                        Minimum Requirements</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.7); line-height: 2; padding: 0;">
+                        <li><strong style="color: #fff;">OS:</strong> Windows/Linux/macOS</li>
+                        <li><strong style="color: #fff;">Python:</strong> 3.7 or higher</li>
+                        <li><strong style="color: #fff;">RAM:</strong> 4GB</li>
+                        <li><strong style="color: #fff;">CPU:</strong> Any modern processor</li>
+                        <li><strong style="color: #fff;">GPU:</strong> Not required (CPU mode)</li>
+                        <li><strong style="color: #fff;">Storage:</strong> 500MB free space</li>
+                    </ul>
+                </div>
+
+                <div
+                    style="padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                    <h4
+                        style="color: #fff; font-size: 1.3rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+                        Recommended Setup</h4>
+                    <ul style="list-style: none; color: rgba(255,255,255,0.7); line-height: 2; padding: 0;">
+                        <li><strong style="color: #fff;">OS:</strong> Windows 10/11, Ubuntu 20.04+</li>
+                        <li><strong style="color: #fff;">Python:</strong> 3.8+</li>
+                        <li><strong style="color: #fff;">RAM:</strong> 8GB</li>
+                        <li><strong style="color: #fff;">CPU:</strong> Multi-core processor</li>
+                        <li><strong style="color: #fff;">GPU:</strong> NVIDIA GPU with CUDA (optional)</li>
+                        <li><strong style="color: #fff;">Training Time:</strong> ~15-30 minutes for 100 games</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                <h4 style="color: #fff; font-size: 1.2rem; margin-bottom: 1rem;">Required Dependencies</h4>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem;">
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">torch</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">pygame</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">numpy</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">matplotlib</span>
+                    <span
+                        style="padding: 0.5rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.3); border-radius: 20px; color: rgba(255,255,255,0.7); font-size: 0.9rem;">IPython</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="download-section reveal" style="margin: 4rem 0; text-align: center;">
+            <h3
+                style="color: #fff; font-size: 2rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 1rem; display: inline-block; min-width: 300px;">
+                Get Started</h3>
+            <p style="color: rgba(255,255,255,0.6); max-width: 600px; margin: 0 auto 2rem auto; line-height: 1.8;">
+                Clone the repository, install dependencies, and watch as the AI learns to master Snake from scratch.
+                Complete training typically takes 100-200 games (~30 minutes).
+            </p>
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem;">
+                <div
+                    style="flex: 1; min-width: 280px; max-width: 400px; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 2px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fff; font-size: 1.4rem; margin-bottom: 1rem;">Complete Project</h4>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem;">Full source code
+                        with all components: game environment, AI agent, neural network model, training visualization,
+                        and pre-trained weights.</p>
+                    <p style="color: rgba(255,255,255,0.5); margin-bottom: 1rem; font-size: 0.85rem;">Size: ~5 MB</p>
+                    <a href="https://github.com/hemanthreddykunduru/AI-Snake-Game-.git" target="_blank"
+                        style="display: inline-block; padding: 1rem 3rem; background: #fff; color: #000; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s; border: 2px solid #fff;">View
+                        on GitHub</a>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 280px; max-width: 400px; padding: 2rem; background: rgba(255,255,255,0.03); border-radius: 8px; border: 2px solid rgba(255,255,255,0.1);">
+                    <h4 style="color: #fff; font-size: 1.4rem; margin-bottom: 1rem;">Pre-trained Model</h4>
+                    <p style="color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem;">Download
+                        pre-trained weights to immediately see expert-level gameplay without waiting for training. Load
+                        and watch the AI perform.</p>
+                    <p style="color: rgba(255,255,255,0.5); margin-bottom: 1rem; font-size: 0.85rem;">Size: ~1 MB</p>
+                    <a href="#download-model"
+                        style="display: inline-block; padding: 1rem 3rem; background: #000; color: #fff; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s; border: 2px solid #fff;">Download
+                        Model</a>
+                </div>
+            </div>
+
+            <div
+                style="margin-top: 2.5rem; padding: 1.5rem; background: rgba(255,255,255,0.02); border-radius: 8px; border-left: 3px solid rgba(255,255,255,0.3); max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem; line-height: 1.7; text-align: left;">
+                    <strong style="color: #fff;">Quick Start:</strong> Clone repository → Install dependencies <span
+                        style="font-family: monospace; background: rgba(255,255,255,0.1); padding: 0.2rem 0.5rem; border-radius: 3px;">pip
+                        install -r requirements.txt</span> → Run <span
+                        style="font-family: monospace; background: rgba(255,255,255,0.1); padding: 0.2rem 0.5rem; border-radius: 3px;">python
+                        agent.py</span> → Watch the AI learn and improve over time
+                </p>
+            </div>
+        </div>
+
+        <div class="additional-info reveal"
+            style="margin: 4rem 0; padding: 2rem; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <h3 style="color: #fff; font-size: 1.6rem; margin-bottom: 1.5rem;">Project Information</h3>
+            <div style="display: grid; gap: 1.2rem;">
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">Educational Purpose:</strong> Perfect for learning reinforcement
+                    learning concepts, understanding Deep Q-Networks, and seeing AI training in action. Includes
+                    detailed comments and modular code structure.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">Customization:</strong> Easily modify game parameters (grid size,
+                    speed), neural network architecture (hidden layers, neurons), training hyperparameters (learning
+                    rate, gamma, batch size), and reward structure.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">Performance Metrics:</strong> Real-time visualization shows score
+                    progression, average score trends, and learning curves. Models automatically save when beating
+                    previous high scores.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">Extensions:</strong> Framework supports easy extension to other games,
+                    different RL algorithms (DDQN, A3C, PPO), enhanced state representations, and multi-agent scenarios.
+                </p>
+                <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">
+                    <strong style="color: #fff;">Open Source:</strong> MIT License - free to use, modify, and
+                    distribute. Contributions welcome for improvements, optimizations, and new features.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

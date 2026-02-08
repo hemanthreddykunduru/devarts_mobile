@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 3D Rocket</title>
+    <style>
+        html {
+            overflow: hidden;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            color: #333;
+            background: #01374b;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.177.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.177.0/examples/jsm/"
+      }
+    }
+  </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+        import TWEEN from 'three/addons/libs/tween.module.js';
+        import * as SceneUtils from 'three/addons/utils/SceneUtils.js';
+        import * as BufferGeometryUtils from 'three/addons/utils/BufferGeometryUtils.js';
+
+        var OutlineShader = {
+            uniforms: {
+                offset: { type: 'f', value: 0.3 },
+                color: { type: 'v3', value: new THREE.Color('#000000') },
+                alpha: { type: 'f', value: 1.0 },
+            },
+
+            vertexShader: `
+        uniform float offset;
+
+        void main() {
+          vec4 pos = modelViewMatrix * vec4( position + normal * offset, 1.0 );
+          gl_Position = projectionMatrix * pos;
+        }
+      `,
+
+            fragmentShader: `
+        uniform vec3 color;
+        uniform float alpha;
+
+        void main() {
+          gl_FragColor = vec4( color, alpha );
+        }
+      `,
+        };
+
+        THREE.ColorManagement.enabled = false;
+
+        var container = document.getElementById('container');
+
+        var renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.outputColorSpace = THREE.LinearSRGBColorSpace;
+
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        container.appendChild(renderer.domElement);
+        renderer.domElement.style.cursor = 'pointer';
+
+        var camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100000);
+        camera.position.set(0, -6, 3);
+
+        var controls = new OrbitControls(camera, renderer.domElement);
+        controls.target.y = 1;
+        controls.enableDamping = true;
+        controls.enabled = false;
+
+        var scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x00212d);
+        scene.fog = new THREE.Fog(0x00212d, 10, 20);
+
+        // lights
+        var aLight = new THREE.AmbientLight(0x555555);
+        scene.add(aLight);
+
+        var dLight1 = new THREE.DirectionalLight(0xffffff, 2);
+        dLight1.position.set(0.7, 1, 1);
+        scene.add(dLight1);
+
+        // -------------------------------------------
+
+        var rocketGroup = new THREE.Group();
+        scene.add(rocketGroup);
+
+        var rocket = new THREE.Group();
+        rocket.position.y = -1.5; // vertically center
+        rocketGroup.add(rocket);
+
+        // -------------------------------------------
+
+        // body
+
+        var points = [];
+
+        points.push(new THREE.Vector2(0, 0)); // bottom
+
+        for (var i = 0; i < 11; i++) {
+            var point = new THREE.Vector2(Math.cos(i * 0.227 - 0.75) * 8, i * 4.0);
+            points.push(point);
+        }
+
+        points.push(new THREE.Vector2(0, 40)); // tip
+
+        var rocketGeo = new THREE.LatheGeometry(points, 32);
+
+        var rocketMat = new THREE.MeshToonMaterial({
+            color: 0x999999,
+        });
+
+        var rocketOutlineMat = new THREE.ShaderMaterial({
+            uniforms: THREE.UniformsUtils.clone(OutlineShader.uniforms),
+            vertexShader: OutlineShader.vertexShader,
+            fragmentShader: OutlineShader.fragmentShader,
+            side: THREE.BackSide,
+        });
+
+        var rocketObj = SceneUtils.createMultiMaterialObject(rocketGeo, [rocketMat, rocketOutlineMat]);
+        rocketObj.scale.setScalar(0.1);
+        rocket.add(rocketObj);
+
+        // -------------------------------------------
+
+        // window
+
+        var portalGeo = new THREE.CylinderGeometry(0.26, 0.26, 1.6, 32);
+        var portalMat = new THREE.MeshToonMaterial({ color: 0x016589 });
+        var portalOutlineMat = rocketOutlineMat.clone();
+        portalOutlineMat.uniforms.offset.value = 0.03;
+        var portal = SceneUtils.createMultiMaterialObject(portalGeo, [portalMat, portalOutlineMat]);
+        portal.position.y = 2;
+        portal.rotation.x = Math.PI / 2;
+        rocket.add(portal);
+
+        // ------------
+
+        var circle = new THREE.Shape();
+        circle.absarc(0, 0, 3.5, 0, Math.PI * 2);
+
+        var hole = new THREE.Path();
+        hole.absarc(0, 0, 3, 0, Math.PI * 2);
+        circle.holes.push(hole);
+
+        var tubeExtrudeSettings = {
+            depth: 17,
+            steps: 1,
+            bevelEnabled: false,
+        };
+        var tubeGeo = new THREE.ExtrudeGeometry(circle, tubeExtrudeSettings);
+        tubeGeo.computeVertexNormals();
+        tubeGeo.center();
+
+        var tubeMat = new THREE.MeshToonMaterial({
+            color: 0x930000,
+        });
+
+        var tubeOutlineMat = rocketOutlineMat.clone();
+        tubeOutlineMat.uniforms.offset.value = 0.2;
+        var tube = SceneUtils.createMultiMaterialObject(tubeGeo, [tubeMat, tubeOutlineMat]);
+        tube.position.y = 2;
+        tube.scale.setScalar(0.1);
+        rocket.add(tube);
+
+        // -------------------------------------------
+
+        // wing
+
+        var shape = new THREE.Shape();
+
+        shape.moveTo(3, 0);
+        shape.quadraticCurveTo(25, -8, 15, -37);
+        shape.lineTo(14.8, -37);
+        shape.quadraticCurveTo(13, -21, 0, -20);
+        shape.lineTo(3, 0);
+
+        var extrudeSettings = {
+            steps: 1,
+            depth: 4,
+            bevelEnabled: true,
+            bevelThickness: 2,
+            bevelSize: 2,
+            bevelSegments: 5,
+        };
+
+        var wingGroup = new THREE.Group();
+        rocket.add(wingGroup);
+
+        var wingGeo = new THREE.ExtrudeGeometry(shape, extrudeSettings);
+        wingGeo.deleteAttribute('normal');
+        wingGeo = BufferGeometryUtils.mergeVertices(wingGeo);
+        wingGeo.computeVertexNormals();
+
+        var wingMat = new THREE.MeshToonMaterial({
+            color: 0x930000,
+        });
+
+        wingMat.needsUpdate = true;
+
+        var wingOutlineMat = rocketOutlineMat.clone();
+        wingOutlineMat.uniforms.offset.value = 1;
+
+        var wing = SceneUtils.createMultiMaterialObject(wingGeo, [wingMat, wingOutlineMat]);
+
+        wing.scale.setScalar(0.03);
+        wing.position.set(0.6, 0.9, 0);
+        wingGroup.add(wing);
+
+        var wing2 = wingGroup.clone();
+        wing2.rotation.y = Math.PI;
+        rocket.add(wing2);
+
+        var wing3 = wingGroup.clone();
+        wing3.rotation.y = Math.PI / 2;
+        rocket.add(wing3);
+
+        var wing4 = wingGroup.clone();
+        wing4.rotation.y = -Math.PI / 2;
+        rocket.add(wing4);
+
+        // -------------------------------------------
+
+        // fire
+
+        var firePoints = [];
+
+        for (var i = 0; i <= 10; i++) {
+            var point = new THREE.Vector2(Math.sin(i * 0.18) * 8, (-10 + i) * 2.5);
+            firePoints.push(point);
+        }
+
+        var fireGeo = new THREE.LatheGeometry(firePoints, 32);
+
+        var fireMat = new THREE.ShaderMaterial({
+            uniforms: {
+                color1: { value: new THREE.Color('yellow') },
+                color2: { value: new THREE.Color(0xff7b00) }, // orange
+            },
+            vertexShader: `
+        varying vec2 vUv;
+
+        void main() {
+          vUv = uv;
+          gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+        }
+      `,
+            fragmentShader: `
+        uniform vec3 color1;
+        uniform vec3 color2;
+
+        varying vec2 vUv;
+
+        void main() {
+          gl_FragColor = vec4(mix(color1, color2, vUv.y), 1.0);
+        }
+      `,
+        });
+
+        var fire = new THREE.Mesh(fireGeo, fireMat);
+        fire.scale.setScalar(0.06);
+        rocket.add(fire);
+
+        var fireLight = new THREE.PointLight(0xff7b00, 6, 9, 2);
+        fireLight.position.set(0, -1, 0);
+        rocket.add(fireLight);
+
+        var fireUpdate = function () {
+            fire.scale.y = THREE.MathUtils.randFloat(0.04, 0.08);
+        };
+
+        // -------------------------------------------
+
+        // star particles
+
+        var ParticleShader = {
+            uniforms: {
+                color: { type: 'v3', value: new THREE.Color(0x2a4a52) },
+                texture: { type: 't', value: null },
+                time: { type: 'f', value: 0 },
+                size: { type: 'f', value: 50.0 },
+
+                fogColor: { type: 'c', value: scene.fog.color },
+                fogNear: { type: 'f', value: scene.fog.near },
+                fogFar: { type: 'f', value: scene.fog.far },
+            },
+
+            vertexShader: `
+        uniform float time;
+        uniform float size;
+        attribute float alphaOffset;
+        varying float vAlpha;
+        uniform vec4 origin;
+
+        void main() {
+          vAlpha = 0.9;
+
+          vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+          float cameraDist = distance( mvPosition, origin );
+          gl_PointSize = size / cameraDist;
+          gl_Position = projectionMatrix * mvPosition;
+        }
+      `,
+
+            fragmentShader: `
+        uniform float time;
+        uniform vec3 color;
+
+        uniform vec3 fogColor;
+        uniform float fogNear;
+        uniform float fogFar;
+
+        varying float vAlpha;
+
+        void main() {
+          vec2 center = gl_PointCoord - 0.5;
+          float dist = length(center);
+          float alpha = smoothstep(0.5, 0.1, dist) * vAlpha;
+          gl_FragColor = vec4( color, alpha );
+
+          #ifdef USE_FOG
+            #ifdef USE_LOGDEPTHBUF_EXT
+              float depth = gl_FragDepthEXT / gl_FragCoord.w;
+            #else
+              float depth = gl_FragCoord.z / gl_FragCoord.w;
+            #endif
+
+            float fogFactor = smoothstep( fogNear, fogFar, depth );
+            gl_FragColor.rgb = mix( gl_FragColor.rgb, fogColor, fogFactor );
+          #endif
+        }
+      `,
+        };
+
+        class Particles extends THREE.Group {
+            constructor(options) {
+                super();
+
+                var color = (this.color = options.color || 0x2a4a52);
+                ParticleShader.uniforms.color.value.setHex(color);
+                var size = (this.size = options.size || 0.4);
+
+                var pointCount = (this.pointCount = options.pointCount || 40);
+                var range = (this.range = options.range || new THREE.Vector3(2, 2, 2));
+                var speed = (this.speed = this.speedTarget = options.speed || 0.0005);
+
+                ParticleShader.uniforms.size.value = size;
+
+                var pointsMat = new THREE.ShaderMaterial({
+                    uniforms: ParticleShader.uniforms,
+                    vertexShader: ParticleShader.vertexShader,
+                    fragmentShader: ParticleShader.fragmentShader,
+                    blending: THREE.AdditiveBlending,
+                    depthWrite: false,
+                    transparent: true,
+                    fog: true,
+                });
+
+                var pointsGeo = new THREE.BufferGeometry();
+
+                var positions = new Float32Array(pointCount * 3);
+                var alphas = new Float32Array(pointCount);
+
+                for (var i = 0; i < pointCount; i++) {
+                    positions[i * 3 + 0] = THREE.MathUtils.randFloatSpread(range.x);
+                    positions[i * 3 + 1] = THREE.MathUtils.randFloatSpread(range.y);
+                    positions[i * 3 + 2] = THREE.MathUtils.randFloatSpread(range.z);
+
+                    alphas[i] = i;
+                }
+
+                pointsGeo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+                pointsGeo.setAttribute('alphaOffset', new THREE.BufferAttribute(alphas, 1));
+
+                var points = (this.points = new THREE.Points(pointsGeo, pointsMat));
+                points.sortParticles = true;
+                points.renderOrder = 1;
+
+                this.add(points);
+
+                var box = new THREE.Box3();
+                box.setFromCenterAndSize(points.position, range);
+            }
+
+            update() {
+                var array = this.points.geometry.attributes.position.array;
+
+                for (var i = 0; i < this.pointCount; i++) {
+                    var indexY = i * 3 + 1;
+
+                    if (array[indexY] < -this.range.y / 2) {
+                        array[indexY] = this.range.y / 2;
+                    }
+
+                    array[indexY] -= this.speed;
+                }
+
+                this.points.geometry.attributes.position.needsUpdate = true;
+            }
+        }
+
+        // ---------------------------------
+
+        function getParticleSize() {
+            var size = 120 * (window.innerHeight / 919);
+            return Math.max(size, 25);
+        }
+
+        var stars = new Particles({
+            color: 0xffffff,
+            range: new THREE.Vector3(30, 30, 30),
+            pointCount: 320,
+            size: getParticleSize(),
+            speed: 0.1,
+        });
+
+        scene.add(stars);
+
+        // -------------------------------------------
+
+        // input
+
+        var plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
+
+        var rocketTarget = new THREE.Vector3();
+
+        var cameraTarget = new THREE.Vector3();
+        cameraTarget.copy(camera.position);
+
+        var raycaster = new THREE.Raycaster();
+
+        var mouse = new THREE.Vector2();
+
+        function mousemove(event) {
+            var e = (event.touches && event.touches[0]) || event;
+            mouse.x = (e.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(e.clientY / window.innerHeight) * 2 + 1;
+
+            cameraTarget.x = -mouse.x * 1;
+            cameraTarget.z = 3 + mouse.y * 1;
+
+            raycaster.setFromCamera(mouse, camera);
+            raycaster.ray.intersectPlane(plane, rocketTarget);
+        }
+
+        function mousedown(event) {
+            event.preventDefault();
+
+            TWEEN.removeAll();
+
+            var dir = mouse.x < 0 ? -1 : 1;
+            var tween = new TWEEN.Tween(rocket.rotation)
+                .to({ y: dir * Math.PI }, 1000)
+                .easing(TWEEN.Easing.Quadratic.InOut)
+                .start();
+
+            var tween2 = new TWEEN.Tween(rocketGroup.scale)
+                .to({ x: 0.9, y: 1.2, z: 0.9 }, 400)
+                .easing(TWEEN.Easing.Cubic.InOut)
+                .start();
+
+            stars.speedTarget = 0.3;
+
+            renderer.domElement.style.cursor = 'none';
+        }
+
+        function mouseup(e) {
+            var tween = new TWEEN.Tween(rocketGroup.scale)
+                .to({ x: 1, y: 1, z: 1 }, 400)
+                .easing(TWEEN.Easing.Cubic.InOut)
+                .start();
+
+            stars.speedTarget = 0.1;
+            renderer.domElement.style.cursor = 'pointer';
+        }
+
+        renderer.domElement.addEventListener('mousemove', mousemove, false);
+        renderer.domElement.addEventListener('mousedown', mousedown, false);
+        renderer.domElement.addEventListener('mouseup', mouseup, false);
+
+        renderer.domElement.addEventListener('touchmove', mousemove, false);
+        renderer.domElement.addEventListener('touchstart', mousedown, false);
+        renderer.domElement.addEventListener('touchend', mouseup, false);
+
+        // -------------------------------------------
+
+        window.addEventListener('resize', resize, false);
+
+        function resize() {
+            stars.size = ParticleShader.uniforms.size.value = getParticleSize();
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        var clock = new THREE.Clock();
+        var time = 0;
+        var angle = THREE.MathUtils.degToRad(3);
+
+        loop();
+
+        function loop() {
+            requestAnimationFrame(loop);
+            TWEEN.update();
+            controls.update();
+
+            time += clock.getDelta();
+
+            rocketGroup.rotation.y = Math.cos(time * 8) * angle;
+
+            fireUpdate();
+
+            stars.update();
+
+            lerp(rocketGroup.position, 'y', rocketTarget.y);
+            lerp(rocketGroup.position, 'x', rocketTarget.x);
+
+            lerp(camera.position, 'x', cameraTarget.x);
+            lerp(camera.position, 'z', cameraTarget.z);
+
+            lerp(stars, 'speed', stars.speedTarget);
+
+            renderer.render(scene, camera);
+        }
+
+        function lerp(object, prop, destination) {
+            if (object && object[prop] !== destination) {
+                object[prop] += (destination - object[prop]) * 0.1;
+
+                if (Math.abs(destination - object[prop]) < 0.01) {
+                    object[prop] = destination;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
