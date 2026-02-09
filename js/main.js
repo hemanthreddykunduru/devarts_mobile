@@ -48,7 +48,7 @@ function initScrollLogic() {
         ScrollTrigger.create({
             trigger: "#portfolio",
             start: "top 80px", // Just after header enters
-            end: "bottom 100px", // Stays active throughout section
+            end: "bottom bottom", // Stays active until the VERY END of the section
             toggleClass: { targets: "body", className: "in-portfolio-view" }
             // CSS handles the rest: hiding navbar, showing controls
         });

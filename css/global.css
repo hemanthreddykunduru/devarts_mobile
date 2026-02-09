@@ -236,26 +236,54 @@ body {
         gap: 0;
     }
 
-    /* Mobile Chat Widget Fix */
+    /* =========================================
+       CHAT CANVAS LAYER (Transparent Overlay)
+       ========================================= */
+    #chat-canvas-layer {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2147483647 !important;
+        /* Max Z-Index */
+        background: transparent !important;
+        pointer-events: none !important;
+        /* Let clicks pass through empty areas */
+    }
+
+    /* The Chat Widget Itself */
     div.pubble-app {
-        max-width: 100vw !important;
+        position: absolute !important;
+        /* Relative to the fixed layer */
         right: 0 !important;
         bottom: 0 !important;
-        overflow: hidden !important;
+        max-width: 100vw !important;
+        overflow: visible !important;
+        pointer-events: none;
+        /* Container doesn't block */
+    }
+
+    /* Enable Interactivity for Chat Elements */
+    div.pubble-app iframe,
+    div.pubble-app * {
+        pointer-events: auto !important;
     }
 
     /* Scale down chat button heavily on small screens */
     @media (max-width: 480px) {
         div.pubble-app {
-            transform: scale(0.85) !important;
-            transform-origin: bottom right !important;
-            right: 16px !important;
-            bottom: 16px !important;
+            /* transform: scale(0.85) !important;  <-- REMOVED: Breaks full screen chat */
+            /* transform-origin: bottom right !important; */
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
         }
 
         .giant-text {
-            font-size: clamp(40px, 12vw, 80px) !important;
             /* Ensure it doesn't overflow */
+            font-size: clamp(40px, 12vw, 80px) !important;
         }
     }
 }
@@ -313,5 +341,62 @@ body.in-portfolio-view .navbar-pill {
 
     .meta-title {
         font-size: 13px !important;
+    }
+}
+
+/* =========================================
+   AGGRESSIVE MOBILE OVERHAUL (< 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    html,
+    body {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        position: relative;
+    }
+
+    .container {
+        width: 100% !important;
+        padding: 0 20px !important;
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+
+    /* TYPOGRAPHY FIXES */
+    h1,
+    h2,
+    h3,
+    .serif-xl,
+    .giant-text {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        max-width: 100%;
+    }
+
+    /* Specific fix for "Freelance..." title */
+    h3[style*="font-size: 56px"] {
+        font-size: 32px !important;
+        /* Force smaller size */
+        line-height: 1.3 !important;
+    }
+
+    /* NAVBAR & CONTROLS FIXES */
+    .navbar-pill {
+        width: 92% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        padding: 0 16px !important;
+    }
+
+    .slider-controls-custom {
+        width: 92% !important;
+        padding: 0 10px !important;
+        margin: 0 auto 40px !important;
+    }
+
+    .nav-link {
+        font-size: 10px !important;
+        padding: 6px 8px !important;
     }
 }
