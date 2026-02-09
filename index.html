@@ -210,13 +210,6 @@
             left: 24px;
         }
 
-        @media (max-width: 768px) {
-            .progress-track {
-                width: calc(100% - 24px);
-                left: 12px;
-            }
-        }
-
         .progress-fill {
             height: 2px;
             background: #fff;
@@ -276,14 +269,7 @@
         .nav-hidden {
             opacity: 0;
             pointer-events: none;
-            visibility: hidden;
             /* Stay in place to fade behind the glass slider */
-        }
-
-        .slider-hidden {
-            opacity: 0 !important;
-            pointer-events: none !important;
-            visibility: hidden !important;
         }
 
         /* STICKY CONTROLS - Positioned to perfectly replace Navbar */
@@ -296,16 +282,8 @@
             margin: 0 auto 60px;
             height: 64px;
             /* Explicit height to contain absolute children */
-            transition: opacity 0.8s cubic-bezier(0.2, 1, 0.3, 1), transform 0.8s cubic-bezier(0.2, 1, 0.3, 1), visibility 0.8s;
+            transition: opacity 0.8s ease, transform 0.8s ease;
             /* Removed visual styles here, moved to .controls-inner */
-        }
-
-        @media (max-width: 768px) {
-            .slider-controls-custom {
-                top: 16px;
-                height: 56px;
-                width: 98%;
-            }
         }
 
         .controls-inner {
@@ -328,31 +306,57 @@
             /* Below overlay */
         }
 
-        @media (max-width: 768px) {
-            .controls-inner {
-                padding: 0 12px;
+        /* Walkthrough Overlay (Attached to the sticky bar) */
+        #walkthrough-overlay {
+            position: absolute;
+            inset: -20px -20px -100px -20px;
+            /* Expand slightly around */
+            pointer-events: none;
+            z-index: 10;
+            display: none;
+            /* Hidden by default */
+        }
+
+        .overlay-arrow {
+            position: absolute;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            text-shadow: 0 2px 8px #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
             }
 
-            .slider-btn {
-                padding: 8px 12px;
-                font-size: 11px;
-                gap: 5px;
-            }
-
-            .meta-title {
-                font-size: 13px;
-                max-width: 120px;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;
-            }
-
-            .meta-label {
-                font-size: 9px;
+            50% {
+                transform: translateY(-10px);
             }
         }
 
-
+        .close-walkthrough {
+            position: absolute;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-weight: bold;
+            cursor: pointer;
+            pointer-events: auto;
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
         /* Nav Active Pill (Sliding Background) */
         .nav-links-wrap {
@@ -678,22 +682,10 @@
                         We forge digital realities. <br>From offline AI swarms to immersive glass engines. </p>
                 </div>
             </div>
-            <iframe src="moon_animated.html" class="moon-iframe"
+            <iframe src="moon_animated.html"
                 style="position: absolute; right:0%; top: 20%; width: 600px; height: 600px; border: none; pointer-events: none; background: transparent; overflow: hidden;"
                 scrolling="no">
             </iframe>
-            <style>
-                @media (max-width: 768px) {
-                    .moon-iframe {
-                        width: 100% !important;
-                        height: 400px !important;
-                        top: 50% !important;
-                        right: 0 !important;
-                        opacity: 0.5;
-                        z-index: 1;
-                    }
-                }
-            </style>
             <div class="interaction-instruction">
                 <div class="instruction-content">
                     <div class="instruction-icon">
@@ -1864,6 +1856,21 @@
                         <div class="progress-fill" id="progress-fill" style="height: 100%;"></div>
                     </div>
                 </div>
+
+                <!-- Attached Walkthrough Overlay -->
+                <div id="walkthrough-overlay">
+                    <button class="close-walkthrough" onclick="hideWalkthrough()">ⓧ Hide</button>
+
+                    <div class="overlay-arrow" style="left: 70px; top: 80px;">
+                        <span style="font-size: 30px;">↑</span>
+                        <span>Click Prev</span>
+                    </div>
+
+                    <div class="overlay-arrow" style="right: 70px; top: 80px;">
+                        <span style="font-size: 30px;">↑</span>
+                        <span>Click Next</span>
+                    </div>
+                </div>
             </div>
             <div id="project-display-area">
                 <div id="injected-content" style="width: 100%;">
@@ -1882,36 +1889,9 @@
                 <style>
                     .credit-card-container {
                         perspective: 1500px;
-                        width: 100%;
-                        max-width: 500px;
+                        width: 500px;
                         height: 320px;
                         cursor: pointer;
-                        margin: 0 auto;
-                    }
-
-                    @media (max-width: 768px) {
-                        .credit-card-container {
-                            height: 240px;
-                            perspective: 1000px;
-                        }
-
-                        .card-number {
-                            font-size: 18px !important;
-                            letter-spacing: 2px !important;
-                        }
-
-                        .card-info {
-                            font-size: 14px !important;
-                        }
-
-                        .card-chip {
-                            width: 40px !important;
-                            height: 30px !important;
-                        }
-
-                        .card-face {
-                            border-radius: 12px !important;
-                        }
                     }
 
                     .credit-card {
@@ -2298,6 +2278,12 @@
         </div>
     </main>
     <footer class="footer" style="border-top: 1px solid var(--glass-border);">
+
+
+        <!-- Pubble App -->
+
+
+
         <div class="container footer-grid">
             <div class="footer-col">
                 <a href="#hero" class="nav-logo" onclick="lenis.scrollTo('#hero')" style="font-style: italic;">Dev
@@ -2363,6 +2349,19 @@
             </div>
         </div>
     </footer>
+
+    <!-- SPOTLIGHT BLUR MASK -->
+    <div id="global-blur-mask" style="
+        position: fixed;
+        inset: 0;
+        z-index: 1000; /* Below controls (1005) but above page content */
+        background: rgba(0,0,0,0.3);
+        backdrop-filter: blur(8px);
+        display: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none; /* Allow scrolling/interactions if needed, but mainly visual focus */
+    "></div>
 
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -2958,14 +2957,11 @@
         }
     </script>
 
-    <!-- Pubble Transparent Overlay (Canvas) -->
-    <div id="pubble-canvas"
-        style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; pointer-events: none; z-index: 2147483647; background: transparent;">
-        <div class="pubble-app" data-app-id="134902" data-app-identifier="134902"
-            style="color: #b8942c; pointer-events: auto;"></div>
-        <script type="text/javascript" src="https://cdn.pubble.io/javascript/loader.js" defer></script>
-    </div>
+    <!-- Chat Widget Embed -->
+    <div class="pubble-app" data-app-id="135053" data-app-identifier="135053"></div>
+    <script type="text/javascript" src="https://cdn.chatify.com/javascript/loader.js" defer></script>
 
 </body>
+
 
 </html>

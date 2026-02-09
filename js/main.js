@@ -39,36 +39,23 @@ function initScrollLogic() {
     // Initial Reveal
     initReveal();
 
-    // Navbar & Slider Crossfade Mutual Exclusion Logic
+    // Navbar CROSSFADE Logic - Portfolio Section Swap
     const navbar = document.querySelector('.navbar-pill');
     const controls = document.querySelector('.slider-controls-custom');
+    const portfolioSection = document.querySelector('#portfolio');
 
-    if (navbar && controls) {
-        // Initial state
-        controls.classList.add('slider-hidden');
-
+    if (controls && portfolioSection) {
         ScrollTrigger.create({
             trigger: "#portfolio",
-            start: "top 24px",
-            end: "bottom bottom", // Keep visible until the entire portfolio section is scrolled out
-            onEnter: () => {
-                navbar.classList.add('nav-hidden');
-                controls.classList.remove('slider-hidden');
-            },
-            onLeave: () => {
-                navbar.classList.remove('nav-hidden');
-                controls.classList.add('slider-hidden');
-            },
-            onEnterBack: () => {
-                navbar.classList.add('nav-hidden');
-                controls.classList.remove('slider-hidden');
-            },
-            onLeaveBack: () => {
-                navbar.classList.remove('nav-hidden');
-                controls.classList.add('slider-hidden');
-            }
+            start: "top 80px", // Just after header enters
+            end: "bottom 100px", // Stays active throughout section
+            toggleClass: { targets: "body", className: "in-portfolio-view" }
+            // CSS handles the rest: hiding navbar, showing controls
         });
     }
+
+    // Removed Automatic Walkthrough Trigger to prevent "blur thing"
+
 
     // ScrollSpy (Active Link Highlighting + Sliding Pill)
     const sections = ['hero', 'about', 'portfolio', 'contact'];
@@ -237,11 +224,44 @@ async function loadProject(index) {
     }
 }
 
+// Helper to hide walkthrough
+let isWalkthroughDismissed = false;
+
+function hideWalkthrough() {
+    isWalkthroughDismissed = true;
+    const w = document.getElementById('walkthrough-overlay');
+    if (w) w.style.display = 'none';
+
+    const blur = document.getElementById('global-blur-mask');
+    if (blur) {
+        blur.style.opacity = '0';
+        setTimeout(() => blur.style.display = 'none', 500);
+    }
+}
+
+// Show Walkthrough
+function showWalkthrough() {
+    if (isWalkthroughDismissed) return;
+
+    const w = document.getElementById('walkthrough-overlay');
+    if (w) w.style.display = 'block';
+
+    const blur = document.getElementById('global-blur-mask');
+    if (blur) {
+        blur.style.display = 'block';
+        // Force reflow
+        blur.offsetHeight;
+        blur.style.opacity = '1';
+    }
+}
+
 window.nextProject = function () {
+    hideWalkthrough();
     loadProject(currentProjectIndex + 1);
     if (typeof lenis !== 'undefined') lenis.scrollTo('#portfolio', { offset: -20 });
 }
 window.prevProject = function () {
+    hideWalkthrough();
     loadProject(currentProjectIndex - 1);
     if (typeof lenis !== 'undefined') lenis.scrollTo('#portfolio', { offset: -20 });
 }
