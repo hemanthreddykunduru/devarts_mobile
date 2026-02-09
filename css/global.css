@@ -389,10 +389,23 @@ body.in-portfolio-view .navbar-pill {
         padding: 0 16px !important;
     }
 
+    /* Fixed Bottom Controls for Mobile (Sticky alternative) */
     .slider-controls-custom {
+        position: fixed !important;
+        bottom: 20px !important;
+        top: auto !important;
+        left: 50% !important;
+        transform: translate(-50%, 20px) !important;
+        /* Start slightly offset */
         width: 92% !important;
         padding: 0 10px !important;
-        margin: 0 auto 40px !important;
+        margin: 0 !important;
+        z-index: 10000 !important;
+    }
+
+    /* Ensure active state animates up correctly on mobile */
+    body.in-portfolio-view .slider-controls-custom {
+        transform: translate(-50%, 0) !important;
     }
 
     .nav-link {
